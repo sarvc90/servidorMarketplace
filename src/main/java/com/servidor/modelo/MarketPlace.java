@@ -4,18 +4,19 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.servidor.util.UtilLog;
+import com.servidor.util.UtilMarketPlace;
 
 public class MarketPlace implements Serializable{
     private List<Vendedor> vendedores;
     private List<Solicitud> solicitudes;
     private Admin administrador;
-    private UtilLog utilidades;
+    private UtilMarketPlace utilMarketPlace;
 
     // Constructor
     public MarketPlace() {
         this.administrador = new Admin("1", "Juana", "Arias", "123", "direccion", "contraseña");
-        this.utilidades = UtilLog.getInstance();
-        this.vendedores = utilidades.leerVendedoresDesdeArchivo();
+        this.utilMarketPlace = utilMarketPlace.getInstance();
+        this.vendedores = utilMarketPlace.leerVendedoresDesdeArchivo();
         this.solicitudes = utilidades.leerSolicitudesDesdeArchivo();
     }
 

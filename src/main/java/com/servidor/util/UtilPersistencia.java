@@ -420,4 +420,15 @@ public class UtilPersistencia {
         return solicitudesEncontradas;
     }
 
+    public Solicitud buscarSolicitudPorEmisorYReceptor(String emisorId, String receptorId){
+        List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
+        for(Solicitud solicitud : listaSolicitudes){
+            if (solicitud.getReceptor().getId().equals(receptorId) && solicitud.getEmisor().getId().equals(emisorId)) {
+                utilLog.logInfo("Solicitud ya existente entre los dos usuarios.");
+                return solicitud;
+            }
+        }
+        return null;
+    }
+
 }
