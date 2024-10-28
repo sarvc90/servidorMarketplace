@@ -5,8 +5,8 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.servidor.IniciarSesionController">
     <children>
-        <Label text="Nombre:" layoutX="50.0" layoutY="50.0" />
-        <TextField fx:id="nombreField" layoutX="150.0" layoutY="50.0" />
+        <Label text="Cedula:" layoutX="50.0" layoutY="50.0" />
+        <TextField fx:id="cedulaField" layoutX="150.0" layoutY="50.0" />
 
         <Label text="Contraseña:" layoutX="50.0" layoutY="100.0" />
         <PasswordField fx:id="contrasenaField" layoutX="150.0" layoutY="100.0" />

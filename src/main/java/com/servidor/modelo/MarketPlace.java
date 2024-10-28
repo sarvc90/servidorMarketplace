@@ -3,12 +3,12 @@ package com.servidor.modelo;
 import java.io.Serializable;
 import java.util.List;
 
-import com.servidor.util.UtilLog;
 import com.servidor.util.UtilMarketPlace;
 
 public class MarketPlace implements Serializable{
     private List<Vendedor> vendedores;
     private List<Solicitud> solicitudes;
+    private List<Producto> productos;
     private Admin administrador;
     private UtilMarketPlace utilMarketPlace;
 
@@ -16,8 +16,9 @@ public class MarketPlace implements Serializable{
     public MarketPlace() {
         this.administrador = new Admin("1", "Juana", "Arias", "123", "direccion", "contraseña");
         this.utilMarketPlace = utilMarketPlace.getInstance();
-        this.vendedores = utilMarketPlace.leerVendedoresDesdeArchivo();
-        this.solicitudes = utilidades.leerSolicitudesDesdeArchivo();
+        this.vendedores = utilMarketPlace.obtenerVendedores();
+        this.solicitudes = utilMarketPlace.obtenerSolicitudes();
+        this.productos = utilMarketPlace.obtenerProductos();
     }
 
     public List<Vendedor> getVendedores() {
@@ -36,10 +37,6 @@ public class MarketPlace implements Serializable{
         this.administrador = administrador;
     }
 
-    public UtilLog getUtilidades() {
-        return utilidades;
-    }
-
     public void setSolicitudes(List<Solicitud> solicitudes){
         this.solicitudes = solicitudes;
     }
@@ -48,58 +45,14 @@ public class MarketPlace implements Serializable{
         return solicitudes;
     }
 
-    public Vendedor buscarVendedor(String id) {
-        for (Vendedor vendedor : vendedores) {
-            if (vendedor.getId().equals(id)) {
-                utilidades.logInfo("Vendedor identificado con"+ id + "encontrado: " + vendedor.getNombre());
-                return vendedor;
-            }
-        }
-        utilidades.logWarning("No se encontro el vendedor identificado con: " + id);
-        return null; // Retorna null si no se encuentra el vendedor
-    }
-
-    //CRUD VENDEDOR
-
-    public void crearVendedor(Vendedor vendedor){
-        utilidades.guardarVendedorEnArchivo(vendedor);
-        utilidades.actualizarSerializacionVendedores();
-    }
-
-    public void eliminarVendedor(String id){
-        utilidades.eliminarVendedor(id);
-        utilidades.actualizarSerializacionVendedores();
-    }
-
-    public void actualizarVendedor(Vendedor vendedor){
-        utilidades.modificarVendedor(vendedor);
-        utilidades.actualizarSerializacionVendedores();
-    }
-
-    public void leerVendedores(){
-        utilidades.leerVendedoresDesdeArchivo();
-    }
-
-    //CRUD SOLICITUDES
-    public void crearSolicitud(Solicitud solicitud){
-        utilidades.guardarSolicitudEnArchivo(solicitud);
-        utilidades.actualizarSerializacionSolicitudes();
-    }
-
-    public void eliminarSolicitud(String id){
-        utilidades.eliminarSolicitud(id);
-        utilidades.actualizarSerializacionSolicitudes();
-    }
-
-    public void actualizarSolicitud(String id, EstadoSolicitud estado ){
-        utilidades.cambiarEstadoSolicitud(id, estado);
-        utilidades.actualizarSerializacionSolicitudes();
-    }
     
-    public void leerSolicitudes(){
-        utilidades.leerSolicitudesDesdeArchivo();
+    public void setProductos(List<Producto> productos){
+        this.productos = productos;
     }
 
-    //Reputacion 
-    //CRUD chat
+    public List<Producto> getProductos(){
+        return productos;
+    }
+
+//Chat?
 }

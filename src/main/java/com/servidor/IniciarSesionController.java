@@ -4,28 +4,37 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
+import com.servidor.modelo.Vendedor;
+import com.servidor.util.UtilMarketPlace;
+import com.servidor.excepciones.UsuarioNoEncontradoException;
 
 public class IniciarSesionController {
 
     @FXML
-    private TextField nombreField;
+    private TextField cedulaField;
 
     @FXML
     private PasswordField contrasenaField;
 
+    // Obtención de la instancia única de UtilMarketPlace
+    private UtilMarketPlace utilMarketplace = UtilMarketPlace.getInstance();
+
     @FXML
-    private void handleLogin() {
-        String nombre = nombreField.getText();
+    private void handleLogin() throws UsuarioNoEncontradoException {
+        String cedula = cedulaField.getText();
         String contrasena = contrasenaField.getText();
 
-        // Aquí puedes agregar la lógica para verificar las credenciales
-        if (nombre.isEmpty() || contrasena.isEmpty()) {
+        if (cedula.isEmpty() || contrasena.isEmpty()) {
             mostrarAlerta("Por favor, complete todos los campos.");
         } else {
-            // Lógica de autenticación
-            // Si las credenciales son correctas, proceder a la siguiente vista
-            // Si no, mostrar un mensaje de error
-            mostrarAlerta("Iniciando sesión...");
+            Vendedor vendedor = utilMarketplace.iniciarSesion(cedula, contrasena);
+
+            if (vendedor != null) {
+                mostrarAlerta("Sesión iniciada con éxito. Bienvenido, " + vendedor.getNombre() + "!");
+                // Aquí puedes cargar la siguiente vista o proceder con la sesión
+            } else {
+                mostrarAlerta("Contraseña incorrecta. Inténtelo de nuevo.");
+            }
         }
     }
 

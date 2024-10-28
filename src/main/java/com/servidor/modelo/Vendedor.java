@@ -1,15 +1,13 @@
 package com.servidor.modelo;
 
 import java.util.List;
-import java.util.Collections;
-import java.util.Comparator;
 
-import com.servidor.util.UtilLog;
+import com.servidor.util.UtilVendedor;
 
 public class Vendedor extends Persona {
     private List<Producto> publicaciones;
     private List<Vendedor> redDeContactos;
-    private UtilLog utilidades;
+    private UtilVendedor utilVendedor;
 
     public Vendedor() {
         super();
@@ -20,7 +18,7 @@ public class Vendedor extends Persona {
         super(id, nombre, apellido, cedula, direccion, contraseña);
         this.publicaciones = publicaciones;
         this.redDeContactos = redDeContactos;
-        this.utilidades = UtilLog.getInstance();
+        this.utilVendedor = utilVendedor.getInstance();
     }
 
     public List<Producto> getPublicaciones() {
@@ -39,79 +37,11 @@ public class Vendedor extends Persona {
         this.redDeContactos = redDeContactos;
     }
 
-    public UtilLog getUtilidades() {
-        return utilidades;
-    }
-
-    // CRUD PRODUCTO
-    public void crearProducto(Producto producto) {
-        utilidades.guardarProductoEnArchivo(producto);
-        utilidades.actualizarSerializacionProductos();
-    }
-
-    public void eliminarProducto(String id) {
-        List<Producto> productosPropios = utilidades.obtenerProductosDeVendedor(getId());
-        boolean productoEncontrado = false;
-
-        for (Producto producto : productosPropios) {
-            if (producto.getId().equals(id)) {
-                productoEncontrado = true;
-                break;
-            }
-        }
-
-        if (productoEncontrado) {
-            utilidades.eliminarProducto(id);
-            utilidades.actualizarSerializacionProductos();
-        } else {
-            System.out.println("El producto con ID " + id + " no pertenece a este vendedor.");
-        }
-    }
-
-    public void actualizarProducto(Producto producto) {
-        List<Producto> productosPropios = utilidades.obtenerProductosDeVendedor(getId());
-        boolean productoEncontrado = false;
-
-        for (Producto p : productosPropios) {
-            if (p.getId().equals(producto.getId())) {
-                productoEncontrado = true;
-                break;
-            }
-        }
-
-        if (productoEncontrado) {
-            utilidades.modificarProducto(producto);
-            utilidades.actualizarSerializacionProductos();
-        } else {
-            System.out.println("El producto con ID " + producto.getId() + " no pertenece a este vendedor.");
-        }
-    }
-
-    public void leerProducto() {
-        List<Producto> productosPropios = utilidades.obtenerProductosDeVendedor(getId());
-        for (Producto producto : productosPropios) {
-            System.out.println(producto); // Asumiendo que Producto tiene un método toString
-        }
-    }
-
-    public List<Producto> obtenerProductosPropiosOrdenadosPorFecha() {
-        List<Producto> productosPropios = utilidades.obtenerProductosDeVendedor(getId());
-    
-        // Ordenar la lista de productos por fecha de publicación
-        Collections.sort(productosPropios, new Comparator<Producto>() {
-            @Override
-            public int compare(Producto p1, Producto p2) {
-                return p1.getFechaPublicacion().compareTo(p2.getFechaPublicacion());
-            }
-        });
-    
-        return productosPropios; // Retorna la lista ordenada
-    }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Productos Propios (Ordenados por Fecha de Publicación):\n");
-        List<Producto> productosPropiosOrdenados = obtenerProductosPropiosOrdenadosPorFecha();
+        List<Producto> productosPropiosOrdenados = getPublicaciones();
         for (Producto producto : productosPropiosOrdenados) {
             sb.append(producto.toString()).append("\n"); // Asumiendo que Producto tiene un método toString
         }
