@@ -17,7 +17,7 @@ import com.servidor.modelo.Producto;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 
-public class UtilPersistencia implements Serializable{
+public class UtilPersistencia implements Serializable {
     private static UtilPersistencia instancia;
     private UtilProperties utilProperties;
     private UtilLog utilLog;
@@ -283,10 +283,14 @@ public class UtilPersistencia implements Serializable{
     // MODIFICAR
 
     // Método para cambiar el estado de una solicitud
-    public void cambiarEstadoSolicitud(String idSolicitud, EstadoSolicitud nuevoEstado) {
+    public void cambiarEstadoSolicitud(String idSolicitud, EstadoSolicitud nuevoEstado, Vendedor vendedor) {
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
         for (Solicitud solicitud : listaSolicitudes) {
             if (solicitud.getId().equals(idSolicitud)) {
+                if (!solicitud.getReceptor().equals(vendedor)) {
+                    utilLog.escribirLog("El vendedor no tiene permiso para cambiar el estado de esta solicitud.", Level.WARNING);
+                    return; // Salir del método sin cambiar el estado
+                }
                 solicitud.setEstado(nuevoEstado);
                 utilLog.escribirLog("Estado de la solicitud cambiado exitosamente: " + solicitud, Level.INFO);
                 break;
@@ -421,15 +425,132 @@ public class UtilPersistencia implements Serializable{
         return solicitudesEncontradas;
     }
 
-    public Solicitud buscarSolicitudPorEmisorYReceptor(String emisorId, String receptorId){
+    public Solicitud buscarSolicitudPorEmisorYReceptor(String emisorId, String receptorId) {
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
-        for(Solicitud solicitud : listaSolicitudes){
+        for (Solicitud solicitud : listaSolicitudes) {
             if (solicitud.getReceptor().getId().equals(receptorId) && solicitud.getEmisor().getId().equals(emisorId)) {
                 utilLog.logInfo("Solicitud ya existente entre los dos usuarios.");
                 return solicitud;
             }
         }
         return null;
+    }
+
+    // Método para buscar solicitudes pendientes por un vendedor
+    public List<Solicitud> buscarSolicitudesPendientesPorVendedor(Vendedor vendedor) {
+        List<Solicitud> solicitudesEncontradas = new ArrayList<>();
+        String rutaSolicitudesPendientes = utilProperties.obtenerPropiedad("rutaSolicitudesPendientes.txt");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaSolicitudesPendientes))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split("%");
+                String id = datos[0];
+                String emisorCedula = datos[1];
+                String receptorCedula = datos[2];
+                EstadoSolicitud estado = EstadoSolicitud.PENDIENTE; // Estado fijo para este método
+
+                // Buscar los Vendedores por ID
+                Vendedor emisor = buscarVendedorPorCedula(emisorCedula);
+                Vendedor receptor = buscarVendedorPorCedula(receptorCedula);
+
+                // Crear la solicitud
+                Solicitud solicitud = new Solicitud(id, emisor, receptor, estado);
+
+                // Verificar si el vendedor es emisor o receptor
+                if (solicitud.getEmisor() != null && solicitud.getEmisor().getId().equals(vendedor.getId())) {
+                    solicitudesEncontradas.add(solicitud);
+                } else if (solicitud.getReceptor() != null
+                        && solicitud.getReceptor().getId().equals(vendedor.getId())) {
+                    solicitudesEncontradas.add(solicitud);
+                }
+            }
+            utilLog.escribirLog("Solicitudes pendientes encontradas para el vendedor ID: " + vendedor.getId(),
+                    Level.INFO);
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer solicitudes pendientes desde el archivo: " + rutaSolicitudesPendientes,
+                    Level.SEVERE);
+        }
+
+        return solicitudesEncontradas;
+    }
+
+    // Método para buscar solicitudes aceptadas por un vendedor
+    public List<Solicitud> buscarSolicitudesAceptadasPorVendedor(Vendedor vendedor) {
+        List<Solicitud> solicitudesEncontradas = new ArrayList<>();
+        String rutaSolicitudesAceptadas = utilProperties.obtenerPropiedad("rutaSolicitudesAceptadas.txt");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaSolicitudesAceptadas))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split("%");
+                String id = datos[0];
+                String emisorCedula = datos[1];
+                String receptorCedula = datos[2];
+                EstadoSolicitud estado = EstadoSolicitud.ACEPTADA; // Estado fijo para este método
+
+                // Buscar los Vendedores por ID
+                Vendedor emisor = buscarVendedorPorCedula(emisorCedula);
+                Vendedor receptor = buscarVendedorPorCedula(receptorCedula);
+
+                // Crear la solicitud
+                Solicitud solicitud = new Solicitud(id, emisor, receptor, estado);
+
+                // Verificar si el vendedor es emisor o receptor
+                if (solicitud.getEmisor() != null && solicitud.getEmisor().getId().equals(vendedor.getId())) {
+                    solicitudesEncontradas.add(solicitud);
+                } else if (solicitud.getReceptor() != null
+                        && solicitud.getReceptor().getId().equals(vendedor.getId())) {
+                    solicitudesEncontradas.add(solicitud);
+                }
+            }
+            utilLog.escribirLog("Solicitudes aceptadas encontradas para el vendedor ID: " + vendedor.getId(),
+                    Level.INFO);
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer solicitudes aceptadas desde el archivo: " + rutaSolicitudesAceptadas,
+                    Level.SEVERE);
+        }
+
+        return solicitudesEncontradas;
+    }
+
+    // Método para buscar solicitudes rechazadas por un vendedor
+    public List<Solicitud> buscarSolicitudesRechazadasPorVendedor(Vendedor vendedor) {
+        List<Solicitud> solicitudesEncontradas = new ArrayList<>();
+        String rutaSolicitudesRechazadas = utilProperties.obtenerPropiedad("rutaSolicitudesRechazadas.txt");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaSolicitudesRechazadas))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split("%");
+                String id = datos[0];
+                String emisorCedula = datos[1];
+                String receptorCedula = datos[2];
+                EstadoSolicitud estado = EstadoSolicitud.RECHAZADA; // Estado fijo para este método
+
+                // Buscar los Vendedores por ID
+                Vendedor emisor = buscarVendedorPorCedula(emisorCedula);
+                Vendedor receptor = buscarVendedorPorCedula(receptorCedula);
+
+                // Crear la solicitud
+                Solicitud solicitud = new Solicitud(id, emisor, receptor, estado);
+
+                // Verificar si el vendedor es emisor o receptor
+                if (solicitud.getEmisor() != null && solicitud.getEmisor().getId().equals(vendedor.getId())) {
+                    solicitudesEncontradas.add(solicitud);
+                } else if (solicitud.getReceptor() != null
+                        && solicitud.getReceptor().getId().equals(vendedor.getId())) {
+                    solicitudesEncontradas.add(solicitud);
+                }
+            }
+            utilLog.escribirLog("Solicitudes rechazadas encontradas para el vendedor ID: " + vendedor.getId(),
+                    Level.INFO);
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer solicitudes rechazadas desde el archivo: " + rutaSolicitudesRechazadas,
+                    Level.SEVERE);
+        }
+
+        return solicitudesEncontradas;
     }
 
 }

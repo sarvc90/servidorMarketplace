@@ -6,6 +6,8 @@ import java.util.List;
 import com.servidor.excepciones.ProductoNoEncontradoException;
 import com.servidor.excepciones.ProductoYaExisteException;
 import com.servidor.modelo.Producto;
+import com.servidor.modelo.Solicitud;
+import com.servidor.modelo.Vendedor;
 
 
 public class UtilVendedor implements Serializable{
@@ -64,7 +66,16 @@ public class UtilVendedor implements Serializable{
         
     }
 
-    public List<Producto> obtenerProductos(){
-        return utilPersistencia.leerProductosDesdeArchivo();
+    public List<Solicitud> obtenerSolicitudesAceptadas(Vendedor vendedor){
+        return utilPersistencia.buscarSolicitudesAceptadasPorVendedor(vendedor);
+    }
+
+    
+    public List<Solicitud> obtenerSolicitudesRechazadas(Vendedor vendedor){
+        return utilPersistencia.buscarSolicitudesRechazadasPorVendedor(vendedor);
+    }
+
+    public List<Solicitud> obtenerSolicitudesPendientes(Vendedor vendedor){
+        return utilPersistencia.buscarSolicitudesPendientesPorVendedor(vendedor);
     }
 }

@@ -10,13 +10,14 @@ public class UtilId implements Serializable{
     private static final Random random = new Random();
     private static final Set<String> idsGenerados = new HashSet<>();
 
+// se crea la unica instancia de la clase 
     public static UtilId getInstance() {
         if (instancia == null) {
             instancia = new UtilId();
         }
         return instancia;
     }
-
+// metodo para crear un identificador unico 
     public static String generarIdAleatorio() {
         String id;
         do {

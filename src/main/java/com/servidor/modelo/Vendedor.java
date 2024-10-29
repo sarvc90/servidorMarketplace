@@ -1,5 +1,6 @@
 package com.servidor.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.servidor.excepciones.ProductoNoEncontradoException;
@@ -18,9 +19,10 @@ public class Vendedor extends Persona {
     public Vendedor(String id, String nombre, String apellido, String cedula, String direccion, String contraseña,
             List<Producto> publicaciones, List<Vendedor> redDeContactos) {
         super(id, nombre, apellido, cedula, direccion, contraseña);
-        this.publicaciones = utilVendedor.obtenerProductos();
-        this.redDeContactos = redDeContactos;
+        this.publicaciones = publicaciones;
+        this.redDeContactos = new ArrayList<>();
         this.utilVendedor = utilVendedor.getInstance();
+        inicializarRedDeContactos(); 
     }
 
     public List<Producto> getPublicaciones() {
@@ -81,6 +83,22 @@ public class Vendedor extends Persona {
         }
     }
 
+    private void inicializarRedDeContactos() {
+        List<Solicitud> solicitudesAceptadas = utilVendedor.obtenerSolicitudesAceptadas(this);
+        for (Solicitud solicitud : solicitudesAceptadas) {
+            Vendedor receptor = solicitud.getReceptor();
+            if (!redDeContactos.contains(receptor)) {
+                redDeContactos.add(receptor);
+            }
+        }
+    }
+
+    public List<Solicitud> obtenerSolicitudesPendientes(){
+        return utilVendedor.obtenerSolicitudesPendientes(this);
+    }
+
+    public List<Solicitud> obtenerSolicitudesRechazadas(){
+        return utilVendedor.obtenerSolicitudesRechazadas(this);
+    }
 }
 
-// FALTA LOGICA DE LISTA DE CONTACTOS

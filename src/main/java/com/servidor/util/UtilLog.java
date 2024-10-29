@@ -26,13 +26,14 @@ public class UtilLog implements Serializable{
         }
     }
 
+// se crea la unica intancia de la clase 
     public UtilLog getInstance() {
         if (instancia == null) {
             instancia = new UtilLog();
         }
         return instancia;
     }
-
+// metodo que registra un mensaje con nivel de severidad 
     public void escribirLog(String mensaje, Level nivel) {
         logger.log(nivel, mensaje);
     }

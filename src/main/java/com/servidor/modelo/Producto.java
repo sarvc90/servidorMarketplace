@@ -162,3 +162,6 @@ public class Producto implements Serializable{
     }
     
 }
+
+
+//Agregar LOg??
