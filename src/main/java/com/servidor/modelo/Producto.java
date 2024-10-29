@@ -6,6 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.servidor.util.UtilId;
+
 public class Producto implements Serializable{
     private String id;
     private String nombre;
@@ -23,7 +25,7 @@ public class Producto implements Serializable{
     }
     // Constructor
     public Producto(String id, String nombre, String descripcion, String fechaPublicacion, String imagenRuta, int precio, int meGustas, Estado estado, Categoria categoria) {
-        this.id = id;
+        this.id = (id == null || id.isEmpty()) ? UtilId.generarIdAleatorio() : id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaPublicacion = LocalDateTime.parse(fechaPublicacion);
@@ -33,6 +35,7 @@ public class Producto implements Serializable{
         this.comentarios = new ArrayList<>();
         this.estado = estado;
         this.categoria = categoria;
+        UtilId.getInstance();
     }
 
     public String getId() {

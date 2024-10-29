@@ -2,6 +2,8 @@ package com.servidor.modelo;
 
 import java.io.Serializable;
 
+import com.servidor.util.UtilId;
+
 // Clase base para Usuario y Administrador
 abstract class Persona implements Serializable {
     protected String id;
@@ -15,13 +17,15 @@ abstract class Persona implements Serializable {
         
     }
     public Persona(String id, String nombre, String apellido, String cedula, String direccion, String contraseña) {
-        this.id = id;
+        this.id = (id == null || id.isEmpty()) ? UtilId.generarIdAleatorio() : id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.direccion = direccion;
         this.contraseña = contraseña;
+        UtilId.getInstance();
     }
+
 
     public String getId() {
         return id;

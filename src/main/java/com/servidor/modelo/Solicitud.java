@@ -2,6 +2,8 @@ package com.servidor.modelo;
 
 import java.io.Serializable;
 
+import com.servidor.util.UtilId;
+
 public class Solicitud implements Serializable {
     private String id;
     private Vendedor emisor;
@@ -9,10 +11,11 @@ public class Solicitud implements Serializable {
     private EstadoSolicitud estado;
 
     public Solicitud(String id, Vendedor emisor, Vendedor receptor, EstadoSolicitud estado) {
-        this.id = id;
+        this.id = (id == null || id.isEmpty()) ? UtilId.generarIdAleatorio() : id;
         this.emisor = emisor;
         this.receptor = receptor;
         this.estado = estado;
+        UtilId.getInstance();
     }
 
     public String getId() {
