@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
-import com.servidor.modelo.Vendedor;
 import com.servidor.util.UtilMarketPlace;
 import com.servidor.excepciones.UsuarioNoEncontradoException;
 
@@ -27,10 +26,14 @@ public class IniciarSesionController {
         if (cedula.isEmpty() || contrasena.isEmpty()) {
             mostrarAlerta("Por favor, complete todos los campos.");
         } else {
-            Vendedor vendedor = utilMarketplace.iniciarSesion(cedula, contrasena);
+            String personaId = utilMarketplace.iniciarSesion(cedula, contrasena);
 
-            if (vendedor != null) {
-                mostrarAlerta("Sesión iniciada con éxito. Bienvenido, " + vendedor.getNombre() + "!");
+            if (personaId != null) {
+                if (personaId == "1"){
+                    mostrarAlerta("Sesión iniciada con e+éxito, bienvenido administrador.");
+                } else {
+                    mostrarAlerta("Sesión iniciada con éxito. Bienvenido, vendedor!");
+                }
                 // Aquí puedes cargar la siguiente vista o proceder con la sesión
             } else {
                 mostrarAlerta("Contraseña incorrecta. Inténtelo de nuevo.");

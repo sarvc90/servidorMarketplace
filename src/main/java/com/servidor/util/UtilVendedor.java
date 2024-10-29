@@ -1,5 +1,6 @@
 package com.servidor.util;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.servidor.excepciones.ProductoNoEncontradoException;
@@ -7,7 +8,7 @@ import com.servidor.excepciones.ProductoYaExisteException;
 import com.servidor.modelo.Producto;
 
 
-public class UtilVendedor {
+public class UtilVendedor implements Serializable{
     private static UtilVendedor instancia;
     private UtilLog utilLog;
     private UtilPersistencia utilPersistencia;
@@ -26,12 +27,12 @@ public class UtilVendedor {
         return instancia;
     }
 
-    public void crearProducto(Producto producto) throws ProductoYaExisteException {
-
+    public boolean crearProducto(Producto producto) throws ProductoYaExisteException {
         if (utilPersistencia.buscarProductoPorId(producto.getId()) == null) {
             utilPersistencia.guardarProductoEnArchivo(producto);
             utilSerializar.actualizarSerializacionProductos();
             utilLog.registrarAccion("Vendedor ", "Producto agregado con exito.", "Muro");
+            return true;
         } else {
             // Excepcion de usuario existente
             utilLog.registrarAccion("Vendedor ", "El producto no pudo agregar con éxito ", "Muro");
@@ -39,13 +40,14 @@ public class UtilVendedor {
         }
 
     }
-//Se pedira que ingrese la cedula para confirmar la accion
-    public void eliminarProducto(String productoId) throws ProductoNoEncontradoException{
+//Se pedira que ingrese el id para confirmar
+    public boolean eliminarProducto(String productoId) throws ProductoNoEncontradoException{
         if (utilPersistencia.buscarProductoPorId(productoId) == null) {
             utilPersistencia.eliminarProducto(productoId);
             utilSerializar.actualizarSerializacionProductos();
             utilLog.registrarAccion("Vendedor",
                     " El producto con id " + productoId + " ha sido eliminado. ", " Eliminación.");
+            return true;
         } else {
             // Excepcion de usuario no encontrado
             utilLog.registrarAccion("El producto no fue encontrado. ", " Eliminación fallida. ", " Eliminación.");
@@ -59,6 +61,7 @@ public class UtilVendedor {
         utilSerializar.actualizarSerializacionProductos();
         utilLog.registrarAccion("Vendedor",
                 " Se modifica el producto ", " Modificar.");
+        
     }
 
     public List<Producto> obtenerProductos(){

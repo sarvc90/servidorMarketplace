@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import com.servidor.modelo.Producto;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 
-public class UtilPersistencia {
+public class UtilPersistencia implements Serializable{
     private static UtilPersistencia instancia;
     private UtilProperties utilProperties;
     private UtilLog utilLog;

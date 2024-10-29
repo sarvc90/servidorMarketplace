@@ -2,6 +2,8 @@ package com.servidor.modelo;
 
 import java.util.List;
 
+import com.servidor.excepciones.ProductoNoEncontradoException;
+import com.servidor.excepciones.ProductoYaExisteException;
 import com.servidor.util.UtilVendedor;
 
 public class Vendedor extends Persona {
@@ -16,7 +18,7 @@ public class Vendedor extends Persona {
     public Vendedor(String id, String nombre, String apellido, String cedula, String direccion, String contraseña,
             List<Producto> publicaciones, List<Vendedor> redDeContactos) {
         super(id, nombre, apellido, cedula, direccion, contraseña);
-        this.publicaciones = publicaciones;
+        this.publicaciones = utilVendedor.obtenerProductos();
         this.redDeContactos = redDeContactos;
         this.utilVendedor = utilVendedor.getInstance();
     }
@@ -37,7 +39,6 @@ public class Vendedor extends Persona {
         this.redDeContactos = redDeContactos;
     }
 
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Productos Propios (Ordenados por Fecha de Publicación):\n");
@@ -48,4 +49,38 @@ public class Vendedor extends Persona {
         return sb.toString();
     }
 
+    public void crearProducto(Producto producto) throws ProductoYaExisteException {
+        boolean exito = utilVendedor.crearProducto(producto);
+        if (exito) {
+            publicaciones.add(producto);
+        }
+    }
+
+    public void eliminarProducto(String productoId) throws ProductoNoEncontradoException {
+        boolean exito = utilVendedor.eliminarProducto(productoId);
+        if (exito) {
+            // Buscar el producto en la lista de publicaciones y removerlo
+            for (Producto producto : publicaciones) {
+                if (producto.getId().equals(productoId)) {
+                    publicaciones.remove(producto);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void modificarProducto(Producto productoModificado) {
+
+        // Buscar el producto en la lista de publicaciones y removerlo
+        for (Producto producto : publicaciones) {
+            if (producto.getId().equals(productoModificado.getId())) {
+                int posicion = publicaciones.indexOf(producto);
+                publicaciones.set(posicion, productoModificado);
+                break;
+            }
+        }
+    }
+
 }
+
+// FALTA LOGICA DE LISTA DE CONTACTOS

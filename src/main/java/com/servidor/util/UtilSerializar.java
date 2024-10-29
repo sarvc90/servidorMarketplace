@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -23,7 +24,7 @@ import com.servidor.modelo.Producto;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 
-public class UtilSerializar {
+public class UtilSerializar implements Serializable{
     private static UtilSerializar instancia;
     private UtilProperties utilProperties;
     private UtilLog utilLog;

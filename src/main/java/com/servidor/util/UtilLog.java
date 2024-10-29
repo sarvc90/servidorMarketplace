@@ -1,11 +1,12 @@
 package com.servidor.util;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.*;
 
-public class UtilLog {
+public class UtilLog implements Serializable{
     private static UtilLog instancia;
     private static final Logger logger = Logger.getLogger(UtilLog.class.getName());
     private UtilProperties utilProperties;

@@ -1,6 +1,8 @@
 package com.servidor.util;
 
-public class UtilHilos {
+import java.io.Serializable;
+
+public class UtilHilos implements Serializable{
     private static UtilHilos instancia;
 
 

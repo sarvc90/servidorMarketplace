@@ -2,15 +2,19 @@ package com.servidor.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
    
 
-public class UtilRespaldo {
+public class UtilRespaldo implements Serializable{
     private static UtilRespaldo instancia;
     private UtilLog utilLog;
+    private UtilProperties utilProperties; // Instancia de UtilProperties
 
     
     private UtilRespaldo() {
@@ -24,9 +28,6 @@ public class UtilRespaldo {
         }
         return instancia;
     }
-
-
-
 
     public void crearCopiaArchivo(String rutaArchivoOriginal, String directorioDestino) {
         File archivoOriginal = new File(rutaArchivoOriginal);
@@ -62,6 +63,25 @@ public class UtilRespaldo {
             return;
         }
     }
+    public List<String> obtenerRutasArchivosProperties() {
+        // Aquí se obtienen las rutas de los archivos properties
+        List<String> rutas = new ArrayList<>();
+        // Supongamos que utilProperties tiene un método para obtener todas las claves
+        for (String key : utilProperties.getAllKeys()) {
+            if (!key.contains("log")) { // Excluye las claves que contienen "log"
+                String ruta = utilProperties.getProperty(key);
+                rutas.add(ruta);
+            }
+        }
+        return rutas;
+    }
 
+    public void respaldoGeneral(String directorioDestino) {
+        List<String> rutasArchivos = obtenerRutasArchivosProperties();
 
+        // Llama al método de copia para cada archivo
+        for (String ruta : rutasArchivos) {
+            crearCopiaArchivo(ruta, directorioDestino);
+        }
+    }
 }
