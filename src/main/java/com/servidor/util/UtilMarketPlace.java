@@ -28,14 +28,14 @@ public class UtilMarketPlace implements Serializable {
     private UtilPersistencia utilPersistencia;
     private UtilRespaldo utilRespaldo;
     private UtilSerializar utilSerializar;
-    private UtilHilos utilHilos;
+
 
     private UtilMarketPlace() {
         this.utilLog = utilLog.getInstance();
         this.utilPersistencia = utilPersistencia.getInstance();
         this.utilRespaldo = utilRespaldo.getInstance();
         this.utilSerializar = utilSerializar.getInstance();
-        this.utilHilos = utilHilos.getInstance();
+
     }
 
     // se crea la unica instancia de la clase
@@ -145,15 +145,15 @@ public class UtilMarketPlace implements Serializable {
     }
 
     public List<Solicitud> obtenerSolicitudes() {
-        return utilPersistencia.leerSolicitudesDesdeArchivo();
+        return utilSerializar.deserializarSolicitudes(true);
     }
 
     public List<Vendedor> obtenerVendedores() {
-        return utilPersistencia.leerVendedoresDesdeArchivo();
+        return utilSerializar.deserializarVendedores(true);
     }
 
     public List<Producto> obtenerProductos() {
-        return utilPersistencia.leerProductosDesdeArchivo();
+        return utilSerializar.deserializarProductos(true);
     }
 
     public String iniciarSesion(String cedula, String contraseña) throws UsuarioNoEncontradoException {
