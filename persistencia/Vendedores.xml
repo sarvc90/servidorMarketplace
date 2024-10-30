@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.4" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Pérez</string>
+    </void>
+    <void property="cedula">
+     <string>12345</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3#20-100</string>
+    </void>
+    <void property="id">
+     <string>1815</string>
+    </void>
+    <void property="nombre">
+     <string>Juan</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Doe</string>
+    </void>
+    <void property="cedula">
+     <string>748</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>6062</string>
+    </void>
+    <void property="nombre">
+     <string>John</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Doe</string>
+    </void>
+    <void property="cedula">
+     <string>765</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>0968</string>
+    </void>
+    <void property="nombre">
+     <string>John</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Doe</string>
+    </void>
+    <void property="cedula">
+     <string>766</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>8717</string>
+    </void>
+    <void property="nombre">
+     <string>John</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Doe</string>
+    </void>
+    <void property="cedula">
+     <string>767</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>9635</string>
+    </void>
+    <void property="nombre">
+     <string>John</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Doe</string>
+    </void>
+    <void property="cedula">
+     <string>784</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>2465</string>
+    </void>
+    <void property="nombre">
+     <string>John</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Doe</string>
+    </void>
+    <void property="cedula">
+     <string>789</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>6870</string>
+    </void>
+    <void property="nombre">
+     <string>John</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>jaoe</string>
+    </void>
+    <void property="cedula">
+     <string>459</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>7013</string>
+    </void>
+    <void property="nombre">
+     <string>Patricia</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Polania</string>
+    </void>
+    <void property="cedula">
+     <string>564</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>9641</string>
+    </void>
+    <void property="nombre">
+     <string>Osvaldo</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Polania</string>
+    </void>
+    <void property="cedula">
+     <string>565</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-02</string>
+    </void>
+    <void property="id">
+     <string>7797</string>
+    </void>
+    <void property="nombre">
+     <string>Osvaldo</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

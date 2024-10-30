@@ -94,6 +94,16 @@ public class MarketPlace implements Serializable {
         }
     }
 
+    public List<Solicitud> obtenerSolicitudes(){
+        return utilMarketPlace.obtenerSolicitudes();
+    }
+    public List<Vendedor> obtenerVendedores(){
+        return utilMarketPlace.obtenerVendedores();
+    }
+    public List<Producto> obtenerProductos(){
+        return utilMarketPlace.obtenerProductos();
+    }
+
     public void crearSolicitud(Solicitud solicitud) throws SolicitudExistenteException {
         boolean exito = utilMarketPlace.crearSolicitud(solicitud);
         if (exito) {

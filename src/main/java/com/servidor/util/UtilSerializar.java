@@ -17,7 +17,7 @@ public class UtilSerializar implements Serializable {
     private UtilLog utilLog;
     private UtilPersistencia utilPersistencia;
     private final ReentrantLock lock = new ReentrantLock();
-
+ // constructor 
     private UtilSerializar() {
         this.utilProperties = UtilProperties.getInstance();
         this.utilLog = UtilLog.getInstance();
@@ -29,28 +29,38 @@ public class UtilSerializar implements Serializable {
         lock.lock();
         try {
             String rutaArchivo = utilProperties.obtenerPropiedad("rutaModeloSerializado.bin");
-            new SerializarTarea(modelo, rutaArchivo, false).start();
+            SerializarTarea tarea = new SerializarTarea(modelo, rutaArchivo, false);
+            tarea.start();
+            tarea.join(); // Espera a que la tarea termine
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // Restaurar el estado de interrupción
+            utilLog.escribirLog("La tarea de serialización fue interrumpida: " + e.getMessage(), Level.SEVERE);
         } finally {
             lock.unlock();
         }
     }
-
+ // se crea la unica instancia de la clase 
     public static UtilSerializar getInstance() {
         if (instancia == null) {
             instancia = new UtilSerializar();
         }
         return instancia;
     }
-
-    public void guardarModeloSerializadoXML(MarketPlace modelo) {
-        lock.lock();
-        try {
-            String rutaArchivo = utilProperties.obtenerPropiedad("rutaModeloSerializado.xml");
-            new SerializarTarea(modelo, rutaArchivo, true).start();
-        } finally {
-            lock.unlock();
-        }
+ // metodo que serializa y guarda los objetos de tipo marketplace 
+ public void guardarModeloSerializadoXML(MarketPlace modelo) {
+    lock.lock();
+    try {
+        String rutaArchivo = utilProperties.obtenerPropiedad("rutaModeloSerializado.xml");
+        SerializarTarea tarea = new SerializarTarea(modelo, rutaArchivo, true);
+        tarea.start();
+        tarea.join(); // Espera a que la tarea termine
+    } catch (InterruptedException e) {
+        Thread.currentThread().interrupt(); // Restaurar el estado de interrupción
+        utilLog.escribirLog("La tarea de serialización fue interrumpida: " + e.getMessage(), Level.SEVERE);
+    } finally {
+        lock.unlock();
     }
+}
 
     // Método para cargar el modelo desde el archivo
     public Object cargarModeloSerializadoBin() {
@@ -66,7 +76,7 @@ public class UtilSerializar implements Serializable {
             lock.unlock();
         }
     }
-
+ // metodo que carga los obe
     public MarketPlace cargarModeloSerializadoDesdeXML() {
         lock.lock();
         try {

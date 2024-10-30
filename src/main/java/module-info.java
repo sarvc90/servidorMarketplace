@@ -8,4 +8,6 @@ module com.servidor {
 
     opens com.servidor to javafx.fxml;
     exports com.servidor;
+    exports com.servidor.modelo; // Asegúrate de exportar este paquete
+    exports com.servidor.util;
 }

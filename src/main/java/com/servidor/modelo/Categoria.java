@@ -1,6 +1,8 @@
 package com.servidor.modelo;
 
 
+
+
 public enum Categoria {
     VEHICULOS, 
     TECNOLOGIA,

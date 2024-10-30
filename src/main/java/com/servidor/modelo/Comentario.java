@@ -3,6 +3,8 @@ package com.servidor.modelo;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+
+
 public class Comentario implements Serializable{
     private String id;
     private Vendedor autor;

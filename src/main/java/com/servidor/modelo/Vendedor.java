@@ -3,6 +3,7 @@ package com.servidor.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import com.servidor.excepciones.ProductoNoEncontradoException;
 import com.servidor.excepciones.ProductoYaExisteException;
 import com.servidor.util.UtilVendedor;
@@ -12,15 +13,19 @@ public class Vendedor extends Persona {
     private List<Vendedor> redDeContactos;
     private UtilVendedor utilVendedor;
 
+
     public Vendedor() {
         super();
+        this.publicaciones = new ArrayList<>(); // Inicializar como lista vacía
+        this.redDeContactos = new ArrayList<>(); // Inicializar como lista vacía
+        this.utilVendedor = UtilVendedor.getInstance();
     }
 
     public Vendedor(String id, String nombre, String apellido, String cedula, String direccion, String contraseña,
             List<Producto> publicaciones, List<Vendedor> redDeContactos) {
         super(id, nombre, apellido, cedula, direccion, contraseña);
-        this.publicaciones = publicaciones;
-        this.redDeContactos = new ArrayList<>();
+        this.publicaciones = (publicaciones != null) ? publicaciones : new ArrayList<>(); // Asignar lista o vacía
+        this.redDeContactos = (redDeContactos != null) ? redDeContactos : new ArrayList<>(); // Asignar lista o vacía
         this.utilVendedor = UtilVendedor.getInstance();
         inicializarRedDeContactos(); 
     }
@@ -32,7 +37,7 @@ public class Vendedor extends Persona {
     public void setPublicaciones(List<Producto> publicaciones) {
         this.publicaciones = publicaciones;
     }
-
+    
     public List<Vendedor> getRedDeContactos() {
         return redDeContactos;
     }

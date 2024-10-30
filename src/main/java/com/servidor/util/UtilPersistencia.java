@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.servidor.modelo.Categoria;
 import com.servidor.modelo.Estado;
@@ -67,6 +68,7 @@ public class UtilPersistencia implements Serializable {
         }
     }
 
+//Guarda la información de una solicitud en un archivo de texto especificado en las propiedades de configuración.
     public void guardarSolicitudEnArchivo(Solicitud solicitud) {
         String rutaSolicitudes = utilProperties.obtenerPropiedad("rutaSolicitudes.txt");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaSolicitudes, true))) {
@@ -74,33 +76,44 @@ public class UtilPersistencia implements Serializable {
             String receptorId = solicitud.getReceptor() != null ? solicitud.getReceptor().getId() : "";
             writer.write(solicitud.getId() + "%" + emisorId + "%" + receptorId + "%" + solicitud.getEstado());
             writer.newLine();
+            //Cada línea en el archivo representa una solicitud con sus atributos separados por el carácter "%".
             utilLog.escribirLog("Solicitud guardada exitosamente: " + solicitud, Level.INFO);
+        //Si ocurre un error al guardar, se registra un mensaje de error en el log.
         } catch (IOException e) {
             utilLog.escribirLog("Error al guardar la solicitud: " + solicitud, Level.SEVERE);
         }
     }
 
-    public void guardarVendedorEnArchivo(Vendedor vendedor) {
-        String rutaVendedores = utilProperties.obtenerPropiedad("rutaVendedores.txt");
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaVendedores, true))) {
-            String publicacionesStr = vendedor.getPublicaciones().stream()
-                    .map(Producto::getId)
-                    .reduce((p1, p2) -> p1 + "," + p2).orElse("");
+//Guarda la información de un vendedor en un archivo de texto, incluyendo sus publicaciones y contactos
+public void guardarVendedorEnArchivo(Vendedor vendedor) {
+    String rutaVendedores = utilProperties.obtenerPropiedad("rutaVendedores.txt");
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaVendedores, true))) {
+        // Manejar publicaciones
+        String publicacionesStr = Optional.ofNullable(vendedor.getPublicaciones())
+                .map(publicaciones -> publicaciones.stream()
+                        .map(Producto::getId)
+                        .reduce((p1, p2) -> p1 + "," + p2).orElse(""))
+                .orElse("");
 
-            String contactosStr = vendedor.getRedDeContactos().stream()
-                    .map(Vendedor::getId)
-                    .reduce((c1, c2) -> c1 + "," + c2).orElse("");
+        // Manejar contactos
+        String contactosStr = Optional.ofNullable(vendedor.getRedDeContactos())
+                .map(contactos -> contactos.stream()
+                        .map(Vendedor::getId)
+                        .reduce((c1, c2) -> c1 + "," + c2).orElse(""))
+                .orElse("");
 
-            writer.write(vendedor.getId() + "%" + vendedor.getNombre() + "%" + vendedor.getApellido() + "%"
-                    + vendedor.getCedula() + "%" + vendedor.getDireccion() + "%" + vendedor.getContraseña() + "%"
-                    + publicacionesStr + "%" + contactosStr + "%");
-            writer.newLine();
-            utilLog.escribirLog("Vendedor guardado exitosamente: " + vendedor, Level.INFO);
-        } catch (IOException e) {
-            utilLog.escribirLog("Error al guardar el vendedor: " + vendedor, Level.SEVERE);
-        }
+        writer.write(vendedor.getId() + "%" + vendedor.getNombre() + "%" + vendedor.getApellido() + "%"
+                + vendedor.getCedula() + "%" + vendedor.getDireccion() + "%" + vendedor.getContraseña() + "%"
+                + publicacionesStr + "%" + contactosStr + "%");
+        writer.newLine();
+        utilLog.escribirLog("Vendedor guardado exitosamente: " + vendedor, Level.INFO);
+    } catch (IOException e) {
+        //Si ocurre un error al guardar, se registra en el log de errores.
+        utilLog.escribirLog("Error al guardar el vendedor: " + vendedor, Level.SEVERE);
     }
+}
 
+    //Guarda la información de un producto en un archivo de texto especificado en las propiedades de configuración.
     public void guardarProductoEnArchivo(Producto producto) {
         String rutaProductos = utilProperties.obtenerPropiedad("rutaProductos.txt");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaProductos))) {
@@ -110,11 +123,14 @@ public class UtilPersistencia implements Serializable {
                     + producto.getCategoria());
             writer.newLine();
             utilLog.escribirLog("Producto guardado exitosamente: " + producto, Level.INFO);
+        
         } catch (IOException e) {
+            //Si ocurre un error al guardar el producto, se registra en el log de errores.
             utilLog.escribirLog("Error al guardar el vendedor: " + producto, Level.SEVERE);
         }
     }
 
+    //Gestiona la escritura de IDs de productos y solicitudes en archivos específicos según el estado actual de cada elemento.
     public void gestionarArchivosPorEstado(List<Producto> listaProductos, List<Solicitud> listaSolicitudes) {
         // Obtener rutas desde utilProperties
         String rutaProductosVendidos = utilProperties.obtenerPropiedad("rutaProductosVendidos.txt");
@@ -160,6 +176,7 @@ public class UtilPersistencia implements Serializable {
         utilLog.escribirLog("Archivos gestionados por estado correctamente", Level.INFO);
     }
 
+    //Escribe el ID especificado en el archivo ubicado en la ruta indicada.
     private void escribirIdEnArchivo(String ruta, String id) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true))) { // true para append
             writer.write(id);
@@ -424,7 +441,7 @@ public class UtilPersistencia implements Serializable {
         utilLog.escribirLog("Solicitudes encontradas para el receptor ID: " + receptorId, Level.INFO);
         return solicitudesEncontradas;
     }
- // metodo que busca las solicitudes especifica entre recepor y emisor 
+ // metodo que busca las solicitudes especifica entre receptor y emisor 
     public Solicitud buscarSolicitudPorEmisorYReceptor(String emisorId, String receptorId) {
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
         for (Solicitud solicitud : listaSolicitudes) {
