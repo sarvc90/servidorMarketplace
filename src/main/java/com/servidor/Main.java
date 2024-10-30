@@ -29,20 +29,31 @@ public class Main {
             System.out.println("El vendedor ya existe.");
         }
 */
-        
+
+/* 
+        //Eliminar vendedor con número de cédula
         try{
-            String cedulaVendedor = "578";
+            String cedulaVendedor = "579";
             marketPlace.eliminarVendedor(cedulaVendedor);
         } catch (UsuarioNoEncontradoException e){
             System.out.println("No se encontro el vendedor");
         }
-            
+    */    
         // Listar vendedores
         System.out.println("Lista de vendedores:");
         marketPlace.obtenerVendedores().forEach(v -> {
             System.out.println("Vendedor: " + v.getNombre() + " " + v.getApellido());
         });
 
+/* 
+        try{
+            Vendedor vendedorModificado = new Vendedor(null, "Lisa", "Pérez", "12345", "dirección", "contraseña",null, null);
+            marketPlace.modificarVendedor(vendedorModificado);
+        }
+        catch(UsuarioNoEncontradoException e){
+            System.out.println("No se encontro el vendedor");
+        }
+*/
         // Listar productos
         //System.out.println("Lista de productos:");
         //marketPlace.obtenerProductos().forEach(p -> {

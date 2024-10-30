@@ -19,24 +19,28 @@ public class IniciarSesionController {
     private UtilMarketPlace utilMarketplace = UtilMarketPlace.getInstance();
 
     @FXML
-    private void handleLogin() throws UsuarioNoEncontradoException {
+    private void handleLogin() {
         String cedula = cedulaField.getText();
         String contrasena = contrasenaField.getText();
-
+    
         if (cedula.isEmpty() || contrasena.isEmpty()) {
             mostrarAlerta("Por favor, complete todos los campos.");
         } else {
-            String personaId = utilMarketplace.iniciarSesion(cedula, contrasena);
-
-            if (personaId != null) {
-                if (personaId == "1"){
-                    mostrarAlerta("Sesión iniciada con e+éxito, bienvenido administrador.");
+            try {
+                String personaId = utilMarketplace.iniciarSesion(cedula, contrasena);
+    
+                if (personaId != null) {
+                    if (personaId.equals("1")) {
+                        mostrarAlerta("Sesión iniciada con éxito, bienvenido administrador.");
+                    } else {
+                        mostrarAlerta("Sesión iniciada con éxito. Bienvenido, vendedor!");
+                    }
+                    // Aquí puedes cargar la siguiente vista o proceder con la sesión
                 } else {
-                    mostrarAlerta("Sesión iniciada con éxito. Bienvenido, vendedor!");
+                    mostrarAlerta("Contraseña o usuario incorrecto. Inténtelo de nuevo.");
                 }
-                // Aquí puedes cargar la siguiente vista o proceder con la sesión
-            } else {
-                mostrarAlerta("Contraseña incorrecta. Inténtelo de nuevo.");
+            } catch (UsuarioNoEncontradoException e) {
+                mostrarAlerta("Contraseña o usuario incorrecto. Inténtelo de nuevo.");
             }
         }
     }

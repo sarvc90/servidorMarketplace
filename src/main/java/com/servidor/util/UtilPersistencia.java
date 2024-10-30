@@ -393,7 +393,7 @@ public class UtilPersistencia implements Serializable {
     public void modificarVendedor(Vendedor vendedorModificado) {
         List<Vendedor> listaVendedores = leerVendedoresDesdeArchivo();
         for (int i = 0; i < listaVendedores.size(); i++) {
-            if (listaVendedores.get(i).getId().equals(vendedorModificado.getId())) {
+            if (listaVendedores.get(i).getCedula().equals(vendedorModificado.getCedula())) {
                 listaVendedores.set(i, vendedorModificado);
                 break;
             }

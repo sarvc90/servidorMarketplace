@@ -93,13 +93,39 @@ public class UtilMarketPlace implements Serializable {
     }
 
     // metodo para actualizar la informacion de un vendedor existente
-    public void modificarVendedor(Vendedor vendedorModificado) {
+    public void modificarVendedor(Vendedor vendedorModificado) throws UsuarioNoEncontradoException {
         utilPersistencia.modificarVendedor(vendedorModificado);
         utilSerializar.actualizarSerializacionVendedores();
-        int posicion = marketPlace.getVendedores().indexOf(vendedorModificado);
-        marketPlace.getVendedores().set(posicion, vendedorModificado);
-        utilLog.registrarAccion(("Vendedor " + vendedorModificado.getNombre() + " modificado. "),
-                " Se modifica el vendedor ", " Modificar.");
+         
+        // Obtener la lista de vendedores
+        List<Vendedor> vendedores = utilPersistencia.leerVendedoresDesdeArchivo();
+        
+        // Verificar si la lista de vendedores es nula
+        if (vendedores == null) {
+            utilLog.registrarAccion("La lista de vendedores es nula.",
+                    "Error crítico.", "Modificar.");
+            throw new UsuarioNoEncontradoException(); // O maneja como sea apropiado
+        }
+        
+        // Buscar la posición del vendedor en la lista usando la cédula
+        int posicion = -1;
+        for (int i = 0; i < vendedores.size(); i++) {
+            if (vendedores.get(i).getCedula().equals(vendedorModificado.getCedula())) {
+                posicion = i;
+                break;
+            }
+        }
+        
+        if (posicion != -1) {
+            vendedores.set(posicion, vendedorModificado);
+            utilLog.registrarAccion(("Vendedor " + vendedorModificado.getNombre() + " modificado."),
+                    " Se modifica el vendedor ", " Modificar.");
+        } else {
+            // Manejar el caso donde el vendedor no fue encontrado
+            utilLog.registrarAccion("Vendedor no encontrado para modificar: " + vendedorModificado.getNombre(),
+                    "Modificación fallida.", "Modificar.");
+            throw new UsuarioNoEncontradoException(); // O maneja como sea apropiado
+        }
     }
 
     // metodo que crea y registra una nueva solicitud

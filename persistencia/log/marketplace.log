@@ -2184,3 +2184,845 @@ oct 30, 2024 12:13:28 P. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
 oct 30, 2024 12:13:28 P. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 2:58:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 2:58:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 2:58:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 2:58:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 2:58:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4703
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 1815
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4703
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 3:02:25 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 3:06:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 3:06:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7914
+oct 30, 2024 3:06:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:06:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4703
+oct 30, 2024 3:06:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:06:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7914
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Alma, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 15:06:57
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 3:06:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 3522
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7914
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 3522
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Alisa, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 15:07:18
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 3:07:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 9266
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 3522
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 3522
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:10:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 9266
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Alisa, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 15:10:17
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 3:10:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 1958
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 9266
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 1958
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Alisa, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 15:13:52
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 3:13:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 3:14:37 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8467
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 1958
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8467
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Lina, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 15:14:38
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 3:14:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 4:21:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:21:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 1565
+oct 30, 2024 4:21:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:21:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8467
+oct 30, 2024 4:21:52 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 1565
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Lina, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 16:21:53
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 4:21:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 9548
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 1565
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 9548
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Lisa, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 16:22:08
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 4:22:08 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 4:25:00 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7722
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 9548
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Productos Propios (Ordenados por Fecha de Publicación):
+
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7722
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor no encontrado para modificar: Lisa, Acción: Modificación fallida., Interfaz: Modificar., Fecha y Hora: 30/10/2024 16:25:01
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 4:25:01 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 4:32:27 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7722
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=5200, nombre=Lisa, apellido=Pérez, cedula=12345, publicaciones=[], direccion=dirección, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@67f89fa3]
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor modificado exitosamente: Vendedor [id=5200, nombre=Lisa, apellido=Pérez, cedula=12345, publicaciones=[], direccion=dirección, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@67f89fa3]
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor Lisa modificado., Acción:  Se modifica el vendedor , Interfaz:  Modificar., Fecha y Hora: 30/10/2024 16:32:28
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 4:32:28 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 4:33:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:33:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:33:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:33:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:34:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:34:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:34:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:34:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor. , Acción: Ingreso de sesión exitoso. , Interfaz: Iniciar sesión., Fecha y Hora: 30/10/2024 16:34:16
+oct 30, 2024 4:35:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:35:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:35:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:35:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor. , Acción: Ingreso de sesión exitoso. , Interfaz: Iniciar sesión., Fecha y Hora: 30/10/2024 16:35:38
+oct 30, 2024 4:35:43 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:35:43 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:35:43 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:35:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:35:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:35:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:35:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Administrador. , Acción: Ingreso de sesión exitoso, bienvenido administrador , Interfaz: Iniciar sesión. , Fecha y Hora: 30/10/2024 16:35:56
+oct 30, 2024 4:36:15 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:36:15 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:36:15 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:36:15 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor. , Acción: Ingreso de sesión exitoso. , Interfaz: Iniciar sesión., Fecha y Hora: 30/10/2024 16:36:15
+oct 30, 2024 4:40:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:40:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:40:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:40:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:41:06 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:41:06 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:41:06 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:48:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:48:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:48:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:48:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:48:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 4:48:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 4:48:17 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 4:50:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 4:50:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 4:50:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 4:50:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 4:50:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:11:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:11:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:13:39 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:13:39 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 5:13:39 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 5:13:39 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:13:39 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:16:37 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:16:38 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:21:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:21:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:22:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:22:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 5:22:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 5:22:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:22:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:29:26 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:29:27 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:29:27 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:29:27 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:29:27 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:29:27 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 5:29:27 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8228
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=8228, nombre=Oscar, apellido=Polania, cedula=579, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@7382f612]
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8228
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor nuevo , Acción: Registro exitoso., Interfaz: Registro., Fecha y Hora: 30/10/2024 17:33:18
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 5:33:18 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8228
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8228
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: null
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de solicitudes es nula.
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=5200, nombre=Lisa, apellido=Pérez, cedula=12345, publicaciones=[], direccion=dirección, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@1055e4af]
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: null
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: La ruta de archivo es nula.
+oct 30, 2024 5:38:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor eliminado exitosamente con cedula: 579
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5200
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor eliminado, Acción:  El vendedor con cédula 579 ha sido eliminado. , Interfaz:  Eliminación., Fecha y Hora: 30/10/2024 17:38:10
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.bin
+oct 30, 2024 5:38:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo guardado exitosamente en: persistencia/Vendedores.xml
+oct 30, 2024 5:42:23 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:42:23 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:42:23 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:42:24 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:42:24 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:42:24 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+oct 30, 2024 5:42:24 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 5:46:40 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 30, 2024 5:46:40 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:46:40 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:46:40 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+oct 30, 2024 5:46:40 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia de Vendedor.
+oct 30, 2024 5:46:40 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+oct 30, 2024 5:46:40 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml

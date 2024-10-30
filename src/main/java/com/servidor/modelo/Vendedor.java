@@ -38,6 +38,14 @@ public class Vendedor extends Persona {
         this.publicaciones = publicaciones;
     }
     
+    public void setUtilVendedor(UtilVendedor utilVendedor) {
+        this.utilVendedor = utilVendedor;
+    }
+
+    public UtilVendedor getUtilVendedor() {
+        return utilVendedor;
+    }
+
     public List<Vendedor> getRedDeContactos() {
         return redDeContactos;
     }
@@ -48,12 +56,9 @@ public class Vendedor extends Persona {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Productos Propios (Ordenados por Fecha de Publicación):\n");
-        List<Producto> productosPropiosOrdenados = getPublicaciones();
-        for (Producto producto : productosPropiosOrdenados) {
-            sb.append(producto.toString()).append("\n"); // Asumiendo que Producto tiene un método toString
-        }
-        return sb.toString();
+        return "Vendedor [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
+                + ", publicaciones=" + publicaciones + ", direccion=" + direccion + ", redDeContactos=" + redDeContactos
+                + ", contraseña=" + contraseña + ", utilVendedor=" + utilVendedor + "]";
     }
 
     public void crearProducto(Producto producto) throws ProductoYaExisteException {

@@ -83,10 +83,10 @@ public class MarketPlace implements Serializable {
         }
     }
 
-    public void modificarVendedor(Vendedor vendedorModificado) {
+    public void modificarVendedor(Vendedor vendedorModificado) throws UsuarioNoEncontradoException {
         utilMarketPlace.modificarVendedor(vendedorModificado);
         for (Vendedor vendedor : vendedores) {
-            if (vendedor.getCedula().equals(vendedorModificado.getId())) {
+            if (vendedor.getCedula().equals(vendedorModificado.getCedula())) {
                 int posicion = vendedores.indexOf(vendedor);
                 vendedores.set(posicion, vendedorModificado);
                 break;

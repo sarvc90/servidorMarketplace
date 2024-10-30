@@ -2,6 +2,7 @@ package com.servidor.util;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.concurrent.locks.ReentrantLock;
@@ -17,7 +18,8 @@ public class UtilSerializar implements Serializable {
     private UtilLog utilLog;
     private UtilPersistencia utilPersistencia;
     private final ReentrantLock lock = new ReentrantLock();
- // constructor 
+
+    // constructor
     private UtilSerializar() {
         this.utilProperties = UtilProperties.getInstance();
         this.utilLog = UtilLog.getInstance();
@@ -39,28 +41,30 @@ public class UtilSerializar implements Serializable {
             lock.unlock();
         }
     }
- // se crea la unica instancia de la clase 
+
+    // se crea la unica instancia de la clase
     public static UtilSerializar getInstance() {
         if (instancia == null) {
             instancia = new UtilSerializar();
         }
         return instancia;
     }
- // metodo que serializa y guarda los objetos de tipo marketplace 
- public void guardarModeloSerializadoXML(MarketPlace modelo) {
-    lock.lock();
-    try {
-        String rutaArchivo = utilProperties.obtenerPropiedad("rutaModeloSerializado.xml");
-        SerializarTarea tarea = new SerializarTarea(modelo, rutaArchivo, true);
-        tarea.start();
-        tarea.join(); // Espera a que la tarea termine
-    } catch (InterruptedException e) {
-        Thread.currentThread().interrupt(); // Restaurar el estado de interrupción
-        utilLog.escribirLog("La tarea de serialización fue interrumpida: " + e.getMessage(), Level.SEVERE);
-    } finally {
-        lock.unlock();
+
+    // metodo que serializa y guarda los objetos de tipo marketplace
+    public void guardarModeloSerializadoXML(MarketPlace modelo) {
+        lock.lock();
+        try {
+            String rutaArchivo = utilProperties.obtenerPropiedad("rutaModeloSerializado.xml");
+            SerializarTarea tarea = new SerializarTarea(modelo, rutaArchivo, true);
+            tarea.start();
+            tarea.join(); // Espera a que la tarea termine
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // Restaurar el estado de interrupción
+            utilLog.escribirLog("La tarea de serialización fue interrumpida: " + e.getMessage(), Level.SEVERE);
+        } finally {
+            lock.unlock();
+        }
     }
-}
 
     // Método para cargar el modelo desde el archivo
     public Object cargarModeloSerializadoBin() {
@@ -76,7 +80,8 @@ public class UtilSerializar implements Serializable {
             lock.unlock();
         }
     }
- // metodo que carga los obe
+
+    // metodo que carga los obe
     public MarketPlace cargarModeloSerializadoDesdeXML() {
         lock.lock();
         try {
@@ -188,13 +193,34 @@ public class UtilSerializar implements Serializable {
         try {
             String ruta = esXML ? utilProperties.obtenerPropiedad("rutaVendedores.xml")
                     : utilProperties.obtenerPropiedad("rutaVendedores.bin");
+            
+            System.out.println("Intentando deserializar desde: " + ruta);
+            
             List<Object> lista = new ArrayList<>();
-            new DeserializarTarea(ruta, esXML, lista).start();
+            DeserializarTarea tarea = new DeserializarTarea(ruta, esXML, lista);
+            tarea.start();
+            tarea.join(); // Esperar a que la tarea termine
+            
+            // Crear una nueva lista de Vendedor
             List<Vendedor> vendedores = new ArrayList<>();
             for (Object obj : lista) {
-                vendedores.add((Vendedor) obj);
+                if (obj instanceof Vendedor) {
+                    vendedores.add((Vendedor) obj); // Cast seguro
+                } else {
+                    utilLog.escribirLog("Objeto deserializado no es una instancia de Vendedor.", Level.WARNING);
+                }
             }
-            return vendedores;
+            
+            System.out.println("Deserialización completada. Total de vendedores: " + vendedores.size());
+            return vendedores; // Retornar la lista de Vendedores
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // Restaurar el estado de interrupción
+            utilLog.escribirLog("Error al esperar la deserialización: " + e.getMessage(), Level.SEVERE);
+            return Collections.emptyList(); // Retornar lista vacía en caso de error
+        } catch (Exception e) {
+            utilLog.escribirLog("Error inesperado durante la deserialización: " + e.getMessage(), Level.SEVERE);
+            e.printStackTrace(); // Imprimir el stack trace para más detalles
+            return Collections.emptyList(); // Retornar lista vacía en caso de error
         } finally {
             lock.unlock();
         }

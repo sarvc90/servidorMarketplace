@@ -13,13 +13,13 @@
      <string>contraseña</string>
     </void>
     <void property="direccion">
-     <string>Cll3#20-100</string>
+     <string>dirección</string>
     </void>
     <void property="id">
-     <string>1815</string>
+     <string>5200</string>
     </void>
     <void property="nombre">
-     <string>Juan</string>
+     <string>Lisa</string>
     </void>
    </object>
   </void>
