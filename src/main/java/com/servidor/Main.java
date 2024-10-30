@@ -6,6 +6,7 @@ import com.servidor.modelo.Vendedor;
 import com.servidor.util.UtilMarketPlace;
 import com.servidor.util.UtilSerializar;
 import com.servidor.excepciones.UsuarioExistenteException;
+import com.servidor.excepciones.UsuarioNoEncontradoException;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,15 +18,25 @@ public class Main {
         MarketPlace marketPlace = utilMarketPlace.getMarketPlace(); // Esto inicializa marketPlace si es null
 
         // Ahora puedes llamar a métodos en marketPlace
+        /* 
         try {
             // Crear un nuevo vendedor
-            Vendedor nuevoVendedor = new Vendedor(null, "Osvaldo", "Polania", "565", "Cll3-02", "contraseña", null, null );
+            Vendedor nuevoVendedor = new Vendedor(null, "Osvaldo", "Polania", "578", "Cll3-02", "contraseña", null, null );
             marketPlace.crearVendedor(nuevoVendedor);
             utilSerializar.serializarObjeto(nuevoVendedor, "persistencia/Vendedores.xml", true);
             System.out.println("Vendedor creado exitosamente.");
         } catch (UsuarioExistenteException e) {
             System.out.println("El vendedor ya existe.");
         }
+*/
+        
+        try{
+            String cedulaVendedor = "578";
+            marketPlace.eliminarVendedor(cedulaVendedor);
+        } catch (UsuarioNoEncontradoException e){
+            System.out.println("No se encontro el vendedor");
+        }
+            
         // Listar vendedores
         //System.out.println("Lista de vendedores:");
         //marketPlace.obtenerVendedores().forEach(v -> {

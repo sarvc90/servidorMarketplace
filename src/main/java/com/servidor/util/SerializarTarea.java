@@ -28,12 +28,10 @@ public class SerializarTarea extends Thread {
                 try (FileOutputStream fos = new FileOutputStream(rutaArchivo);
                      XMLEncoder encoder = new XMLEncoder(fos)) {
                     encoder.writeObject(modelo);
-                    encoder.close();
                 }
             } else {
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(rutaArchivo))) {
                     oos.writeObject(modelo);
-                    oos.close();
                 }
             }
             utilLog.escribirLog("Modelo guardado exitosamente en: " + rutaArchivo, Level.INFO);

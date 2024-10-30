@@ -1,7 +1,7 @@
 module com.servidor {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.logging;
+    requires transitive java.logging;
     requires java.xml.bind;
     requires java.desktop;
     requires transitive javafx.graphics;
