@@ -20,8 +20,8 @@ public class UtilSerializar implements Serializable {
 
     private UtilSerializar() {
         this.utilProperties = utilProperties.getInstance();
-        this.utilLog = utilLog.getInstance();
-        this.utilPersistencia = utilPersistencia.getInstance();
+        this.utilLog = UtilLog.getInstance();
+        this.utilPersistencia = UtilPersistencia.getInstance();
     }
 
     // Método para guardar el modelo serializado en un único archivo
@@ -35,7 +35,7 @@ public class UtilSerializar implements Serializable {
         }
     }
 
-    public UtilSerializar getInstance() {
+    public static UtilSerializar getInstance() {
         if (instancia == null) {
             instancia = new UtilSerializar();
         }

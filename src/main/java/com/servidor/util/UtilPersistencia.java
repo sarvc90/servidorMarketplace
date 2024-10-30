@@ -21,10 +21,10 @@ public class UtilPersistencia implements Serializable {
     private static UtilPersistencia instancia;
     private UtilProperties utilProperties;
     private UtilLog utilLog;
-
+// se crea la unica instancia de la clase 
     private UtilPersistencia() {
         this.utilProperties = utilProperties.getInstance();
-        this.utilLog = utilLog.getInstance();
+        this.utilLog = UtilLog.getInstance();
     }
 
     public void gestionarArchivos(List<Vendedor> listaVendedores, List<Producto> listaProductos,
@@ -38,7 +38,7 @@ public class UtilPersistencia implements Serializable {
         utilLog.escribirLog("Archivos gestionados correctamente", Level.INFO);
     }
 
-    public UtilPersistencia getInstance() {
+    public static UtilPersistencia getInstance() {
         if (instancia == null) {
             instancia = new UtilPersistencia();
         }

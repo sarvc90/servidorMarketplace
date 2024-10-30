@@ -16,11 +16,11 @@ public class UtilRespaldo implements Serializable {
     private UtilProperties utilProperties; // Instancia de UtilProperties
 
     private UtilRespaldo() {
-        this.utilLog = utilLog.getInstance();
+        this.utilLog = UtilLog.getInstance();
     }
 
     // Método para obtener la instancia (Singleton)
-    public UtilRespaldo getInstance() {
+    public static UtilRespaldo getInstance() {
         if (instancia == null) {
             instancia = new UtilRespaldo();
         }

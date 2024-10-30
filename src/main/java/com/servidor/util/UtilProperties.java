@@ -13,7 +13,7 @@ public class UtilProperties implements Serializable{
     private UtilLog utilLog;
 
     public UtilProperties(String rutaArchivo) {
-        this.utilLog = utilLog.getInstance();
+        this.utilLog = UtilLog.getInstance();
         propiedades = new Properties();
         try (FileInputStream fis = new FileInputStream(rutaArchivo)) {
             propiedades.load(fis);

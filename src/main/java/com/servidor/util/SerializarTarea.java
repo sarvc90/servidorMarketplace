@@ -18,7 +18,7 @@ public class SerializarTarea extends Thread {
         this.modelo = modelo;
         this.rutaArchivo = rutaArchivo;
         this.esXML = esXML;
-        this.utilLog = utilLog.getInstance();
+        this.utilLog = UtilLog.getInstance();
     }
 
     @Override

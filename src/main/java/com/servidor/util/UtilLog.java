@@ -27,7 +27,7 @@ public class UtilLog implements Serializable{
     }
 
 // se crea la unica intancia de la clase 
-    public UtilLog getInstance() {
+    public static UtilLog getInstance() {
         if (instancia == null) {
             instancia = new UtilLog();
         }

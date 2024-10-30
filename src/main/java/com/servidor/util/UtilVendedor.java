@@ -17,9 +17,9 @@ public class UtilVendedor implements Serializable{
     private UtilSerializar utilSerializar;
 
     private UtilVendedor() {
-        this.utilLog = utilLog.getInstance();
-        this.utilPersistencia = utilPersistencia.getInstance();
-        this.utilSerializar = utilSerializar.getInstance();
+        this.utilLog = UtilLog.getInstance();
+        this.utilPersistencia = UtilPersistencia.getInstance();
+        this.utilSerializar = UtilSerializar.getInstance();
     }
 
     public UtilVendedor getInstance() {

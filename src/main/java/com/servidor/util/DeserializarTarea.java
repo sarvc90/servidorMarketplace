@@ -17,7 +17,7 @@ public class DeserializarTarea extends Thread {
         this.rutaArchivo = rutaArchivo;
         this.esXML = esXML;
         this.lista = lista;
-        this.utilLog = utilLog.getInstance();
+        this.utilLog = UtilLog.getInstance();
     }
 
     @Override

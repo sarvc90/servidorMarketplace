@@ -31,10 +31,10 @@ public class UtilMarketPlace implements Serializable {
 
 
     private UtilMarketPlace() {
-        this.utilLog = utilLog.getInstance();
-        this.utilPersistencia = utilPersistencia.getInstance();
-        this.utilRespaldo = utilRespaldo.getInstance();
-        this.utilSerializar = utilSerializar.getInstance();
+        this.utilLog = UtilLog.getInstance();
+        this.utilPersistencia = UtilPersistencia.getInstance();
+        this.utilRespaldo = UtilRespaldo.getInstance();
+        this.utilSerializar = UtilSerializar.getInstance();
 
     }
 
@@ -290,6 +290,10 @@ public class UtilMarketPlace implements Serializable {
         utilSerializar.guardarModeloSerializadoBin(marketPlace);
         utilSerializar.guardarModeloSerializadoXML(marketPlace);
         utilLog.registrarAccion("Administrador", "Copia de modelo", "administrador");
+    }
+
+    public void respaldoGeneral(){
+        utilRespaldo.respaldoGeneral();
     }
 
 }
