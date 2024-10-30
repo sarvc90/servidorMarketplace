@@ -19,7 +19,7 @@ public class UtilSerializar implements Serializable {
     private final ReentrantLock lock = new ReentrantLock();
 
     private UtilSerializar() {
-        this.utilProperties = utilProperties.getInstance();
+        this.utilProperties = UtilProperties.getInstance();
         this.utilLog = UtilLog.getInstance();
         this.utilPersistencia = UtilPersistencia.getInstance();
     }

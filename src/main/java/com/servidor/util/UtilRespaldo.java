@@ -60,19 +60,24 @@ public class UtilRespaldo implements Serializable {
         }
     }
 
+    //Obtiene una lista de rutas de archivos de propiedades, excluyendo aquellas que contienen "log".
     public List<String> obtenerRutasArchivosProperties() {
 
         List<String> rutas = new ArrayList<>();
 
         for (String key : utilProperties.getAllKeys()) {
+            //recorre todas las claves disponibles en la configuración de propiedades
             if (!key.contains("log")) {
                 String ruta = utilProperties.getProperty(key);
                 rutas.add(ruta);
+                //almacena las rutas correspondientes en una lista.
             }
         }
         return rutas;
     }
 
+// Realiza un respaldo general de los archivos de configuración del sistema, copiándolos
+//a un directorio de destino especificado en las propiedades.
     public void respaldoGeneral() {
         
         String directorioDestino = utilProperties.getProperty("ruta.respaldo");

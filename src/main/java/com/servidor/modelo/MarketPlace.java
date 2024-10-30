@@ -3,14 +3,13 @@ package com.servidor.modelo;
 import java.io.Serializable;
 import java.util.List;
 
-
 import com.servidor.excepciones.SolicitudExistenteException;
 import com.servidor.excepciones.SolicitudNoExistenteException;
 import com.servidor.excepciones.UsuarioExistenteException;
 import com.servidor.excepciones.UsuarioNoEncontradoException;
 import com.servidor.util.UtilMarketPlace;
 
-public class MarketPlace implements Serializable{
+public class MarketPlace implements Serializable {
     private List<Vendedor> vendedores;
     private List<Solicitud> solicitudes;
     private List<Producto> productos;
@@ -18,9 +17,16 @@ public class MarketPlace implements Serializable{
     private UtilMarketPlace utilMarketPlace;
 
     // Constructor
-    public MarketPlace() {
+    public MarketPlace(UtilMarketPlace utilMarketPlace) {
         this.administrador = new Admin("1", "Juana", "Arias", "123", "direccion", "contraseña");
-        this.utilMarketPlace = UtilMarketPlace.getInstance();
+        this.utilMarketPlace = utilMarketPlace;
+        this.vendedores = utilMarketPlace.obtenerVendedores();
+        this.solicitudes = utilMarketPlace.obtenerSolicitudes();
+        this.productos = utilMarketPlace.obtenerProductos();
+    }
+
+    public void setUtilMarketPlace(UtilMarketPlace utilMarketPlace) {
+        this.utilMarketPlace = utilMarketPlace;
         this.vendedores = utilMarketPlace.obtenerVendedores();
         this.solicitudes = utilMarketPlace.obtenerSolicitudes();
         this.productos = utilMarketPlace.obtenerProductos();
@@ -42,26 +48,25 @@ public class MarketPlace implements Serializable{
         this.administrador = administrador;
     }
 
-    public void setSolicitudes(List<Solicitud> solicitudes){
+    public void setSolicitudes(List<Solicitud> solicitudes) {
         this.solicitudes = solicitudes;
     }
 
-    public List<Solicitud> getSolicitudes(){
+    public List<Solicitud> getSolicitudes() {
         return solicitudes;
     }
 
-    
-    public void setProductos(List<Producto> productos){
+    public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
 
-    public List<Producto> getProductos(){
+    public List<Producto> getProductos() {
         return productos;
     }
 
-    public void crearVendedor(Vendedor vendedor) throws UsuarioExistenteException{
+    public void crearVendedor(Vendedor vendedor) throws UsuarioExistenteException {
         boolean exito = utilMarketPlace.crearVendedor(vendedor);
-        if (exito){
+        if (exito) {
             vendedores.add(vendedor);
         }
     }
@@ -78,20 +83,20 @@ public class MarketPlace implements Serializable{
         }
     }
 
-    public void modificarVendedor(Vendedor vendedorModificado){
+    public void modificarVendedor(Vendedor vendedorModificado) {
         utilMarketPlace.modificarVendedor(vendedorModificado);
-            for (Vendedor vendedor : vendedores) {
-                if (vendedor.getCedula().equals(vendedorModificado.getId())) {
-                    int posicion = vendedores.indexOf(vendedor);
-                    vendedores.set(posicion, vendedorModificado);
-                    break;
-                }
+        for (Vendedor vendedor : vendedores) {
+            if (vendedor.getCedula().equals(vendedorModificado.getId())) {
+                int posicion = vendedores.indexOf(vendedor);
+                vendedores.set(posicion, vendedorModificado);
+                break;
             }
+        }
     }
 
-    public void crearSolicitud(Solicitud solicitud) throws SolicitudExistenteException{
+    public void crearSolicitud(Solicitud solicitud) throws SolicitudExistenteException {
         boolean exito = utilMarketPlace.crearSolicitud(solicitud);
-        if (exito){
+        if (exito) {
             solicitudes.add(solicitud);
         }
     }
@@ -108,14 +113,14 @@ public class MarketPlace implements Serializable{
         }
     }
 
-    public void cambiarEstadoSolicitud(Solicitud solicitud1, EstadoSolicitud nuevoEstado, Vendedor vendedor){
+    public void cambiarEstadoSolicitud(Solicitud solicitud1, EstadoSolicitud nuevoEstado, Vendedor vendedor) {
         utilMarketPlace.cambiarEstadoSolicitud(solicitud1, nuevoEstado, vendedor);
     }
 
-    public void exportarEstadisticas(String ruta, String nombreUsuario, String fechaInicio, String fechaFin, String idVendedor){
+    public void exportarEstadisticas(String ruta, String nombreUsuario, String fechaInicio, String fechaFin,
+            String idVendedor) {
         utilMarketPlace.exportarEstadisticas(ruta, nombreUsuario, fechaInicio, fechaFin, idVendedor);
     }
 
-
-//Chat?
+    // Chat?
 }

@@ -6,13 +6,13 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.*;
 
-public class UtilLog implements Serializable{
+public class UtilLog implements Serializable {
     private static UtilLog instancia;
     private static final Logger logger = Logger.getLogger(UtilLog.class.getName());
     private UtilProperties utilProperties;
 
     private UtilLog() {
-        this.utilProperties = utilProperties.getInstance();
+        this.utilProperties = UtilProperties.getInstance();
         try {
             String ruta = utilProperties.obtenerPropiedad("ruta.log");
             FileHandler fileHandler = new FileHandler(ruta, true);
@@ -26,14 +26,15 @@ public class UtilLog implements Serializable{
         }
     }
 
-// se crea la unica intancia de la clase 
+    // se crea la unica intancia de la clase
     public static UtilLog getInstance() {
         if (instancia == null) {
             instancia = new UtilLog();
         }
         return instancia;
     }
-// metodo que registra un mensaje con nivel de severidad 
+
+    // metodo que registra un mensaje con nivel de severidad
     public void escribirLog(String mensaje, Level nivel) {
         logger.log(nivel, mensaje);
     }

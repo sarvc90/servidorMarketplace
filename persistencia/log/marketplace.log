@@ -1,0 +1,26 @@
+oct 29, 2024 8:17:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 29, 2024 8:19:10 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 29, 2024 8:34:53 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 29, 2024 8:42:32 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 29, 2024 8:45:41 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 29, 2024 8:50:45 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 29, 2024 8:51:00 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 29, 2024 9:03:39 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+oct 29, 2024 9:03:39 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error al cargar el modelo: persistencia\Vendedores.xml (El sistema no puede encontrar el archivo especificado)
+oct 29, 2024 9:03:39 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error al cargar el modelo: persistencia\Solicitudes.xml (El sistema no puede encontrar el archivo especificado)
+oct 29, 2024 9:03:39 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error al cargar el modelo: persistencia\Productos.xml (El sistema no puede encontrar el archivo especificado)
+oct 29, 2024 9:04:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+oct 29, 2024 9:04:09 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Administrador. , Acción: Ingreso de sesión exitoso, bienvenido administrador , Interfaz: Iniciar sesión. , Fecha y Hora: 29/10/2024 21:04:09

@@ -21,7 +21,7 @@ public class Vendedor extends Persona {
         super(id, nombre, apellido, cedula, direccion, contraseña);
         this.publicaciones = publicaciones;
         this.redDeContactos = new ArrayList<>();
-        this.utilVendedor = utilVendedor.getInstance();
+        this.utilVendedor = UtilVendedor.getInstance();
         inicializarRedDeContactos(); 
     }
 

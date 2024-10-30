@@ -23,10 +23,10 @@ public class UtilPersistencia implements Serializable {
     private UtilLog utilLog;
 // se crea la unica instancia de la clase 
     private UtilPersistencia() {
-        this.utilProperties = utilProperties.getInstance();
+        this.utilProperties = UtilProperties.getInstance();
         this.utilLog = UtilLog.getInstance();
     }
-
+// metodo que se encarga de gestionar la escritura de las listas de los obj
     public void gestionarArchivos(List<Vendedor> listaVendedores, List<Producto> listaProductos,
             List<Solicitud> listaSolicitudes) {
         String rutaVendedores = utilProperties.obtenerPropiedad("rutaVendedores.txt");
@@ -37,7 +37,7 @@ public class UtilPersistencia implements Serializable {
         escribirListaEnArchivo(rutaSolicitudes, listaSolicitudes);
         utilLog.escribirLog("Archivos gestionados correctamente", Level.INFO);
     }
-
+// metodo que verifica que solo exista una instancia de la clase 
     public static UtilPersistencia getInstance() {
         if (instancia == null) {
             instancia = new UtilPersistencia();
@@ -396,7 +396,7 @@ public class UtilPersistencia implements Serializable {
         }
         return null; // Retorna null si no se encuentra el producto
     }
-
+// metodo que se encarga de buscar solicitud por emisor especifico 
     public List<Solicitud> buscarSolicitudPorEmisor(String emisorId) {
         List<Solicitud> solicitudesEncontradas = new ArrayList<>();
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
@@ -410,7 +410,7 @@ public class UtilPersistencia implements Serializable {
         utilLog.escribirLog("Solicitudes encontradas para el emisor ID: " + emisorId, Level.INFO);
         return solicitudesEncontradas;
     }
-
+ // metodo que busca y devuelve la lista de solicitues de un receptor especifico  
     public List<Solicitud> buscarSolicitudPorReceptor(String receptorId) {
         List<Solicitud> solicitudesEncontradas = new ArrayList<>();
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
@@ -424,7 +424,7 @@ public class UtilPersistencia implements Serializable {
         utilLog.escribirLog("Solicitudes encontradas para el receptor ID: " + receptorId, Level.INFO);
         return solicitudesEncontradas;
     }
-
+ // metodo que busca las solicitudes especifica entre recepor y emisor 
     public Solicitud buscarSolicitudPorEmisorYReceptor(String emisorId, String receptorId) {
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
         for (Solicitud solicitud : listaSolicitudes) {

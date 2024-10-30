@@ -38,6 +38,17 @@ public class UtilMarketPlace implements Serializable {
 
     }
 
+    public void setMarketPlace(MarketPlace marketPlace) {
+        this.marketPlace = marketPlace;
+    }
+
+    public MarketPlace getMarketPlace() {
+        if (marketPlace == null) {
+            marketPlace = new MarketPlace(this); // Pass this instance
+        }
+        return marketPlace;
+    }
+
     // se crea la unica instancia de la clase
     public static UtilMarketPlace getInstance() {
         if (instancia == null) {
@@ -106,7 +117,7 @@ public class UtilMarketPlace implements Serializable {
         } else {
             // Excepcion de solicitud existente
             utilLog.registrarAccion("Vendedor ", "Solicitud ya existente. ", "Buscador");
-            throw new SolicitudExistenteException();
+                throw new SolicitudExistenteException();
         }
 
     }
@@ -126,7 +137,8 @@ public class UtilMarketPlace implements Serializable {
             return true;
         } else {
             // Excepcion de usuario no encontrado
-            utilLog.registrarAccion("El vendedor no fue encontrado. ", " Eliminación fallida. ", " Eliminación.");
+     
+       utilLog.registrarAccion("El vendedor no fue encontrado. ", " Eliminación fallida. ", " Eliminación.");
             throw new SolicitudNoExistenteException();
         }
 
@@ -144,18 +156,20 @@ public class UtilMarketPlace implements Serializable {
                 " Se modifica el estado de la solicitud ", " Modificar.");
     }
 
+//obtiene la lista de solicitudes deserializada desde un archivo.
     public List<Solicitud> obtenerSolicitudes() {
         return utilSerializar.deserializarSolicitudes(true);
     }
-
+//obtiene la lista de vendedores deserializada desde un archivo.
     public List<Vendedor> obtenerVendedores() {
         return utilSerializar.deserializarVendedores(true);
     }
-
+//obtiene la lista de sproductos deserializada desde un archivo.
     public List<Producto> obtenerProductos() {
         return utilSerializar.deserializarProductos(true);
     }
 
+//Inicia sesión para un usuario (vendedor o administrador) basado en la cédula y contraseña proporcionadas.
     public String iniciarSesion(String cedula, String contraseña) throws UsuarioNoEncontradoException {
         Vendedor vendedor = utilPersistencia.buscarVendedorPorCedula(cedula);
         if (vendedor != null) {
@@ -173,11 +187,13 @@ public class UtilMarketPlace implements Serializable {
                         "Iniciar sesión. ");
                 return administrador.getId();
             } else {
+            //Excepcion de usuario no encontrado
                 throw new UsuarioNoEncontradoException();
             }
         }
     }
 
+//Cuenta la cantidad de productos publicados dentro de un rango de fechas en específico.
     public int contarProductosPorRangoFecha(String fechaInicio, String fechaFin) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
@@ -201,6 +217,7 @@ public class UtilMarketPlace implements Serializable {
         return contador;
     }
 
+//Cuenta la cantidad de productos publicados por un vendedor específico, se busca por su cédula.
     public int contarProductosPorVendedor(String cedulaVendedor) {
         List<Vendedor> listaVendedores = utilPersistencia.leerVendedoresDesdeArchivo();
 
@@ -219,6 +236,7 @@ public class UtilMarketPlace implements Serializable {
         return 0;
     }
 
+//Cuenta la cantidad de contactos en la red de un vendedor específico, se busca por su cedula.
     public int contarContactosPorVendedor(String cedulaVendedor) {
         Vendedor vendedor = utilPersistencia.buscarVendedorPorCedula(cedulaVendedor);
 
@@ -234,6 +252,7 @@ public class UtilMarketPlace implements Serializable {
         }
     }
 
+// Obtiene una lista de los 10 productos más populares basados en el número de "me gusta".
     /* 
     public List<Producto> obtenerTop10ProductosPopulares() {
         List<Producto> listaProductos = utilPersistencia.leerProductosDesdeArchivo();
@@ -243,22 +262,23 @@ public class UtilMarketPlace implements Serializable {
         List<Producto> top10 = listaProductos.stream().limit(10).collect(Collectors.toList());
 
         utilLog.escribirLog("Top 10 productos más populares obtenidos.", Level.INFO);
-        return top10;
+                return top10;
     }
     */
 
+//Exporta las estadísticas de un vendedor específico en un rango de fechas determinado, guardándolas en una ruta especificada.
         public void exportarEstadisticas(String ruta, String nombreUsuario, String fechaInicio, String fechaFin, String idVendedor) {
         // Formatear la fecha actual
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String fechaActual = LocalDateTime.now().format(formatter);
     
-        // Obtener información para el reporte
+        // Obtiene información para el reporte
         int cantidadProductosPublicados = contarProductosPorRangoFecha(fechaInicio, fechaFin);
         int cantidadProductosPorVendedor = contarProductosPorVendedor(idVendedor);
         int cantidadContactos = contarContactosPorVendedor(idVendedor);
         //List<Producto> top10Productos = obtenerTop10ProductosPopulares();
     
-        // Crear el contenido del reporte
+        // Crea el contenido del reporte
         StringBuilder reporte = new StringBuilder();
         reporte.append("<Título>Reporte de Listado de Clientes\n");
         reporte.append("<fecha>Fecha: ").append(fechaActual).append("\n");
@@ -276,18 +296,22 @@ public class UtilMarketPlace implements Serializable {
         reporte.append("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
         reporte.append("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
     
-        // Escribir el reporte en el archivo
+        // Escribe el reporte en el archivo
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(ruta))) {
             writer.write(reporte.toString());
             utilLog.escribirLog("Reporte exportado exitosamente a: " + ruta, Level.INFO);
             utilLog.registrarAccion(nombreUsuario, "Exportó estadísticas. ", "Muro. ");
         } catch (IOException e) {
             utilLog.escribirLog("Error al exportar el reporte: " + e.getMessage(), Level.SEVERE);
-        }
+              }
     }
 
+//Serializa el modelo de datos del Marketplace en formatos binario y XML, permitiendo guardar 
+//una copia de seguridad del estado actual del sistema.
     public void serializarModelo(MarketPlace marketPlace){
-        utilSerializar.guardarModeloSerializadoBin(marketPlace);
+
+//Este método invoca el proceso de respaldo 
+//definido en la utilidad de respaldo.        utilSerializar.guardarModeloSerializadoBin(marketPlace);
         utilSerializar.guardarModeloSerializadoXML(marketPlace);
         utilLog.registrarAccion("Administrador", "Copia de modelo", "administrador");
     }

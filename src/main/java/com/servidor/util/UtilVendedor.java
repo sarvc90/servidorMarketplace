@@ -22,7 +22,7 @@ public class UtilVendedor implements Serializable{
         this.utilSerializar = UtilSerializar.getInstance();
     }
 
-    public UtilVendedor getInstance() {
+    public static UtilVendedor getInstance() {
         if (instancia == null) {
             instancia = new UtilVendedor();
         }
