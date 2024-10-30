@@ -27,10 +27,10 @@ public class Main {
             System.out.println("El vendedor ya existe.");
         }
         // Listar vendedores
-        //System.out.println("Lista de vendedores:");
-        //marketPlace.obtenerVendedores().forEach(v -> {
-            //System.out.println("Vendedor: " + v.getNombre() + " " + v.getApellido());
-        //});
+        System.out.println("Lista de vendedores:");
+        marketPlace.obtenerVendedores().forEach(v -> {
+            System.out.println("Vendedor: " + v.getNombre() + " " + v.getApellido());
+        });
 
         // Listar productos
         //System.out.println("Lista de productos:");

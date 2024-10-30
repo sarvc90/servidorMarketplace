@@ -13,20 +13,20 @@ public class Main1 extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Initialize UtilMarketPlace
+            // Inicializar utilMarketplace
             UtilMarketPlace utilMarketPlace = UtilMarketPlace.getInstance();
 
-            // Initialize MarketPlace by passing the UtilMarketPlace instance
-            MarketPlace marketPlace = new MarketPlace(utilMarketPlace); // Pass UtilMarketPlace instance to MarketPlace
+            
+            MarketPlace marketPlace = new MarketPlace(utilMarketPlace); 
 
-            // Set MarketPlace instance in UtilMarketPlace
+            
             utilMarketPlace.setMarketPlace(marketPlace);
 
-            // Load the FXML file
+            // carga el archivo XML
             FXMLLoader loader = new FXMLLoader(getClass().getResource("IniciarSesion.fxml"));
             AnchorPane root = loader.load();
 
-            // Create the scene
+            // Crea la escena
             Scene scene = new Scene(root, 300, 200);
             primaryStage.setTitle("Inicio de Sesión");
             primaryStage.setScene(scene);
@@ -40,3 +40,4 @@ public class Main1 extends Application {
         launch(args);
     }
 }
+// ayuda
