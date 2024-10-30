@@ -44,4 +44,4 @@ public class Main {
             //System.out.println("Solicitud de: " + s.getEmisor().getNombre() + " a " + s.getReceptor().getNombre());
         //});
     }
-}
+} //:)//
