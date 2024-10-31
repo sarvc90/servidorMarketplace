@@ -55,7 +55,7 @@ public class UtilVendedor implements Serializable{
     }
     //Elimina un producto del sistema utilizando su ID.
     public boolean eliminarProducto(String productoId) throws ProductoNoEncontradoException{
-        if (utilPersistencia.buscarProductoPorId(productoId) == null) {
+        if (utilPersistencia.buscarProductoPorId(productoId) != null) {
             utilPersistencia.eliminarProducto(productoId);
             utilSerializar.actualizarSerializacionProductos();
             utilLog.registrarAccion("Vendedor",

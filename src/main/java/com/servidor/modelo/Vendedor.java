@@ -65,6 +65,7 @@ public class Vendedor extends Persona {
         boolean exito = utilVendedor.crearProducto(producto);
         if (exito) {
             publicaciones.add(producto);
+            
         }
     }
 

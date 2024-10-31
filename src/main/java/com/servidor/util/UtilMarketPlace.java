@@ -164,23 +164,55 @@ public class UtilMarketPlace implements Serializable {
         } else {
             // Excepcion de usuario no encontrado
      
-       utilLog.registrarAccion("El vendedor no fue encontrado. ", " Eliminación fallida. ", " Eliminación.");
+       utilLog.registrarAccion("La solicitud no fue encontrada. ", " Eliminación fallida. ", " Eliminación.");
             throw new SolicitudNoExistenteException();
         }
 
     }
 //metodo para actualizar el estado de la solicitud 
-    public void cambiarEstadoSolicitud(Solicitud solicitud, EstadoSolicitud nuevoEstado, Vendedor vendedor) {
-        utilPersistencia.cambiarEstadoSolicitud(solicitud.getId(), nuevoEstado, vendedor);
-        utilSerializar.actualizarSerializacionSolicitudes();
-        int posicion = marketPlace.getSolicitudes().indexOf(solicitud);
-        solicitud.setEstado(nuevoEstado);
-        marketPlace.getSolicitudes().set(posicion, solicitud);
-        utilPersistencia.gestionarArchivosPorEstado(utilPersistencia.leerProductosDesdeArchivo(),
-                utilPersistencia.leerSolicitudesDesdeArchivo());
-        utilLog.registrarAccion(("El estado de la solicitud " + solicitud.getId() + " cambió. "),
-                " Se modifica el estado de la solicitud ", " Modificar.");
+public void cambiarEstadoSolicitud(Solicitud solicitud, EstadoSolicitud nuevoEstado, Vendedor vendedor) {
+    // Cambiar estado en la persistencia
+    utilPersistencia.cambiarEstadoSolicitud(solicitud.getId(), nuevoEstado, vendedor);
+    
+    // Actualizar la serialización
+    utilSerializar.actualizarSerializacionSolicitudes();
+    
+    // Cargar solicitudes desde el archivo
+    List<Solicitud> solicitudes = utilPersistencia.leerSolicitudesDesdeArchivo();
+    
+    // Buscar la solicitud en la nueva lista
+    int posicion = -1;
+    for (int i = 0; i < solicitudes.size(); i++) {
+        Solicitud s = solicitudes.get(i);
+        if (s.getId().equals(solicitud.getId())) {
+            posicion = i;
+            break;
+        }
     }
+    
+    if (posicion == -1) {
+        utilLog.registrarAccion("No se encontró la solicitud con ID: " + solicitud.getId(), 
+            "Error al modificar el estado", "Modificar");
+        return;
+    }
+    
+    // Cambiar el estado de la solicitud
+    solicitudes.get(posicion).setEstado(nuevoEstado);
+    
+    // Reemplazar la solicitud en la lista original
+    marketPlace.getSolicitudes().set(posicion, solicitudes.get(posicion));
+    
+    // Gestionar archivos
+    utilPersistencia.gestionarArchivosPorEstado(utilPersistencia.leerProductosDesdeArchivo(),
+            solicitudes);
+    
+    // Registrar la acción realizada
+    utilLog.registrarAccion("Estado cambiado a " + nuevoEstado + " para la solicitud con ID: " + solicitud.getId(), 
+        "Modificación exitosa", "Modificar");
+}
+
+
+
 
 //obtiene la lista de solicitudes deserializada desde un archivo.
     public List<Solicitud> obtenerSolicitudes() {

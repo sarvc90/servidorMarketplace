@@ -14,8 +14,11 @@ public class Solicitud implements Serializable {
         this.id = (id == null || id.isEmpty()) ? UtilId.generarIdAleatorio() : id;
         this.emisor = emisor;
         this.receptor = receptor;
-        this.estado = estado;
+        this.estado = (estado == null) ? EstadoSolicitud.PENDIENTE : estado; 
         UtilId.getInstance();
+    }
+    public Solicitud(){
+        
     }
 
     public String getId() {

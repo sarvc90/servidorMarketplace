@@ -193,54 +193,66 @@ public class UtilSerializar implements Serializable {
         try {
             String ruta = esXML ? utilProperties.obtenerPropiedad("rutaVendedores.xml")
                     : utilProperties.obtenerPropiedad("rutaVendedores.bin");
-            
-            System.out.println("Intentando deserializar desde: " + ruta);
-            
+    
             List<Object> lista = new ArrayList<>();
             DeserializarTarea tarea = new DeserializarTarea(ruta, esXML, lista);
             tarea.start();
             tarea.join(); // Esperar a que la tarea termine
-            
-            // Crear una nueva lista de Vendedor
+    
             List<Vendedor> vendedores = new ArrayList<>();
             for (Object obj : lista) {
                 if (obj instanceof Vendedor) {
-                    vendedores.add((Vendedor) obj); // Cast seguro
+                    vendedores.add((Vendedor) obj);
                 } else {
-                    utilLog.escribirLog("Objeto deserializado no es una instancia de Vendedor.", Level.WARNING);
+                    utilLog.escribirLog("Objeto deserializado no es una instancia de Vendedor: " + obj.getClass().getName(), Level.WARNING);
                 }
             }
-            
-            System.out.println("Deserialización completada. Total de vendedores: " + vendedores.size());
-            return vendedores; // Retornar la lista de Vendedores
+    
+            return vendedores;
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt(); // Restaurar el estado de interrupción
+            Thread.currentThread().interrupt();
             utilLog.escribirLog("Error al esperar la deserialización: " + e.getMessage(), Level.SEVERE);
-            return Collections.emptyList(); // Retornar lista vacía en caso de error
+            return Collections.emptyList();
         } catch (Exception e) {
             utilLog.escribirLog("Error inesperado durante la deserialización: " + e.getMessage(), Level.SEVERE);
-            e.printStackTrace(); // Imprimir el stack trace para más detalles
-            return Collections.emptyList(); // Retornar lista vacía en caso de error
+            return Collections.emptyList();
         } finally {
             lock.unlock();
         }
     }
+     
 
     public List<Solicitud> deserializarSolicitudes(boolean esXML) {
         lock.lock();
         try {
             String ruta = esXML ? utilProperties.obtenerPropiedad("rutaSolicitudes.xml")
                     : utilProperties.obtenerPropiedad("rutaSolicitudes.bin");
+            
             List<Object> lista = new ArrayList<>();
-            new DeserializarTarea(ruta, esXML, lista).start();
+            DeserializarTarea tarea = new DeserializarTarea(ruta, esXML, lista);
+            tarea.start();
+            tarea.join(); // Esperar a que la tarea termine
+    
             List<Solicitud> solicitudes = new ArrayList<>();
             for (Object obj : lista) {
-                solicitudes.add((Solicitud) obj);
+                if (obj instanceof Solicitud) {
+                    solicitudes.add((Solicitud) obj);
+                } else {
+                    utilLog.escribirLog("Objeto deserializado no es una instancia de Solicitud: " + obj.getClass().getName(), Level.WARNING);
+                }
             }
             return solicitudes;
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            utilLog.escribirLog("Error al esperar la deserialización: " + e.getMessage(), Level.SEVERE);
+            return Collections.emptyList();
+        } catch (Exception e) {
+            utilLog.escribirLog("Error inesperado durante la deserialización: " + e.getMessage(), Level.SEVERE);
+            return Collections.emptyList();
         } finally {
             lock.unlock();
         }
     }
+    
 
 }

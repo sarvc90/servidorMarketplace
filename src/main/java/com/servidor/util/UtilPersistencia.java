@@ -333,8 +333,8 @@ public class UtilPersistencia implements Serializable {
             }
 
             String id = datos[0];
-            String emisorCedula = datos[1];
-            String receptorCedula = datos[2];
+            String emisorId = datos[1];
+            String receptorId = datos[2];
             EstadoSolicitud estado = null;
             try {
                 estado = EstadoSolicitud.valueOf(datos[3]);
@@ -343,8 +343,8 @@ public class UtilPersistencia implements Serializable {
                 continue;
             }
 
-            Vendedor emisor = buscarVendedorPorCedula(emisorCedula);
-            Vendedor receptor = buscarVendedorPorCedula(receptorCedula);
+            Vendedor emisor = buscarVendedorPorId(emisorId);
+            Vendedor receptor = buscarVendedorPorId(receptorId);
 
             if (emisor == null || receptor == null) {
                 utilLog.escribirLog("Emisor o receptor no encontrado para la línea: " + linea, Level.SEVERE);
@@ -448,6 +448,16 @@ public class UtilPersistencia implements Serializable {
         List<Vendedor> listaVendedores = leerVendedoresDesdeArchivo();
         for (Vendedor vendedor : listaVendedores) {
             if (vendedor.getCedula().equals(cedula)) {
+                return vendedor; // Retorna el vendedor encontrado
+            }
+        }
+        return null; // Retorna null si no se encuentra el vendedor
+    }
+
+    public Vendedor buscarVendedorPorId(String id) {
+        List<Vendedor> listaVendedores = leerVendedoresDesdeArchivo();
+        for (Vendedor vendedor : listaVendedores) {
+            if (vendedor.getId().equals(id)) {
                 return vendedor; // Retorna el vendedor encontrado
             }
         }
