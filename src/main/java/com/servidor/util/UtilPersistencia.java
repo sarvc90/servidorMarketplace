@@ -55,17 +55,17 @@ public class UtilPersistencia implements Serializable {
 
     private void escribirListaEnArchivo(String ruta, List<?> lista) {
         utilLog.escribirLog("Escribir lista en archivo: " + ruta, Level.INFO);
-    
+
         if (ruta == null) {
             utilLog.escribirLog("La ruta de archivo es nula.", Level.SEVERE);
             return;
         }
-    
+
         if (lista == null) {
             utilLog.escribirLog("La lista es nula y no se puede escribir en el archivo.", Level.SEVERE);
             return;
         }
-    
+
         File archivo = new File(ruta);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
             for (Object objeto : lista) {
@@ -73,7 +73,7 @@ public class UtilPersistencia implements Serializable {
                     utilLog.escribirLog("El objeto en la lista es nulo, saltando este elemento.", Level.WARNING);
                     continue;
                 }
-    
+
                 if (objeto instanceof Vendedor) {
                     Vendedor vendedor = (Vendedor) objeto;
                     guardarVendedorEnArchivo(vendedor);
@@ -92,7 +92,6 @@ public class UtilPersistencia implements Serializable {
             utilLog.escribirLog("Error al escribir en el archivo: " + ruta + ", " + e.getMessage(), Level.SEVERE);
         }
     }
-    
 
     // Guarda la información de una solicitud en un archivo de texto especificado en
     // las propiedades de configuración.
@@ -172,35 +171,57 @@ public class UtilPersistencia implements Serializable {
         String rutaSolicitudesAceptadas = utilProperties.obtenerPropiedad("rutaSolicitudesAceptadas.txt");
         String rutaSolicitudesRechazadas = utilProperties.obtenerPropiedad("rutaSolicitudesRechazadas.txt");
 
-        // Escribir productos en archivos según su estado
-        for (Producto producto : listaProductos) {
-            String estado = producto.getEstado().toString(); // Suponiendo que el estado es un enum
-            switch (estado) {
-                case "VENDIDO":
-                    escribirIdEnArchivo(rutaProductosVendidos, producto.getId());
-                    break;
-                case "PUBLICADO":
-                    escribirIdEnArchivo(rutaProductosPublicados, producto.getId());
-                    break;
-                case "CANCELADO":
-                    escribirIdEnArchivo(rutaProductosCancelados, producto.getId());
-                    break;
+        // Gestionar productos
+        // Borrar contenido de los archivos de productos
+        borrarContenidoArchivo(rutaProductosVendidos);
+        borrarContenidoArchivo(rutaProductosPublicados);
+        borrarContenidoArchivo(rutaProductosCancelados);
+
+        if (listaProductos.isEmpty()) {
+            utilLog.escribirLog("La lista de productos está vacía. Se han borrado los archivos correspondientes.",
+                    Level.INFO);
+        } else {
+            // Escribir productos en archivos según su estado
+            for (Producto producto : listaProductos) {
+                String estado = producto.getEstado().toString(); // Suponiendo que el estado es un enum
+                switch (estado) {
+                    case "VENDIDO":
+                        escribirIdEnArchivo(rutaProductosVendidos, producto.getId());
+                        break;
+                    case "PUBLICADO":
+                        escribirIdEnArchivo(rutaProductosPublicados, producto.getId());
+                        break;
+                    case "CANCELADO":
+                        escribirIdEnArchivo(rutaProductosCancelados, producto.getId());
+                        break;
+                }
             }
         }
 
-        // Escribir solicitudes en archivos según su estado
-        for (Solicitud solicitud : listaSolicitudes) {
-            String estado = solicitud.getEstado().toString(); // Suponiendo que el estado es un enum
-            switch (estado) {
-                case "PENDIENTE":
-                    escribirIdEnArchivo(rutaSolicitudesPendientes, solicitud.getId());
-                    break;
-                case "ACEPTADA":
-                    escribirIdEnArchivo(rutaSolicitudesAceptadas, solicitud.getId());
-                    break;
-                case "RECHAZADA":
-                    escribirIdEnArchivo(rutaSolicitudesRechazadas, solicitud.getId());
-                    break;
+        // Gestionar solicitudes
+        // Borrar contenido de los archivos de solicitudes
+        borrarContenidoArchivo(rutaSolicitudesPendientes);
+        borrarContenidoArchivo(rutaSolicitudesAceptadas);
+        borrarContenidoArchivo(rutaSolicitudesRechazadas);
+
+        if (listaSolicitudes.isEmpty()) {
+            utilLog.escribirLog("La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.",
+                    Level.INFO);
+        } else {
+            // Escribir solicitudes en archivos según su estado
+            for (Solicitud solicitud : listaSolicitudes) {
+                String estado = solicitud.getEstado().toString(); // Suponiendo que el estado es un enum
+                switch (estado) {
+                    case "PENDIENTE":
+                        escribirIdEnArchivo(rutaSolicitudesPendientes, solicitud.getId());
+                        break;
+                    case "ACEPTADA":
+                        escribirIdEnArchivo(rutaSolicitudesAceptadas, solicitud.getId());
+                        break;
+                    case "RECHAZADA":
+                        escribirIdEnArchivo(rutaSolicitudesRechazadas, solicitud.getId());
+                        break;
+                }
             }
         }
 
@@ -279,6 +300,23 @@ public class UtilPersistencia implements Serializable {
             String linea;
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split("%");
+                // Verificar que el array tiene suficientes elementos
+                if (datos.length < 9) {
+                    utilLog.escribirLog("Línea mal formada en el archivo: " + linea, Level.WARNING);
+                    continue; // Saltar a la siguiente línea
+                }
+
+                // Validar y parsear los enteros
+                int precio = 0;
+                int meGustas = 0;
+                try {
+                    precio = Integer.parseInt(datos[5]);
+                    meGustas = Integer.parseInt(datos[6]);
+                } catch (NumberFormatException e) {
+                    utilLog.escribirLog("Error al convertir precios en la línea: " + linea, Level.WARNING);
+                    continue; // Saltar a la siguiente línea si hay un error de formato
+                }
+
                 Producto producto = new Producto(
                         datos[0], // ID
                         datos[1], // Nombre
@@ -301,68 +339,67 @@ public class UtilPersistencia implements Serializable {
 
     // Método para leer solicitudes desde archivo
     public List<Solicitud> leerSolicitudesDesdeArchivo() {
-    List<Solicitud> listaSolicitudes = new ArrayList<>();
-    String rutaSolicitudes = utilProperties.obtenerPropiedad("rutaSolicitudes.txt");
+        List<Solicitud> listaSolicitudes = new ArrayList<>();
+        String rutaSolicitudes = utilProperties.obtenerPropiedad("rutaSolicitudes.txt");
 
-    // Log the path for debugging
-    utilLog.escribirLog("Ruta de solicitudes: " + rutaSolicitudes, Level.INFO);
+        // Log the path for debugging
+        utilLog.escribirLog("Ruta de solicitudes: " + rutaSolicitudes, Level.INFO);
 
-    // Check if the path is valid
-    if (rutaSolicitudes == null) {
-        utilLog.escribirLog("La ruta de solicitudes es nula.", Level.SEVERE);
-        return listaSolicitudes;
-    }
-
-    File file = new File(rutaSolicitudes);
-    if (!file.exists()) {
-        utilLog.escribirLog("El archivo no existe: " + rutaSolicitudes, Level.SEVERE);
-        return listaSolicitudes;
-    }
-
-    try (BufferedReader reader = new BufferedReader(new FileReader(rutaSolicitudes))) {
-        String linea;
-        while ((linea = reader.readLine()) != null) {
-            utilLog.escribirLog("Leyendo línea: " + linea, Level.INFO);
-
-            String[] datos = linea.split("%");
-            utilLog.escribirLog("Datos separados: " + Arrays.toString(datos), Level.INFO);
-
-            if (datos.length < 4) {
-                utilLog.escribirLog("Datos incompletos en la línea: " + linea, Level.SEVERE);
-                continue;
-            }
-
-            String id = datos[0];
-            String emisorId = datos[1];
-            String receptorId = datos[2];
-            EstadoSolicitud estado = null;
-            try {
-                estado = EstadoSolicitud.valueOf(datos[3]);
-            } catch (IllegalArgumentException e) {
-                utilLog.escribirLog("Estado no válido en la línea: " + linea, Level.SEVERE);
-                continue;
-            }
-
-            Vendedor emisor = buscarVendedorPorId(emisorId);
-            Vendedor receptor = buscarVendedorPorId(receptorId);
-
-            if (emisor == null || receptor == null) {
-                utilLog.escribirLog("Emisor o receptor no encontrado para la línea: " + linea, Level.SEVERE);
-                continue;
-            }
-
-            Solicitud solicitud = new Solicitud(id, emisor, receptor, estado);
-            utilLog.escribirLog("Solicitud creada: " + solicitud.toString(), Level.INFO);
-
-            listaSolicitudes.add(solicitud);
+        // Check if the path is valid
+        if (rutaSolicitudes == null) {
+            utilLog.escribirLog("La ruta de solicitudes es nula.", Level.SEVERE);
+            return listaSolicitudes;
         }
-        utilLog.escribirLog("Solicitudes leídas desde el archivo correctamente.", Level.INFO);
-    } catch (IOException e) {
-        utilLog.escribirLog("Error al leer solicitudes desde el archivo: " + rutaSolicitudes, Level.SEVERE);
-    }
-    return listaSolicitudes;
-}
 
+        File file = new File(rutaSolicitudes);
+        if (!file.exists()) {
+            utilLog.escribirLog("El archivo no existe: " + rutaSolicitudes, Level.SEVERE);
+            return listaSolicitudes;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaSolicitudes))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                utilLog.escribirLog("Leyendo línea: " + linea, Level.INFO);
+
+                String[] datos = linea.split("%");
+                utilLog.escribirLog("Datos separados: " + Arrays.toString(datos), Level.INFO);
+
+                if (datos.length < 4) {
+                    utilLog.escribirLog("Datos incompletos en la línea: " + linea, Level.SEVERE);
+                    continue;
+                }
+
+                String id = datos[0];
+                String emisorId = datos[1];
+                String receptorId = datos[2];
+                EstadoSolicitud estado = null;
+                try {
+                    estado = EstadoSolicitud.valueOf(datos[3]);
+                } catch (IllegalArgumentException e) {
+                    utilLog.escribirLog("Estado no válido en la línea: " + linea, Level.SEVERE);
+                    continue;
+                }
+
+                Vendedor emisor = buscarVendedorPorId(emisorId);
+                Vendedor receptor = buscarVendedorPorId(receptorId);
+
+                if (emisor == null || receptor == null) {
+                    utilLog.escribirLog("Emisor o receptor no encontrado para la línea: " + linea, Level.SEVERE);
+                    continue;
+                }
+
+                Solicitud solicitud = new Solicitud(id, emisor, receptor, estado);
+                utilLog.escribirLog("Solicitud creada: " + solicitud.toString(), Level.INFO);
+
+                listaSolicitudes.add(solicitud);
+            }
+            utilLog.escribirLog("Solicitudes leídas desde el archivo correctamente.", Level.INFO);
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer solicitudes desde el archivo: " + rutaSolicitudes, Level.SEVERE);
+        }
+        return listaSolicitudes;
+    }
 
     // Método para leer todas las solicitudes
     public List<Solicitud> leerTodasLasSolicitudes() {
@@ -374,19 +411,36 @@ public class UtilPersistencia implements Serializable {
     // Método para cambiar el estado de una solicitud
     public void cambiarEstadoSolicitud(String idSolicitud, EstadoSolicitud nuevoEstado, Vendedor vendedor) {
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
-        for (Solicitud solicitud : listaSolicitudes) {
-            if (solicitud.getId().equals(idSolicitud)) {
-                if (!solicitud.getReceptor().equals(vendedor)) {
+        utilLog.escribirLog("Lista de solicitudes cargada: " + listaSolicitudes.size() + " solicitudes", Level.INFO);
+
+        boolean solicitudEncontrada = false;
+        for (int i = 0; i < listaSolicitudes.size(); i++) {
+            if (listaSolicitudes.get(i).getId().equals(idSolicitud)) {
+                solicitudEncontrada = true;
+                Vendedor receptor = listaSolicitudes.get(i).getReceptor();
+                utilLog.escribirLog("Receptor de la solicitud: " + receptor.toString(), Level.INFO);
+                utilLog.escribirLog("Vendedor actual: " + vendedor.toString(), Level.INFO);
+                if (!receptor.getCedula().equals(vendedor.getCedula())) {
                     utilLog.escribirLog("El vendedor no tiene permiso para cambiar el estado de esta solicitud.",
                             Level.WARNING);
                     return; // Salir del método sin cambiar el estado
                 }
-                solicitud.setEstado(nuevoEstado);
-                utilLog.escribirLog("Estado de la solicitud cambiado exitosamente: " + solicitud, Level.INFO);
+                listaSolicitudes.get(i).setEstado(nuevoEstado);
+                utilLog.escribirLog("Estado de la solicitud cambiado en memoria: " + idSolicitud, Level.INFO);
+                if (listaSolicitudes.get(i).getEstado().equals(nuevoEstado)) {
+                    utilLog.escribirLog("SI SE MODIFICO EL ESTADO DE SOLICITUD EN LISTA", Level.INFO);
+                }
                 break;
             }
         }
+
+        if (!solicitudEncontrada) {
+            utilLog.escribirLog("No se encontró la solicitud con ID: " + idSolicitud, Level.WARNING);
+            return;
+        }
+
         gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes);
+        utilLog.escribirLog("Lista de solicitudes guardada con éxito", Level.INFO);
     }
 
     // Método para modificar un vendedor
@@ -587,6 +641,13 @@ public class UtilPersistencia implements Serializable {
             String linea;
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split("%");
+
+                // Verificar que el array tiene suficientes elementos
+                if (datos.length < 3) {
+                    utilLog.escribirLog("Línea mal formada en el archivo: " + linea, Level.WARNING);
+                    continue; // Saltar a la siguiente línea
+                }
+
                 String id = datos[0];
                 String emisorCedula = datos[1];
                 String receptorCedula = datos[2];
@@ -654,6 +715,16 @@ public class UtilPersistencia implements Serializable {
         }
 
         return solicitudesEncontradas;
+    }
+
+    public void borrarContenidoArchivo(String rutaArchivo) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
+            // Simplemente crear un nuevo archivo vacío
+            writer.write(""); // Esto borra el contenido del archivo
+            utilLog.escribirLog("Se borro correctamente el contenido del archivo: " + rutaArchivo, Level.INFO);
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al borrar el contenido del archivo: " + rutaArchivo, Level.SEVERE);
+        }
     }
 
 }

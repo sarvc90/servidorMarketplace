@@ -34,7 +34,7 @@ public class SerializarTarea extends Thread {
                     oos.writeObject(modelo);
                 }
             }
-            utilLog.escribirLog("Modelo guardado exitosamente en: " + rutaArchivo, Level.INFO);
+            utilLog.escribirLog("Objeto guardado exitosamente en: " + rutaArchivo, Level.INFO);
         } catch (Exception e) {
             utilLog.escribirLog("Error al guardar el modelo: " + e.getMessage(), Level.SEVERE);
         }

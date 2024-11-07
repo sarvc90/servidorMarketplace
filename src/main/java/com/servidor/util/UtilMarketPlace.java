@@ -153,7 +153,10 @@ public class UtilMarketPlace implements Serializable {
         if (solicitud != null) {
             utilPersistencia.eliminarSolicitud(solicitud.getId());
             utilSerializar.actualizarSerializacionSolicitudes();
-            marketPlace.getSolicitudes().remove(solicitud);
+            marketPlace.obtenerSolicitudes().remove(solicitud);
+            utilPersistencia.gestionarArchivosPorEstado(utilPersistencia.leerProductosDesdeArchivo(),
+                    marketPlace.obtenerSolicitudes());
+
             utilLog.registrarAccion("Vendedor",
                     " La solicitud mandada por el usuario :" + solicitud.getEmisor().getNombre()
                             + solicitud.getEmisor().getApellido() + ", al usuario: "

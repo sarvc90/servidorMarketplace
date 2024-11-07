@@ -31,31 +31,32 @@ public class Main {
         // CREAR
         try {
 
-            Vendedor nuevoVendedor = new Vendedor(null, "Osvaldo", "Polania", "578", "Cll3-02", "contraseña", null,
+            Vendedor nuevoVendedor = new Vendedor(null, "Maria", "Arias", "579", "Cll3-02", "contraseña", null,
                     null);
             marketPlace.crearVendedor(nuevoVendedor);
             System.out.println("Vendedor creado exitosamente.");
         } catch (UsuarioExistenteException e) {
             System.out.println("El vendedor ya existe.");
         }
-
+/* 
         // ELIMINAR
         try {
-            String cedulaVendedor = "579";
+            String cedulaVendedor = "12345";
             marketPlace.eliminarVendedor(cedulaVendedor);
         } catch (UsuarioNoEncontradoException e) {
             System.out.println("No se encontro el vendedor");
         }
-*/
+
         // LEER
         System.out.println("Lista de vendedores:");
         marketPlace.obtenerVendedores().forEach(v -> {
             System.out.println("Vendedor: " + v.getNombre() + " " + v.getApellido());
         });
-/* 
+/*  
+
         // MODIFICAR
         try {
-            Vendedor vendedorModificado = new Vendedor(null, "Lisa", "Pérez", "12345", "dirección", "contraseña", null,
+            Vendedor vendedorModificado = new Vendedor(null, "Rosa", "Pérez", "12345", "dirección", "contraseña", null,
                     null);
             marketPlace.modificarVendedor(vendedorModificado);
         } catch (UsuarioNoEncontradoException e) {
@@ -67,7 +68,7 @@ public class Main {
         marketPlace.obtenerProductos().forEach(p -> {
             System.out.println("Producto: " + p.getNombre() + ", Precio: " + p.getPrecio());
         });
-
+/* 
         // SOLICITUDES
         // CREAR
         try {
@@ -79,19 +80,19 @@ public class Main {
                 emisor = vendedores.get(0); // Asignar el primer vendedor a emisor
             }
 
-            if (vendedores.size() > 2) {
+            if (vendedores.size() > 1) {
                 receptor = vendedores.get(1); // Asignar el segundo vendedor a receptor
             }
             Solicitud nuevaSolicitud = new Solicitud(null, emisor, receptor, null);
             marketPlace.crearSolicitud(nuevaSolicitud);
-            System.out.println("VSolicitud creado exitosamente.");
+            System.out.println("Solicitud creado exitosamente.");
         } catch (SolicitudExistenteException e) {
             System.out.println("Ya hay solicitud existente entre los dos usuarios");
 
         }
-
+    /*
         // ELIMINAR
-
+ 
         try {
             List<Vendedor> vendedores = marketPlace.getVendedores();
             Vendedor emisor = null;
@@ -110,7 +111,7 @@ public class Main {
             System.out.println("No existe la solicitud");
 
         }
-
+/*  */
         // MODIFICAR
         List<Vendedor> vendedores = marketPlace.getVendedores();
         Vendedor emisor = null;
@@ -120,13 +121,13 @@ public class Main {
             emisor = vendedores.get(0); // Asignar el primer vendedor a emisor
         }
 
-        if (vendedores.size() > 2) {
-            receptor = vendedores.get(2); // Asignar el segundo vendedor a receptor
+        if (vendedores.size() > 1) {
+            receptor = vendedores.get(1); // Asignar el segundo vendedor a receptor
         }
-        Solicitud solicitud = new Solicitud("8215", emisor, receptor, EstadoSolicitud.PENDIENTE);
-        marketPlace.cambiarEstadoSolicitud(solicitud, EstadoSolicitud.RECHAZADA, emisor);
+        Solicitud solicitud = new Solicitud("3621", emisor, receptor, EstadoSolicitud.PENDIENTE);
+        marketPlace.cambiarEstadoSolicitud(solicitud, EstadoSolicitud.RECHAZADA, receptor);
         System.out.println("VSolicitud modificada exitosamente.");
- */
+ /* 
         // LEER
         System.out.println("Lista de solicitudes:");
         marketPlace.obtenerSolicitudes().forEach(s -> {
@@ -160,7 +161,7 @@ public class Main {
         System.out.println("Error: " + e.getMessage());
     }
 
-
+*/
         
 
 

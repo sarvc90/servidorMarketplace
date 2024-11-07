@@ -1,5 +1,8 @@
 package com.servidor.util;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -119,14 +122,25 @@ public class UtilSerializar implements Serializable {
             lock.unlock();
         }
     }
-
     public void actualizarSerializacionSolicitudes() {
         lock.lock();
         try {
             List<Solicitud> listaSolicitudes = utilPersistencia.leerSolicitudesDesdeArchivo();
-            serializarLista(listaSolicitudes, false);
-            serializarLista(listaSolicitudes, true);
-            utilLog.escribirLog("Serialización de solicitudes actualizada correctamente.", Level.INFO);
+            
+            // Verificar si la lista de solicitudes está vacía
+            if (listaSolicitudes.isEmpty()) {
+                String rutaArchivoXML = "persistencia/Solicitudes.xml";
+                String rutaArchivoBin = "persistencia/Solicitudes.bin";
+                utilLog.escribirLog("Intentando borrar contenido del archivo: " + rutaArchivoXML + " y " + rutaArchivoBin, Level.INFO);
+                utilPersistencia.borrarContenidoArchivo(rutaArchivoXML);
+                utilPersistencia.borrarContenidoArchivo(rutaArchivoBin);
+                utilLog.escribirLog("La lista de solicitudes está vacía. Se ha borrado el contenido del archivo XML.", Level.INFO);
+            } else {
+                // Serializar la lista de solicitudes
+                serializarLista(listaSolicitudes, false);
+                serializarLista(listaSolicitudes, true);
+                utilLog.escribirLog("Serialización de solicitudes actualizada correctamente.", Level.INFO);
+            }
         } finally {
             lock.unlock();
         }

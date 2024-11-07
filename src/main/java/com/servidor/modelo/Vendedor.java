@@ -101,6 +101,7 @@ public class Vendedor extends Persona {
             if (!redDeContactos.contains(receptor)) {
                 redDeContactos.add(receptor);
             }
+            
         }
     }
 

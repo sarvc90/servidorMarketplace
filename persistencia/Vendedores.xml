@@ -4,22 +4,22 @@
   <void method="add">
    <object class="com.servidor.modelo.Vendedor">
     <void property="apellido">
-     <string>Pérez</string>
+     <string>Polania</string>
     </void>
     <void property="cedula">
-     <string>12345</string>
+     <string>578</string>
     </void>
     <void property="contraseña">
      <string>contraseña</string>
     </void>
     <void property="direccion">
-     <string>dirección</string>
+     <string>Cll3-02</string>
     </void>
     <void property="id">
-     <string>5200</string>
+     <string>4285</string>
     </void>
     <void property="nombre">
-     <string>Lisa</string>
+     <string>Osvaldo</string>
     </void>
    </object>
   </void>
@@ -38,32 +38,10 @@
      <string>Cll3-02</string>
     </void>
     <void property="id">
-     <string>2236</string>
+     <string>0431</string>
     </void>
     <void property="nombre">
-     <string>María</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="com.servidor.modelo.Vendedor">
-    <void property="apellido">
-     <string>Polania</string>
-    </void>
-    <void property="cedula">
-     <string>578</string>
-    </void>
-    <void property="contraseña">
-     <string>contraseña</string>
-    </void>
-    <void property="direccion">
-     <string>Cll3-02</string>
-    </void>
-    <void property="id">
-     <string>4285</string>
-    </void>
-    <void property="nombre">
-     <string>Osvaldo</string>
+     <string>Maria</string>
     </void>
    </object>
   </void>
