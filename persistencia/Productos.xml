@@ -18,7 +18,7 @@
     <void property="estado">
      <object class="java.lang.Enum" method="valueOf">
       <class>com.servidor.modelo.Estado</class>
-      <string>PUBLICADO</string>
+      <string>VENDIDO</string>
      </object>
     </void>
     <void property="id">
@@ -31,7 +31,7 @@
      <int>50</int>
     </void>
     <void property="nombre">
-     <string>Laptop</string>
+     <string>Teléfono</string>
     </void>
     <void property="precio">
      <int>750</int>

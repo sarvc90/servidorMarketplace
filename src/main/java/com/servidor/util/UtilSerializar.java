@@ -205,13 +205,21 @@ public class UtilSerializar implements Serializable {
             String ruta = esXML ? utilProperties.obtenerPropiedad("rutaProductos.xml")
                     : utilProperties.obtenerPropiedad("rutaProductos.bin");
             List<Object> lista = new ArrayList<>();
-            new DeserializarTarea(ruta, esXML, lista).start();
+            DeserializarTarea tarea = new DeserializarTarea(ruta, esXML, lista);
+            tarea.start();
+            tarea.join();
+
             List<Producto> productos = new ArrayList<>();
             for (Object obj : lista) {
                 productos.add((Producto) obj);
             }
             return productos;
-        } finally {
+        } catch (InterruptedException e){
+            Thread.currentThread().interrupt();
+            utilLog.escribirLog("Error al esperar la deserialización: " + e.getMessage(), Level.SEVERE);
+            return Collections.emptyList();
+        } 
+        finally {
             lock.unlock();
         }
     }

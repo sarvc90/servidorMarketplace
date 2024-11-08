@@ -84,7 +84,7 @@ public class UtilVendedor implements Serializable {
     }
 
     // Modifica un producto existente en el sistema.
-    public void modificarProducto(Producto productoModificado) {
+    public boolean modificarProducto(Producto productoModificado) {
         utilPersistencia.modificarProducto(productoModificado);
         utilSerializar.actualizarSerializacionProductos();
         utilPersistencia.gestionarArchivosPorEstado(utilPersistencia.leerProductosDesdeArchivo(),
@@ -94,7 +94,7 @@ public class UtilVendedor implements Serializable {
         utilLog.registrarAccion("Vendedor",
                 " Se modifica el producto ", " Modificar.");
         // actualiza la serialización de los productos en el sistema.
-
+        return true;
     }
 
     // Obtiene una lista de solicitudes aceptadas asociadas a un vendedor

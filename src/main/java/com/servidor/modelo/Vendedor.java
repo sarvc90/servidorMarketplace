@@ -84,8 +84,9 @@ public class Vendedor extends Persona {
     }
 
     public void modificarProducto(Producto productoModificado) {
-
+        boolean exito = utilVendedor.modificarProducto(productoModificado);
         // Buscar el producto en la lista de publicaciones y removerlo
+        if(exito){
         for (Producto producto : publicaciones) {
             if (producto.getId().equals(productoModificado.getId())) {
                 int posicion = publicaciones.indexOf(producto);
@@ -93,6 +94,7 @@ public class Vendedor extends Persona {
                 break;
             }
         }
+    }
     }
 
     private void inicializarRedDeContactos() {

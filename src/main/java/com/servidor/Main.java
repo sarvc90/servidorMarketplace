@@ -160,7 +160,7 @@ public class Main {
         } catch(Exception e){
 
         }
-        /**/
+        /*
 
     //ELIMINAR
     try {
@@ -171,8 +171,18 @@ public class Main {
     }
 
 
-        
+    
 
+//MODIFICAR
+        Producto productoModificado = new Producto("6970", "Teléfono", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.VENDIDO, Categoria.TECNOLOGIA);
+        vendedor1.modificarProducto(productoModificado);
+
+*/
+        // LEER
+        System.out.println("Lista de productos:");
+        marketPlace.obtenerProductos().forEach(s -> {
+            System.out.println("Producto" + s.getNombre());
+        });
 
 
     }
