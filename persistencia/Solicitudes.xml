@@ -28,11 +28,11 @@
     <void property="estado">
      <object class="java.lang.Enum" method="valueOf">
       <class>com.servidor.modelo.EstadoSolicitud</class>
-      <string>RECHAZADA</string>
+      <string>PENDIENTE</string>
      </object>
     </void>
     <void property="id">
-     <string>3621</string>
+     <string>9647</string>
     </void>
     <void property="receptor">
      <object class="com.servidor.modelo.Vendedor">

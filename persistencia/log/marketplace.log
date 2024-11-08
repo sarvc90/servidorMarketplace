@@ -12642,3 +12642,1171 @@ nov 07, 2024 4:59:15 P. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Solicitudes.bin
 nov 07, 2024 4:59:15 P. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Solicitudes.xml
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 3621%4285%0431%RECHAZADA
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [3621, 4285, 0431, RECHAZADA]
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='3621', emisor=4285, receptor=0431, estado=RECHAZADA}
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud ya existente entre los dos usuarios.
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 3621%4285%0431%RECHAZADA
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [3621, 4285, 0431, RECHAZADA]
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='3621', emisor=4285, receptor=0431, estado=RECHAZADA}
+nov 07, 2024 5:03:04 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@1c6b6478]
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=0431, nombre=Maria, apellido=Arias, cedula=579, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@1c6b6478]
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud eliminada exitosamente con ID: 3621
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Intentando borrar contenido del archivo: persistencia/Solicitudes.xml y persistencia/Solicitudes.bin
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/Solicitudes.xml
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/Solicitudes.bin
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se ha borrado el contenido del archivo XML.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de productos está vacía. Se han borrado los archivos correspondientes.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 07, 2024 5:03:05 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor, Acción:  La solicitud mandada por el usuario :OsvaldoPolania, al usuario: MariaArias ha sido eliminado. , Interfaz:  Muro propio del emisor., Fecha y Hora: 07/11/2024 17:03:05
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud guardada exitosamente: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de solicitudes actualizada correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de productos está vacía. Se han borrado los archivos correspondientes.
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor, Acción: Nueva solicitud, Interfaz: Buscador, Fecha y Hora: 07/11/2024 17:04:14
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Solicitudes.bin
+nov 07, 2024 5:04:14 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Solicitudes.xml
+nov 07, 2024 5:05:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 5:05:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 5:05:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 5:05:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 5:05:36 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 1765, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Error al convertir precios en la línea: 1765%Laptop%descripcion%2024-10-30T10:15:30%ruta imagen%75050%[]%PUBLICADO%TECNOLOGIA
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: La lista está vacía, no se puede serializar.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: La lista está vacía, no se puede serializar.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de productos actualizada correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Error al convertir precios en la línea: 1765%Laptop%descripcion%2024-10-30T10:15:30%ruta imagen%75050%[]%PUBLICADO%TECNOLOGIA
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[ID: 1765, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@61baa894]
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=0431, nombre=Maria, apellido=Arias, cedula=579, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@61baa894]
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud guardada exitosamente: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 07, 2024 5:37:50 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor , Acción: Producto agregado con exito., Interfaz: Muro, Fecha y Hora: 07/11/2024 17:37:50
+nov 07, 2024 5:48:35 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 5:48:35 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 5:48:35 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 5:48:35 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:48:35 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:48:35 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 5:48:35 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 5401, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 5:52:26 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 5:52:26 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 5:52:26 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 5:52:26 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 5:52:26 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 5:52:26 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 5:52:26 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 5408, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:00:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 6:00:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 6:00:36 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 6:00:36 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Guardando producto en archivo: ID: 4702, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 4702, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:00:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Actualizando serialización de productos
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Guardando producto en archivo: ID: 2592, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 2592, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Actualizando serialización de productos
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo productos desde archivo
+nov 07, 2024 6:06:44 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error en actualizarSerializacionProductos: No enum constant com.servidor.modelo.Estado.[]
+nov 07, 2024 6:27:19 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Guardando producto en archivo: ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Actualizando serialización de productos
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo productos desde archivo
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos: 1
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (primera vez)
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Primera serialización completada
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (segunda vez)
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Segunda serialización completada
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de productos actualizada correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Agregando producto al vendedor: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@60215eee]
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@60215eee]
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=0431, nombre=Maria, apellido=Arias, cedula=579, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@60215eee]
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud guardada exitosamente: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Gestionando archivos por estado
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.bin
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.xml
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 07, 2024 6:27:20 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor , Acción: Producto agregado con éxito., Interfaz: Muro, Fecha y Hora: 07/11/2024 18:27:20
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Guardando producto en archivo: ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Actualizando serialización de productos
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo productos desde archivo
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos: 2
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (primera vez)
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Primera serialización completada
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (segunda vez)
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Segunda serialización completada
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de productos actualizada correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Agregando producto al vendedor: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@44e81672]
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30, ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@44e81672]
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.bin
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=0431, nombre=Maria, apellido=Arias, cedula=579, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@44e81672]
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud guardada exitosamente: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Gestionando archivos por estado
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 6:31:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.xml
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor , Acción: Producto agregado con éxito., Interfaz: Muro, Fecha y Hora: 07/11/2024 18:31:57
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Guardando producto en archivo: ID: 0790, Nombre: Teléfono, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 0790, Nombre: Teléfono, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Actualizando serialización de productos
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo productos desde archivo
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos: 3
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (primera vez)
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Primera serialización completada
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.bin
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (segunda vez)
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Segunda serialización completada
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de productos actualizada correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Agregando producto al vendedor: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@44e81672]
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.xml
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30, ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30, ID: 0790, Nombre: Teléfono, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@44e81672]
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=0431, nombre=Maria, apellido=Arias, cedula=579, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@44e81672]
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 0790, Nombre: Teléfono, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud guardada exitosamente: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Gestionando archivos por estado
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 07, 2024 6:31:57 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor , Acción: Producto agregado con éxito., Interfaz: Muro, Fecha y Hora: 07/11/2024 18:31:57
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=4285, nombre=Osvaldo, apellido=Polania, cedula=578, publicaciones=[ID: 9294, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30, ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30, ID: 0790, Nombre: Teléfono, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@2a3046da]
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedor guardado exitosamente: Vendedor [id=0431, nombre=Maria, apellido=Arias, cedula=579, publicaciones=[], direccion=Cll3-02, redDeContactos=[], contraseña=contraseña, utilVendedor=com.servidor.util.UtilVendedor@2a3046da]
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 0790, Nombre: Teléfono, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud guardada exitosamente: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto eliminado exitosamente con ID: 9294
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo productos desde archivo
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos: 2
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (primera vez)
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Primera serialización completada
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (segunda vez)
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Segunda serialización completada
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de productos actualizada correctamente.
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor, Acción:  El producto con id 9294 ha sido eliminado. , Interfaz:  Eliminación., Fecha y Hora: 07/11/2024 18:58:02
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.bin
+nov 07, 2024 6:58:02 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.xml
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4285
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0431
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitud creada: Solicitud{id='9647', emisor=4285, receptor=0431, estado=PENDIENTE}
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 7:01:13 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Emisor o receptor no encontrado para la línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Solicitudes.xml
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Datos separados: [9647, 4285, 0431, PENDIENTE]
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Productos.xml
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Emisor o receptor no encontrado para la línea: 9647%4285%0431%PENDIENTE
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta del archivo: persistencia/archivos/Productos.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto guardado exitosamente: ID: 6970, Nombre: Laptop, Descripción: descripcion, Fecha de Publicación: 2024-10-30 10:15:30
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Producto eliminado exitosamente con ID: 0790
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Leyendo productos desde archivo
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos: 1
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (primera vez)
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Primera serialización completada
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serializando lista de productos (segunda vez)
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Segunda serialización completada
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de productos actualizada correctamente.
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor, Acción:  El producto con id 0790 ha sido eliminado. , Interfaz:  Eliminación., Fecha y Hora: 07/11/2024 20:30:59
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.bin
+nov 07, 2024 8:30:59 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Productos.xml

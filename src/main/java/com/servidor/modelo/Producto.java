@@ -26,7 +26,7 @@ public class Producto implements Serializable{
 
     }
     // Constructor
-    public Producto(String id, String nombre, String descripcion, String fechaPublicacion, String imagenRuta, int precio, int meGustas, Estado estado, Categoria categoria) {
+    public Producto(String id, String nombre, String descripcion, String fechaPublicacion, String imagenRuta, int precio, int meGustas, List<Comentario> comentarios, Estado estado, Categoria categoria) {
         this.id = (id == null || id.isEmpty()) ? UtilId.generarIdAleatorio() : id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -34,11 +34,11 @@ public class Producto implements Serializable{
         this.imagenRuta = imagenRuta;
         this.precio = precio;
         this.meGustas = meGustas;
-        this.comentarios = new ArrayList<>();
+        this.comentarios = comentarios != null ? comentarios : new ArrayList<>();
         this.estado = estado;
         this.categoria = categoria;
-        UtilId.getInstance();
     }
+    
 
     public String getId() {
         return id;
@@ -166,4 +166,3 @@ public class Producto implements Serializable{
 }
 
 
-//Agregar LOg??

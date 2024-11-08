@@ -1,6 +1,7 @@
 package com.servidor.util;
 
 import java.util.logging.*;
+import java.util.stream.Collectors;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.servidor.modelo.Categoria;
+import com.servidor.modelo.Comentario;
 import com.servidor.modelo.Estado;
 import com.servidor.modelo.EstadoSolicitud;
 import com.servidor.modelo.Producto;
@@ -145,17 +147,25 @@ public class UtilPersistencia implements Serializable {
     // las propiedades de configuración.
     public void guardarProductoEnArchivo(Producto producto) {
         String rutaProductos = utilProperties.obtenerPropiedad("rutaProductos.txt");
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaProductos))) {
+        utilLog.escribirLog("Ruta del archivo: " + rutaProductos, Level.INFO);
+
+        // Convertir la lista de comentarios a una lista de strings usando toString de
+        // Comentario
+        List<String> comentariosStrings = producto.getComentarios().stream()
+                .map(Comentario::toString)
+                .collect(Collectors.toList());
+        String comentariosString = String.join(";", comentariosStrings);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaProductos, true))) { // 'true' para añadir al
+                                                                                                // final del archivo
             writer.write(producto.getId() + "%" + producto.getNombre() + "%" + producto.getDescripcion() + "%"
-                    + producto.getFechaPublicacion() + "%" + producto.getImagenRuta() + "%" + producto.getPrecio()
-                    + producto.getMeGustas() + "%" + producto.getComentarios() + "%" + producto.getEstado() + "%"
+                    + producto.getFechaPublicacion() + "%" + producto.getImagenRuta() + "%" + producto.getPrecio() + "%"
+                    + producto.getMeGustas() + "%" + comentariosString + "%" + producto.getEstado() + "%"
                     + producto.getCategoria());
             writer.newLine();
             utilLog.escribirLog("Producto guardado exitosamente: " + producto, Level.INFO);
-
         } catch (IOException e) {
-            // Si ocurre un error al guardar el producto, se registra en el log de errores.
-            utilLog.escribirLog("Error al guardar el vendedor: " + producto, Level.SEVERE);
+            utilLog.escribirLog("Error al guardar el producto: " + producto, Level.SEVERE);
         }
     }
 
@@ -301,7 +311,7 @@ public class UtilPersistencia implements Serializable {
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split("%");
                 // Verificar que el array tiene suficientes elementos
-                if (datos.length < 9) {
+                if (datos.length < 10) {
                     utilLog.escribirLog("Línea mal formada en el archivo: " + linea, Level.WARNING);
                     continue; // Saltar a la siguiente línea
                 }
@@ -317,16 +327,25 @@ public class UtilPersistencia implements Serializable {
                     continue; // Saltar a la siguiente línea si hay un error de formato
                 }
 
+                // Manejar lista de comentarios
+                List<Comentario> comentarios = datos[7].isEmpty() || datos[7].equals("[]")
+                        ? new ArrayList<>()
+                        : Arrays.stream(datos[7].split(";"))
+                                .map(Comentario::fromString) // Suponiendo que hay un método estático `fromString` en
+                                                             // Comentario
+                                .collect(Collectors.toList());
+
                 Producto producto = new Producto(
                         datos[0], // ID
                         datos[1], // Nombre
                         datos[2], // Descripcion
                         datos[3], // Fecha Publicacion (string)
                         datos[4], // Imagen Ruta
-                        Integer.parseInt(datos[5]), // Precio
-                        Integer.parseInt(datos[6]), // Me Gustas
-                        Estado.valueOf(datos[7]), // Estado (convertido a Enum)
-                        Categoria.valueOf(datos[8]) // Categoria (convertido a Enum)
+                        precio, // Precio
+                        meGustas, // Me Gustas
+                        comentarios, // Comentarios
+                        Estado.valueOf(datos[8]), // Estado (convertido a Enum)
+                        Categoria.valueOf(datos[9]) // Categoria (convertido a Enum)
                 );
                 listaProductos.add(producto);
             }
@@ -593,6 +612,69 @@ public class UtilPersistencia implements Serializable {
         return null;
     }
 
+    public List<Producto> leerProductosPublicadosDesdeArchivo() {
+        List<Producto> productosPublicados = new ArrayList<>();
+        String rutaProductosPublicados = utilProperties.obtenerPropiedad("rutaProductosPublicados.txt");
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaProductosPublicados))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split("%");
+                String id = datos[0];
+                Producto producto = buscarProductoPorId(id);
+                productosPublicados.add(producto);
+                utilLog.escribirLog("Productos publicados encontrado para el producto ID: " + producto.getId(),
+                        Level.INFO);
+            }
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer productos publicados desde el archivo: " + rutaProductosPublicados,
+                    Level.SEVERE);
+        }
+        return productosPublicados;
+    }
+
+    public List<Producto> leerProductosVendidosDesdeArchivo() {
+        List<Producto> productosVendidos = new ArrayList<>();
+        String rutaProductosVendidos = utilProperties.obtenerPropiedad("rutaProductosVendidos.txt");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaProductosVendidos))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split("%");
+                String id = datos[0];
+                Producto producto = buscarProductoPorId(id);
+                productosVendidos.add(producto);
+                utilLog.escribirLog("Producto vendido encontrado para el producto ID: " + producto.getId(), Level.INFO);
+            }
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer productos vendidos desde el archivo: " + rutaProductosVendidos,
+                    Level.SEVERE);
+        }
+
+        return productosVendidos;
+    }
+
+    public List<Producto> leerProductosCanceladosDesdeArchivo() {
+        List<Producto> productosCancelados = new ArrayList<>();
+        String rutaProductosCancelados = utilProperties.obtenerPropiedad("rutaProductosCancelados.txt");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaProductosCancelados))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split("%");
+                String id = datos[0];
+                Producto producto = buscarProductoPorId(id);
+                productosCancelados.add(producto);
+                utilLog.escribirLog("Producto cancelado encontrado para el producto ID: " + producto.getId(),
+                        Level.INFO);
+            }
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer productos cancelados desde el archivo: " + rutaProductosCancelados,
+                    Level.SEVERE);
+        }
+
+        return productosCancelados;
+    }
+
     // Método para buscar solicitudes pendientes por un vendedor
     public List<Solicitud> buscarSolicitudesPendientesPorVendedor(Vendedor vendedor) {
         List<Solicitud> solicitudesEncontradas = new ArrayList<>();
@@ -725,6 +807,19 @@ public class UtilPersistencia implements Serializable {
         } catch (IOException e) {
             utilLog.escribirLog("Error al borrar el contenido del archivo: " + rutaArchivo, Level.SEVERE);
         }
+    }
+
+    public void agregarProductoAVendedor(Producto producto, Vendedor vendedor) {
+        List<Vendedor> vendedores = leerVendedoresDesdeArchivo();
+        for (int i = 0; i < vendedores.size(); i++) {
+            if (vendedores.get(i).getCedula().equals(vendedor.getCedula())) {
+                List<Producto> productos = vendedores.get(i).getPublicaciones();
+                productos.add(producto);
+                vendedores.get(i).setPublicaciones(productos);
+                break;
+            }
+        }
+        gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
     }
 
 }

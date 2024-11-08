@@ -62,7 +62,7 @@ public class Vendedor extends Persona {
     }
 
     public void crearProducto(Producto producto) throws ProductoYaExisteException {
-        boolean exito = utilVendedor.crearProducto(producto);
+        boolean exito = utilVendedor.crearProducto(producto, this);
         if (exito) {
             publicaciones.add(producto);
             
@@ -79,6 +79,7 @@ public class Vendedor extends Persona {
                     break;
                 }
             }
+            
         }
     }
 

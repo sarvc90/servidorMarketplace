@@ -114,14 +114,28 @@ public class UtilSerializar implements Serializable {
     public void actualizarSerializacionProductos() {
         lock.lock();
         try {
+            utilLog.escribirLog("Leyendo productos desde archivo", Level.INFO);
             List<Producto> listaProductos = utilPersistencia.leerProductosDesdeArchivo();
+            utilLog.escribirLog("Productos leídos: " + listaProductos.size(), Level.INFO);
+    
+            utilLog.escribirLog("Serializando lista de productos (primera vez)", Level.INFO);
             serializarLista(listaProductos, false);
+            utilLog.escribirLog("Primera serialización completada", Level.INFO);
+    
+            utilLog.escribirLog("Serializando lista de productos (segunda vez)", Level.INFO);
             serializarLista(listaProductos, true);
+            utilLog.escribirLog("Segunda serialización completada", Level.INFO);
+    
             utilLog.escribirLog("Serialización de productos actualizada correctamente.", Level.INFO);
+        } catch (Exception e) {
+            utilLog.escribirLog("Error en actualizarSerializacionProductos: " + e.getMessage(), Level.SEVERE);
+            throw new RuntimeException("Error en actualizar serialización de productos", e);
         } finally {
             lock.unlock();
         }
     }
+    
+
     public void actualizarSerializacionSolicitudes() {
         lock.lock();
         try {

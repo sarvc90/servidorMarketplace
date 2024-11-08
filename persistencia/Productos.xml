@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.4" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="com.servidor.modelo.Producto">
+    <void property="categoria">
+     <object class="java.lang.Enum" method="valueOf">
+      <class>com.servidor.modelo.Categoria</class>
+      <string>TECNOLOGIA</string>
+     </object>
+    </void>
+    <void property="comentarios">
+     <object class="java.util.ArrayList"/>
+    </void>
+    <void property="descripcion">
+     <string>descripcion</string>
+    </void>
+    <void property="estado">
+     <object class="java.lang.Enum" method="valueOf">
+      <class>com.servidor.modelo.Estado</class>
+      <string>PUBLICADO</string>
+     </object>
+    </void>
+    <void property="id">
+     <string>6970</string>
+    </void>
+    <void property="imagenRuta">
+     <string>ruta imagen</string>
+    </void>
+    <void property="meGustas">
+     <int>50</int>
+    </void>
+    <void property="nombre">
+     <string>Laptop</string>
+    </void>
+    <void property="precio">
+     <int>750</int>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

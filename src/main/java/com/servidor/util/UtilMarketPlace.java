@@ -35,6 +35,7 @@ public class UtilMarketPlace implements Serializable {
         this.utilPersistencia = UtilPersistencia.getInstance();
         this.utilRespaldo = UtilRespaldo.getInstance();
         this.utilSerializar = UtilSerializar.getInstance();
+        utilPersistencia.gestionarArchivosPorEstado(utilPersistencia.leerProductosDesdeArchivo(), utilPersistencia.leerSolicitudesDesdeArchivo());
 
     }
 
@@ -377,8 +378,12 @@ public void cambiarEstadoSolicitud(Solicitud solicitud, EstadoSolicitud nuevoEst
         utilLog.registrarAccion("Administrador", "Copia de modelo", "administrador");
     }
 
+
+
     public void respaldoGeneral(){
         utilRespaldo.respaldoGeneral();
     }
 
 }
+
+

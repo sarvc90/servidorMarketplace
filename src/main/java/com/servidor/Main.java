@@ -111,7 +111,7 @@ public class Main {
             System.out.println("No existe la solicitud");
 
         }
-/*  */
+/*  
         // MODIFICAR
         List<Vendedor> vendedores = marketPlace.getVendedores();
         Vendedor emisor = null;
@@ -134,34 +134,43 @@ public class Main {
             System.out.println("Solicitud de: " + s.getEmisor().getNombre() + " a " + s.getReceptor().getNombre());
         });
 
+/* */
+    //PRODUCTOS
+        //CREAR
         List<Vendedor> vendedores = marketPlace.getVendedores();
         Vendedor vendedor1 = null;
-        Vendedor receptor = null;
+        Vendedor vendedor2 = null;
 
         if (vendedores.size() > 0) {
             vendedor1 = vendedores.get(0); // Asignar el primer vendedor a emisor
         }
 
         if (vendedores.size() > 2) {
-            receptor = vendedores.get(2); // Asignar el segundo vendedor a receptor
+            vendedor2 = vendedores.get(2); // Asignar el segundo vendedor a receptor
         }
-        Producto producto1 = new Producto("111", "Laptop", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, Estado.PUBLICADO, Categoria.TECNOLOGIA);
-        Producto producto2 = new Producto(null, "Teléfono", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, Estado.VENDIDO, Categoria.TECNOLOGIA);
+
+     /* 
+        Producto producto1 = new Producto(null, "Laptop", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.PUBLICADO, Categoria.TECNOLOGIA);
+        Producto producto2 = new Producto(null, "Teléfono", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.VENDIDO, Categoria.TECNOLOGIA);
             
         try{
             System.out.println(vendedor1.getNombre());
-            //vendedor1.crearProducto(producto1);
+            vendedor1.crearProducto(producto1);
+            vendedor1.crearProducto(producto2);
         } catch(Exception e){
 
         }
+        /**/
+
+    //ELIMINAR
     try {
-        vendedor1.eliminarProducto("101"); // Usa un ID que exista
+        vendedor1.eliminarProducto("0790"); // Usa un ID que exista
         System.out.println("Producto eliminado");
     } catch (ProductoNoEncontradoException e) {
         System.out.println("Error: " + e.getMessage());
     }
 
-*/
+
         
 
 
