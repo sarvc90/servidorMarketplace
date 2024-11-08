@@ -21,6 +21,11 @@
       <string>VENDIDO</string>
      </object>
     </void>
+    <void property="fechaPublicacion">
+     <object class="java.time.LocalDateTime" method="parse">
+      <string>2024-11-07T22:19:00</string>
+     </object>
+    </void>
     <void property="id">
      <string>6970</string>
     </void>

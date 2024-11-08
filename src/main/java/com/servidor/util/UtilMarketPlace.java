@@ -220,14 +220,17 @@ public void cambiarEstadoSolicitud(Solicitud solicitud, EstadoSolicitud nuevoEst
 
 //obtiene la lista de solicitudes deserializada desde un archivo.
     public List<Solicitud> obtenerSolicitudes() {
+        utilPersistencia.gestionarArchivos(utilPersistencia.leerVendedoresDesdeArchivo(), utilPersistencia.leerProductosDesdeArchivo(), utilSerializar.deserializarSolicitudes(true));
         return utilSerializar.deserializarSolicitudes(true);
     }
 //obtiene la lista de vendedores deserializada desde un archivo.
     public List<Vendedor> obtenerVendedores() {
+        utilPersistencia.gestionarArchivos(utilSerializar.deserializarVendedores(true), utilPersistencia.leerProductosDesdeArchivo(), utilPersistencia.leerSolicitudesDesdeArchivo());
         return utilSerializar.deserializarVendedores(true);
     }
 //obtiene la lista de sproductos deserializada desde un archivo.
     public List<Producto> obtenerProductos() {
+        utilPersistencia.gestionarArchivos(utilPersistencia.leerVendedoresDesdeArchivo(), utilSerializar.deserializarProductos(true), utilPersistencia.leerSolicitudesDesdeArchivo());
         return utilSerializar.deserializarProductos(true);
     }
 
