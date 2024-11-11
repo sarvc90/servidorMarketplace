@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
-
+import java.util.Set;
 
 import com.servidor.util.UtilId;
 
@@ -21,6 +21,8 @@ public class Producto implements Serializable{
     private List<Comentario> comentarios; 
     private Estado estado;
     private Categoria categoria;
+    private Set<String> vendedoresQueDieronLike; // Para almacenar los IDs de los vendedores que han dado like
+
 
     public Producto(){
 
@@ -37,6 +39,8 @@ public class Producto implements Serializable{
         this.comentarios = new ArrayList<>();
         this.estado = estado;
         this.categoria = categoria;
+        this.vendedoresQueDieronLike = new HashSet<>(); // Inicializamos el conjunto
+
         UtilId.getInstance();
     }
 
@@ -163,7 +167,49 @@ public class Producto implements Serializable{
         return false; // Comentario no encontrado
     }
     
+    public void darLike(String vendedorId) {
+        if (vendedorId == null || vendedorId.isEmpty()) {
+            throw new IllegalArgumentException("El ID del vendedor no puede ser nulo o vacío");
+        }
+        // Verifica si el vendedor ya ha dado like
+        if (!vendedoresQueDieronLike.contains(vendedorId)) {
+            vendedoresQueDieronLike.add(vendedorId); // Agrega el ID del vendedor
+            meGustas++; // Incrementa el contador de likes
+        }
+    }
+    
+    public void quitarLike(String vendedorId) {
+        if (vendedorId == null || vendedorId.isEmpty()) {
+            throw new IllegalArgumentException("El ID del vendedor no puede ser nulo o vacío");
+        }
+        // Verifica si el vendedor está en la lista de likes
+        if (vendedoresQueDieronLike.contains(vendedorId)) {
+            vendedoresQueDieronLike.remove(vendedorId); // Elimina el ID del vendedor
+            meGustas--; // Decrementa el contador de likes
+        }
+    }
+    
+    public Set<String> getVendedoresQueDieronLike() {
+        return vendedoresQueDieronLike; // Devuelve la lista de vendedores que dieron like
+    }
+    public int contarLikes() {
+        return meGustas; // Devuelve el número total de likes
+    }
+    
+    // Método para agregar un comentario restringido a vendedores autorizados
+    public void agregarComentario(Comentario comentario, String vendedorId, Set<String> contactosVendedor) {
+    if (comentario == null) {
+        throw new IllegalArgumentException("El comentario no puede ser nulo");
+    }
+    // Verifica si el vendedor está en la lista de contactos
+    if (contactosVendedor != null && contactosVendedor.contains(vendedorId)) {
+        comentarios.add(comentario); // Agrega el comentario a la lista
+    } else {
+        throw new IllegalArgumentException("El vendedor no está autorizado para comentar");
+    }
+}
+
 }
 
 
-//Agregar LOg??
+//Agregar LOg?

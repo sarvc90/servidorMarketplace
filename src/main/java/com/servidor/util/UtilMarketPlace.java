@@ -15,6 +15,7 @@ import com.servidor.excepciones.SolicitudNoExistenteException;
 import com.servidor.excepciones.UsuarioExistenteException;
 import com.servidor.excepciones.UsuarioNoEncontradoException;
 import com.servidor.modelo.Admin;
+import com.servidor.modelo.Comentario;
 import com.servidor.modelo.EstadoSolicitud;
 import com.servidor.modelo.MarketPlace;
 import com.servidor.modelo.Producto;
@@ -318,6 +319,10 @@ public class UtilMarketPlace implements Serializable {
 
     public void respaldoGeneral(){
         utilRespaldo.respaldoGeneral();
+    }
+
+    public List<Comentario> obtenerComentariosDeProducto(Producto producto) {
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerComentariosDeProducto'");
     }
 
 }

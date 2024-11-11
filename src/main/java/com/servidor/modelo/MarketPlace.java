@@ -1,7 +1,10 @@
 package com.servidor.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.servidor.excepciones.SolicitudExistenteException;
 import com.servidor.excepciones.SolicitudNoExistenteException;
@@ -132,5 +135,49 @@ public class MarketPlace implements Serializable {
         utilMarketPlace.exportarEstadisticas(ruta, nombreUsuario, fechaInicio, fechaFin, idVendedor);
     }
 
-    // Chat?
+    public List<Vendedor> sugerirContactos(Vendedor vendedor) {
+    List<Vendedor> sugerencias = new ArrayList<>();
+    List<Vendedor> contactosDirectos = vendedor.getRedDeContactos();
+
+    // Usar un Set para evitar duplicados
+    Set<Vendedor> contactosSugeridos = new HashSet<>();
+
+    // Explorar la red de contactos de los contactos directos
+    for (Vendedor contacto : contactosDirectos) {
+        for (Vendedor contactoDeContacto : contacto.getRedDeContactos()) {
+            // Agregar solo si no es el vendedor original y no está en su lista de contactos
+            if (!contactoDeContacto.equals(vendedor) && !contactosDirectos.contains(contactoDeContacto)) {
+                contactosSugeridos.add(contactoDeContacto);
+            }
+        }
+    }
+
+    // Convertir el Set a una lista
+    sugerencias.addAll(contactosSugeridos);
+    return sugerencias;
+    }
+    public List<Comentario> obtenerComentariosDeProducto(Producto producto) {
+        // Suponiendo que el UtilMarketPlace tiene un método para obtener los comentarios de un producto
+        return utilMarketPlace.obtenerComentariosDeProducto(producto);
+    }
+    
+    public List<Comentario> filtrarComentariosPorContactos(List<Comentario> comentarios, Vendedor vendedor) {
+        List<Comentario> comentariosFiltrados = new ArrayList<>();
+        List<Vendedor> contactosDirectos = vendedor.getRedDeContactos();
+    
+        for (Comentario comentario : comentarios) {
+            // Suponiendo que el comentario tiene un método getAutor() que devuelve el vendedor que hizo el comentario
+            if (contactosDirectos.contains(comentario.getAutor())) {
+                comentariosFiltrados.add(comentario);
+            }
+        }
+    
+        return comentariosFiltrados;
+    }
+    
+    public List<Comentario> verComentariosDeContactos(Vendedor vendedor, Producto producto) {
+        List<Comentario> comentarios = obtenerComentariosDeProducto(producto);
+        return filtrarComentariosPorContactos(comentarios, vendedor);
+    }
+
 }

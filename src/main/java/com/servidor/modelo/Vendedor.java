@@ -12,6 +12,9 @@ public class Vendedor extends Persona {
     private List<Producto> publicaciones;
     private List<Vendedor> redDeContactos;
     private UtilVendedor utilVendedor;
+    private List <Integer> calificaciones; 
+    private int contadorCalificaciones; 
+    private double promedioCalificaciones; 
 
 
     public Vendedor() {
@@ -19,6 +22,9 @@ public class Vendedor extends Persona {
         this.publicaciones = new ArrayList<>(); // Inicializar como lista vacía
         this.redDeContactos = new ArrayList<>(); // Inicializar como lista vacía
         this.utilVendedor = UtilVendedor.getInstance();
+        this.calificaciones = new ArrayList<>(); // Inicializar lista de calificaciones
+        this.contadorCalificaciones = 0; // Inicializar contador de calificaciones
+        this.promedioCalificaciones = 0.0; // Inicializar promedio de calificaciones
     }
 
     public Vendedor(String id, String nombre, String apellido, String cedula, String direccion, String contraseña,
@@ -27,6 +33,9 @@ public class Vendedor extends Persona {
         this.publicaciones = (publicaciones != null) ? publicaciones : new ArrayList<>(); // Asignar lista o vacía
         this.redDeContactos = (redDeContactos != null) ? redDeContactos : new ArrayList<>(); // Asignar lista o vacía
         this.utilVendedor = UtilVendedor.getInstance();
+        this.calificaciones = new ArrayList<>(); // Inicializar lista de calificaciones
+        this.contadorCalificaciones = 0; // Inicializar contador de calificaciones
+        this.promedioCalificaciones = 0.0; // Inicializar promedio de calificaciones
         inicializarRedDeContactos(); 
     }
 
@@ -105,5 +114,35 @@ public class Vendedor extends Persona {
     public List<Solicitud> obtenerSolicitudesRechazadas(){
         return utilVendedor.obtenerSolicitudesRechazadas(this);
     }
+    public void calificar(int calificacion) {
+        if (calificacion < 1 || calificacion > 5) {
+            throw new IllegalArgumentException("La calificación debe estar entre 1 y 5.");
+        }
+        calificaciones.add(calificacion); // Agregar la calificación a la lista
+        contadorCalificaciones++; // Incrementar el contador de calificaciones
+        calcularPromedio(); // Recalcular el promedio
+    }
+    private void calcularPromedio() {
+        if (contadorCalificaciones == 0) {
+            promedioCalificaciones = 0.0; // Evitar división por cero
+        } else {
+            int suma = 0;
+            for (int calificacion : calificaciones) {
+                suma += calificacion; // Sumar todas las calificaciones
+            }
+            promedioCalificaciones = (double) suma / contadorCalificaciones; // Calcular el promedio
+        }
+    }
+    public double getPromedioCalificaciones() {
+        return promedioCalificaciones; // Devuelve el promedio de calificaciones
+    }
+    
+    public int getContadorCalificaciones() {
+        return contadorCalificaciones; // Devuelve el número total de calificaciones
+    }
+    
+    public List<Integer> getCalificaciones() {
+        return new ArrayList<>(calificaciones); // Devuelve una copia de la lista de calificaciones
+    }  
 }
 
