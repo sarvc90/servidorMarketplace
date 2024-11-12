@@ -115,5 +115,9 @@ public class Vendedor extends Persona {
     public List<Solicitud> obtenerSolicitudesRechazadas(){
         return utilVendedor.obtenerSolicitudesRechazadas(this);
     }
+
+    public List<Solicitud> obtenerSolicitudesAceptadas(){
+        return utilVendedor.obtenerSolicitudesAceptadas(this);
+    }
 }
 

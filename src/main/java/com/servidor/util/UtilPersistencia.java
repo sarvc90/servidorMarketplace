@@ -822,4 +822,27 @@ public class UtilPersistencia implements Serializable {
         gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
     }
 
+    public void agregarSolicitudAVendedor(Solicitud solicitud, Vendedor vendedor){
+        List<Vendedor> vendedores = leerVendedoresDesdeArchivo();
+        for(int i = 0; i < vendedores.size(); i++){
+            if(vendedores.get(i).getCedula().equals(vendedor.getCedula())){
+                List<Solicitud> solicitudes = vendedores.get(i).obtenerSolicitudesAceptadas();
+                solicitudes.add(solicitud);
+                List<Vendedor> redDeContactos = new ArrayList<>();
+                for (Solicitud solicitud1 : solicitudes){
+                    if(solicitud1.getEmisor().getCedula() == vendedor.getCedula()){
+                        redDeContactos.add(solicitud1.getReceptor());
+                    } else {
+                        redDeContactos.add(solicitud1.getEmisor());
+                    }
+                }
+                
+                //Obtener emisor o receptor independientemente solo que sea igual al vendedor, agregue al vendedor a una lista y ahí si set red de contactos
+                vendedores.get(i).setRedDeContactos(redDeContactos);
+                break;
+            }
+        }
+        gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
+    }
+
 }

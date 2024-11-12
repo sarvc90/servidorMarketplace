@@ -56,7 +56,7 @@ public class Main {
 
         // MODIFICAR
         try {
-            Vendedor vendedorModificado = new Vendedor(null, "Rosa", "Pérez", "12345", "dirección", "contraseña", null,
+            Vendedor vendedorModificado = new Vendedor(null, "Osvaldo", "Flores", "578", "dirección", "contraseña", null,
                     null);
             marketPlace.modificarVendedor(vendedorModificado);
         } catch (UsuarioNoEncontradoException e) {
@@ -111,8 +111,8 @@ public class Main {
             System.out.println("No existe la solicitud");
 
         }
-/*  
-        // MODIFICAR
+
+  */    // MODIFICAR
         List<Vendedor> vendedores = marketPlace.getVendedores();
         Vendedor emisor = null;
         Vendedor receptor = null;
@@ -124,9 +124,9 @@ public class Main {
         if (vendedores.size() > 1) {
             receptor = vendedores.get(1); // Asignar el segundo vendedor a receptor
         }
-        Solicitud solicitud = new Solicitud("3621", emisor, receptor, EstadoSolicitud.PENDIENTE);
-        marketPlace.cambiarEstadoSolicitud(solicitud, EstadoSolicitud.RECHAZADA, receptor);
-        System.out.println("VSolicitud modificada exitosamente.");
+        Solicitud solicitud = new Solicitud("9647", emisor, receptor, EstadoSolicitud.PENDIENTE);
+        marketPlace.cambiarEstadoSolicitud(solicitud, EstadoSolicitud.ACEPTADA, receptor);
+        System.out.println("Solicitud modificada exitosamente.");
  /* 
         // LEER
         System.out.println("Lista de solicitudes:");
@@ -134,7 +134,7 @@ public class Main {
             System.out.println("Solicitud de: " + s.getEmisor().getNombre() + " a " + s.getReceptor().getNombre());
         });
 
-/* */
+/* 
     //PRODUCTOS
         //CREAR
         List<Vendedor> vendedores = marketPlace.getVendedores();
@@ -177,15 +177,14 @@ public class Main {
         Producto productoModificado = new Producto("6970", "Teléfono", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.VENDIDO, Categoria.TECNOLOGIA);
         vendedor1.modificarProducto(productoModificado);
 
-*/
+
         // LEER
         System.out.println("Lista de productos:");
         marketPlace.obtenerProductos().forEach(s -> {
             System.out.println("Producto" + s.getNombre());
         });
-
+*/
+   
 
     }
-
-
 }

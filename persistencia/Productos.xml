@@ -4,7 +4,7 @@
   <void method="add">
    <object class="com.servidor.modelo.Producto">
     <void property="categoria">
-     <object class="java.lang.Enum" method="valueOf">
+     <object class="java.lang.Enum" id="Categoria0" method="valueOf">
       <class>com.servidor.modelo.Categoria</class>
       <string>TECNOLOGIA</string>
      </object>
@@ -16,18 +16,78 @@
      <string>descripcion</string>
     </void>
     <void property="estado">
-     <object class="java.lang.Enum" method="valueOf">
+     <object class="java.lang.Enum" id="Estado0" method="valueOf">
       <class>com.servidor.modelo.Estado</class>
       <string>VENDIDO</string>
      </object>
     </void>
-    <void property="fechaPublicacion">
-     <object class="java.time.LocalDateTime" method="parse">
-      <string>2024-11-07T22:19:00</string>
+    <void property="id">
+     <string>6970</string>
+    </void>
+    <void property="imagenRuta">
+     <string>ruta imagen</string>
+    </void>
+    <void property="meGustas">
+     <int>50</int>
+    </void>
+    <void property="nombre">
+     <string>Teléfono</string>
+    </void>
+    <void property="precio">
+     <int>750</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Producto">
+    <void property="categoria">
+     <object idref="Categoria0"/>
+    </void>
+    <void property="comentarios">
+     <object class="java.util.ArrayList"/>
+    </void>
+    <void property="descripcion">
+     <string>descripcion</string>
+    </void>
+    <void property="estado">
+     <object class="java.lang.Enum" method="valueOf">
+      <class>com.servidor.modelo.Estado</class>
+      <string>PUBLICADO</string>
      </object>
     </void>
     <void property="id">
-     <string>6970</string>
+     <string>9504</string>
+    </void>
+    <void property="imagenRuta">
+     <string>ruta imagen</string>
+    </void>
+    <void property="meGustas">
+     <int>50</int>
+    </void>
+    <void property="nombre">
+     <string>Laptop</string>
+    </void>
+    <void property="precio">
+     <int>750</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Producto">
+    <void property="categoria">
+     <object idref="Categoria0"/>
+    </void>
+    <void property="comentarios">
+     <object class="java.util.ArrayList"/>
+    </void>
+    <void property="descripcion">
+     <string>descripcion</string>
+    </void>
+    <void property="estado">
+     <object idref="Estado0"/>
+    </void>
+    <void property="id">
+     <string>6809</string>
     </void>
     <void property="imagenRuta">
      <string>ruta imagen</string>

@@ -125,6 +125,7 @@ public class MarketPlace implements Serializable {
 
     public void cambiarEstadoSolicitud(Solicitud solicitud1, EstadoSolicitud nuevoEstado, Vendedor vendedor) {
         utilMarketPlace.cambiarEstadoSolicitud(solicitud1, nuevoEstado, vendedor);
+        
     }
 
     public void exportarEstadisticas(String ruta, String nombreUsuario, String fechaInicio, String fechaFin,

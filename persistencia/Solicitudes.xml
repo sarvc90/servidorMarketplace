@@ -28,7 +28,7 @@
     <void property="estado">
      <object class="java.lang.Enum" method="valueOf">
       <class>com.servidor.modelo.EstadoSolicitud</class>
-      <string>PENDIENTE</string>
+      <string>ACEPTADA</string>
      </object>
     </void>
     <void property="id">

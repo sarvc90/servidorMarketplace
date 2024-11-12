@@ -177,6 +177,8 @@ public class UtilMarketPlace implements Serializable {
 public void cambiarEstadoSolicitud(Solicitud solicitud, EstadoSolicitud nuevoEstado, Vendedor vendedor) {
     // Cambiar estado en la persistencia
     utilPersistencia.cambiarEstadoSolicitud(solicitud.getId(), nuevoEstado, vendedor);
+
+    utilPersistencia.agregarSolicitudAVendedor(solicitud, vendedor);
     
     // Actualizar la serialización
     utilSerializar.actualizarSerializacionSolicitudes();
