@@ -1,3 +1,0 @@
-6970%Teléfono%descripcion%null%ruta imagen%750%50%%VENDIDO%TECNOLOGIA
-9504%Laptop%descripcion%null%ruta imagen%750%50%%PUBLICADO%TECNOLOGIA
-6809%Teléfono%descripcion%null%ruta imagen%750%50%%VENDIDO%TECNOLOGIA

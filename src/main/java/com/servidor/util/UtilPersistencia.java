@@ -11,8 +11,12 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.OptionalDouble; // Para el uso de OptionalDouble
+import java.util.Set;
 
 import com.servidor.modelo.Categoria;
 import com.servidor.modelo.Comentario;
@@ -26,6 +30,7 @@ public class UtilPersistencia implements Serializable {
     private static UtilPersistencia instancia;
     private UtilProperties utilProperties;
     private UtilLog utilLog;
+    private List<Vendedor> listaVendedoresCache = new ArrayList<>();
 
     // se crea la unica instancia de la clase
     private UtilPersistencia() {
@@ -116,30 +121,44 @@ public class UtilPersistencia implements Serializable {
     // Guarda la información de un vendedor en un archivo de texto, incluyendo sus
     // publicaciones y contactos
     public void guardarVendedorEnArchivo(Vendedor vendedor) {
+        if (vendedor == null) {
+            utilLog.escribirLog("El vendedor es null, no se puede guardar.", Level.SEVERE);
+            return; // Salir del método si el vendedor es null
+        }
+
         String rutaVendedores = utilProperties.obtenerPropiedad("rutaVendedores.txt");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaVendedores, true))) {
             // Manejar publicaciones
             String publicacionesStr = Optional.ofNullable(vendedor.getPublicaciones())
                     .map(publicaciones -> publicaciones.stream()
-                            .map(Producto::getId)
-                            .reduce((p1, p2) -> p1 + "," + p2).orElse(""))
-                    .orElse("");
+                            .filter(Objects::nonNull) // Filtrar elementos nulos
+                            .map(Producto::getId) // Asegúrate de que Producto tenga el método getId()
+                            .collect(Collectors.joining(",")) // Usar joining para crear una cadena
+                    ).orElse("");
 
             // Manejar contactos
             String contactosStr = Optional.ofNullable(vendedor.getRedDeContactos())
                     .map(contactos -> contactos.stream()
-                            .map(Vendedor::getId)
-                            .reduce((c1, c2) -> c1 + "," + c2).orElse(""))
-                    .orElse("");
+                            .filter(Objects::nonNull) // Filtrar elementos nulos
+                            .map(Vendedor::getCedula) // Cambiar a getCedula si es necesario
+                            .collect(Collectors.joining(",")) // Usar joining para crear una cadena
+                    ).orElse("");
 
-            writer.write(vendedor.getId() + "%" + vendedor.getNombre() + "%" + vendedor.getApellido() + "%"
-                    + vendedor.getCedula() + "%" + vendedor.getDireccion() + "%" + vendedor.getContraseña() + "%"
-                    + publicacionesStr + "%" + contactosStr + "%");
+            // Manejar calificaciones
+            String calificacionesStr = Optional.ofNullable(vendedor.getCalificaciones())
+                    .map(calificaciones -> calificaciones.stream()
+                            .filter(Objects::nonNull) // Filtrar elementos nulos
+                            .map(String::valueOf) // Asegúrate de que calificaciones sean convertibles a String
+                            .collect(Collectors.joining(",")) // Usar joining para crear una cadena
+                    ).orElse("");
+
+            // Escribir en el archivo
+            writer.write(vendedor.getId() + "%" + vendedor.getNombre() + "%" + vendedor.getApellido() + "%" +
+                    vendedor.getCedula() + "%" + vendedor.getDireccion() + "%" + vendedor.getContraseña() + "%" +
+                    publicacionesStr + "%" + contactosStr + "%" + calificacionesStr);
             writer.newLine();
-            utilLog.escribirLog("Vendedor guardado exitosamente: " + vendedor, Level.INFO);
         } catch (IOException e) {
-            // Si ocurre un error al guardar, se registra en el log de errores.
-            utilLog.escribirLog("Error al guardar el vendedor: " + vendedor, Level.SEVERE);
+            utilLog.escribirLog("Error al guardar el vendedor en el archivo: " + e.getMessage(), Level.SEVERE);
         }
     }
 
@@ -155,13 +174,18 @@ public class UtilPersistencia implements Serializable {
                 .map(Comentario::toString)
                 .collect(Collectors.toList());
         String comentariosString = String.join(";", comentariosStrings);
+        // Manejar vendedores que dieron like
+        String vendedoreslikeStr = Optional.ofNullable(producto.getVendedoresQueDieronLike())
+                .map(vendedores -> vendedores.stream()
+                        .reduce((c1, c2) -> c1 + "," + c2).orElse(""))
+                .orElse("");
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaProductos, true))) { // 'true' para añadir al
                                                                                                 // final del archivo
             writer.write(producto.getId() + "%" + producto.getNombre() + "%" + producto.getDescripcion() + "%"
                     + producto.getFechaPublicacion() + "%" + producto.getImagenRuta() + "%" + producto.getPrecio() + "%"
                     + producto.getMeGustas() + "%" + comentariosString + "%" + producto.getEstado() + "%"
-                    + producto.getCategoria());
+                    + producto.getCategoria() + "%" + vendedoreslikeStr);
             writer.newLine();
             utilLog.escribirLog("Producto guardado exitosamente: " + producto, Level.INFO);
         } catch (IOException e) {
@@ -251,6 +275,7 @@ public class UtilPersistencia implements Serializable {
     // LEER
 
     public List<Vendedor> leerVendedoresDesdeArchivo() {
+        listaVendedoresCache.clear(); // Limpiar la lista anterior
         List<Vendedor> listaVendedores = new ArrayList<>();
         String rutaVendedores = utilProperties.obtenerPropiedad("rutaVendedores.txt");
         utilLog.logInfo("Ruta de vendedores: " + rutaVendedores);
@@ -264,12 +289,21 @@ public class UtilPersistencia implements Serializable {
             String linea;
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split("%");
+
+                // Validar el número de campos en 'datos'
+                if (datos.length < 6) {
+                    utilLog.escribirLog("Formato incorrecto en la línea: " + linea, Level.WARNING);
+                    continue; // Saltar esta línea si no tiene el formato correcto
+                }
+
                 List<Producto> publicaciones = new ArrayList<>();
-                if (datos.length > 6) {
-                    String[] idsPublicaciones = datos[6].split(",");
+                if (datos.length > 8) {
+                    String[] idsPublicaciones = datos[8].split(",");
                     for (String id : idsPublicaciones) {
                         Producto producto = buscarProductoPorId(id);
-                        publicaciones.add(producto);
+                        if (producto != null) { // Verificar que el producto no sea nulo
+                            publicaciones.add(producto);
+                        }
                     }
                 }
 
@@ -278,8 +312,45 @@ public class UtilPersistencia implements Serializable {
                     String[] idsContactos = datos[7].split(",");
                     for (String cedula : idsContactos) {
                         Vendedor contacto = buscarVendedorPorCedula(cedula);
-                        contactos.add(contacto);
+                        if (contacto != null) { // Verificar que el contacto no sea nulo
+                            contactos.add(contacto);
+                        }
                     }
+                }
+
+                // Manejar calificaciones
+                List<Integer> calificaciones = new ArrayList<>();
+                if (datos.length > 8 && !datos[8].isEmpty()) { // Asegurarse de que existe el índice 8
+                    String[] calificacionesArray = datos[8].split(",");
+                    for (String calificacionStr : calificacionesArray) {
+                        try {
+                            int calificacion = Integer.parseInt(calificacionStr);
+                            calificaciones.add(calificacion);
+                        } catch (NumberFormatException e) {
+                            utilLog.escribirLog(
+                                    "Error al convertir calificación: " + calificacionStr + " en la línea: " + linea,
+                                    Level.WARNING);
+                        }
+                    }
+                }
+
+                // Promedio de calificaciones
+                double promedioCalificaciones = 0;
+                int contadorCalificaciones = 0;
+
+                if (!calificaciones.isEmpty()) {
+                    int suma = 0; // Inicializa la suma
+                    // Sumar todas las calificaciones
+                    for (int calificacion : calificaciones) {
+                        suma += calificacion; // Sumar cada calificación
+                    }
+                    // Calcular el promedio
+                    promedioCalificaciones = (double) suma / calificaciones.size(); // Convertir a double para obtener
+                                                                                    // un promedio correcto
+                    contadorCalificaciones = calificaciones.size(); // Contar las calificaciones válidas
+                } else {
+                    promedioCalificaciones = 0.0; // Si no hay calificaciones, el promedio es 0
+                    contadorCalificaciones = 0; // No hay calificaciones, así que el contador es 0
                 }
 
                 Vendedor vendedor = new Vendedor(
@@ -290,9 +361,13 @@ public class UtilPersistencia implements Serializable {
                         datos[4], // Direccion
                         datos[5], // Contraseña
                         publicaciones, // Publicaciones
-                        contactos // Red de contactos
+                        contactos, // Red de contactos
+                        calificaciones, // Calificaciones
+                        contadorCalificaciones, // Contador de calificaciones
+                        promedioCalificaciones // Promedio de calificaciones
                 );
                 listaVendedores.add(vendedor);
+                listaVendedoresCache.add(vendedor);
             }
             utilLog.escribirLog("Vendedores leídos desde el archivo correctamente.", Level.INFO);
         } catch (IOException e) {
@@ -301,6 +376,7 @@ public class UtilPersistencia implements Serializable {
         return listaVendedores;
     }
 
+    // Método para leer productos desde archivo
     // Método para leer productos desde archivo
     public List<Producto> leerProductosDesdeArchivo() {
         List<Producto> listaProductos = new ArrayList<>();
@@ -311,7 +387,7 @@ public class UtilPersistencia implements Serializable {
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split("%");
                 // Verificar que el array tiene suficientes elementos
-                if (datos.length < 10) {
+                if (datos.length < 11) {
                     utilLog.escribirLog("Línea mal formada en el archivo: " + linea, Level.WARNING);
                     continue; // Saltar a la siguiente línea
                 }
@@ -335,6 +411,24 @@ public class UtilPersistencia implements Serializable {
                                                              // Comentario
                                 .collect(Collectors.toList());
 
+                // Manejar vendedores que dieron like
+                Set<String> vendedoresQueDieronLike = Optional.ofNullable(datos[10])
+                        .filter(vendedoresStr -> !vendedoresStr.isEmpty())
+                        .map(vendedoresStr -> new HashSet<>(Arrays.asList(vendedoresStr.split(","))))
+                        .orElse(new HashSet<>());
+
+                // Manejar la conversión de Estado y Categoria con manejo de errores
+                Estado estado;
+                Categoria categoria;
+                try {
+                    estado = Estado.valueOf(datos[8]); // Convertir a Enum Estado
+                    categoria = Categoria.valueOf(datos[9]); // Convertir a Enum Categoria
+                } catch (IllegalArgumentException e) {
+                    utilLog.escribirLog("Error al convertir Estado o Categoria en la línea: " + linea, Level.WARNING);
+                    continue; // Saltar a la siguiente línea si hay un error de conversión
+                }
+
+                // Crear el objeto Producto
                 Producto producto = new Producto(
                         datos[0], // ID
                         datos[1], // Nombre
@@ -344,16 +438,19 @@ public class UtilPersistencia implements Serializable {
                         precio, // Precio
                         meGustas, // Me Gustas
                         comentarios, // Comentarios
-                        Estado.valueOf(datos[8]), // Estado (convertido a Enum)
-                        Categoria.valueOf(datos[9]) // Categoria (convertido a Enum)
-                );
+                        estado, // Estado (convertido a Enum)
+                        categoria, // Categoria (convertido a Enum)
+                        vendedoresQueDieronLike); // Vendedores que dieron like
+
+                // Agregar el producto a la lista
                 listaProductos.add(producto);
             }
             utilLog.escribirLog("Productos leídos desde el archivo correctamente.", Level.INFO);
         } catch (IOException e) {
             utilLog.escribirLog("Error al leer productos desde el archivo: " + rutaProductos, Level.SEVERE);
         }
-        return listaProductos;
+
+        return listaProductos; // Retornar la lista de productos
     }
 
     // Método para leer solicitudes desde archivo
@@ -518,13 +615,12 @@ public class UtilPersistencia implements Serializable {
 
     // Método para buscar un vendedor por cedula
     public Vendedor buscarVendedorPorCedula(String cedula) {
-        List<Vendedor> listaVendedores = leerVendedoresDesdeArchivo();
-        for (Vendedor vendedor : listaVendedores) {
+        for (Vendedor vendedor : listaVendedoresCache) {
             if (vendedor.getCedula().equals(cedula)) {
-                return vendedor; // Retorna el vendedor encontrado
+                return vendedor; // Retornar el vendedor encontrado
             }
         }
-        return null; // Retorna null si no se encuentra el vendedor
+        return null; // Retornar null si no se encuentra
     }
 
     public Vendedor buscarVendedorPorId(String id) {
@@ -822,22 +918,23 @@ public class UtilPersistencia implements Serializable {
         gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
     }
 
-    public void agregarSolicitudAVendedor(Solicitud solicitud, Vendedor vendedor){
+    public void agregarSolicitudAVendedor(Solicitud solicitud, Vendedor vendedor) {
         List<Vendedor> vendedores = leerVendedoresDesdeArchivo();
-        for(int i = 0; i < vendedores.size(); i++){
-            if(vendedores.get(i).getCedula().equals(vendedor.getCedula())){
+        for (int i = 0; i < vendedores.size(); i++) {
+            if (vendedores.get(i).getCedula().equals(vendedor.getCedula())) {
                 List<Solicitud> solicitudes = vendedores.get(i).obtenerSolicitudesAceptadas();
                 solicitudes.add(solicitud);
                 List<Vendedor> redDeContactos = new ArrayList<>();
-                for (Solicitud solicitud1 : solicitudes){
-                    if(solicitud1.getEmisor().getCedula() == vendedor.getCedula()){
+                for (Solicitud solicitud1 : solicitudes) {
+                    if (solicitud1.getEmisor().getCedula() == vendedor.getCedula()) {
                         redDeContactos.add(solicitud1.getReceptor());
                     } else {
                         redDeContactos.add(solicitud1.getEmisor());
                     }
                 }
-                
-                //Obtener emisor o receptor independientemente solo que sea igual al vendedor, agregue al vendedor a una lista y ahí si set red de contactos
+
+                // Obtener emisor o receptor independientemente solo que sea igual al vendedor,
+                // agregue al vendedor a una lista y ahí si set red de contactos
                 vendedores.get(i).setRedDeContactos(redDeContactos);
                 break;
             }

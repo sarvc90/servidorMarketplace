@@ -27,12 +27,11 @@ public class Main {
         MarketPlace marketPlace = utilMarketPlace.getMarketPlace();
 
         // Vendedor
-/* 
+ 
         // CREAR
         try {
 
-            Vendedor nuevoVendedor = new Vendedor(null, "Maria", "Arias", "579", "Cll3-02", "contraseña", null,
-                    null);
+            Vendedor nuevoVendedor = new Vendedor(null, "Ruperto", "Castiblanco", "777", "Cll3-2050", "contraseña", null, null, null, 0, 0);
             marketPlace.crearVendedor(nuevoVendedor);
             System.out.println("Vendedor creado exitosamente.");
         } catch (UsuarioExistenteException e) {
@@ -112,7 +111,7 @@ public class Main {
 
         }
 
-  */    // MODIFICAR
+      // MODIFICAR
         List<Vendedor> vendedores = marketPlace.getVendedores();
         Vendedor emisor = null;
         Vendedor receptor = null;
@@ -149,9 +148,9 @@ public class Main {
             vendedor2 = vendedores.get(2); // Asignar el segundo vendedor a receptor
         }
 
-     /* 
-        Producto producto1 = new Producto(null, "Laptop", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.PUBLICADO, Categoria.TECNOLOGIA);
-        Producto producto2 = new Producto(null, "Teléfono", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.VENDIDO, Categoria.TECNOLOGIA);
+     
+        Producto producto1 = new Producto(null, "Laptop", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.PUBLICADO, Categoria.TECNOLOGIA,null);
+        Producto producto2 = new Producto(null, "Teléfono", "descripcion", "2024-10-30T10:15:30", "ruta imagen", 750, 50, null, Estado.VENDIDO, Categoria.TECNOLOGIA,null);
             
         try{
             System.out.println(vendedor1.getNombre());
@@ -183,8 +182,8 @@ public class Main {
         marketPlace.obtenerProductos().forEach(s -> {
             System.out.println("Producto" + s.getNombre());
         });
+*//*
+    utilMarketPlace.exportarEstadisticas("/persistencia/log","Usuario ejemplo", "01/01/2024", "31/12/2024", "4285");
 */
-   
-
     }
 }
