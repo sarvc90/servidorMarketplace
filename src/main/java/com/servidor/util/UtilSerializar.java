@@ -12,6 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import com.servidor.modelo.MarketPlace;
 import com.servidor.modelo.Producto;
+import com.servidor.modelo.Reseña;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 
@@ -84,7 +85,7 @@ public class UtilSerializar implements Serializable {
         }
     }
 
-    // metodo que carga los obe
+    // metodo que carga los obj
     public MarketPlace cargarModeloSerializadoDesdeXML() {
         lock.lock();
         try {
@@ -160,6 +161,41 @@ public class UtilSerializar implements Serializable {
         }
     }
 
+    public void actualizarSerializacionReseñas() {
+        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
+        lock.lock();
+        try {
+            utilLog.escribirLog("Leyendo reseñas desde archivo", Level.INFO);
+            List<Reseña> listaReseñas = utilPersistencia.leerReseñasDesdeArchivo(listaVendedores);
+            utilLog.escribirLog("Reseñas leídas: " + listaReseñas.size(), Level.INFO);
+
+            if (listaReseñas.isEmpty()) {
+                String rutaArchivoXML = "persistencia/Reseñas.xml";
+                String rutaArchivoBin = "persistencia/Reseñas.bin";
+                utilLog.escribirLog("Intentando borrar contenido del archivo: " + rutaArchivoXML + " y " + rutaArchivoBin, Level.INFO);
+                utilPersistencia.borrarContenidoArchivo(rutaArchivoXML);
+                utilPersistencia.borrarContenidoArchivo(rutaArchivoBin);
+                utilLog.escribirLog("La lista de reseñas está vacía. Se ha borrado el contenido del archivo XML.", Level.INFO);
+            } else {
+                // Serializar la lista de reseñas
+                utilLog.escribirLog("Serializando lista de reseñas (primera vez)", Level.INFO);
+                serializarLista(listaReseñas, false);
+                utilLog.escribirLog("Primera serialización completada", Level.INFO);
+
+                utilLog.escribirLog("Serializando lista de reseñas (segunda vez)", Level.INFO);
+                serializarLista(listaReseñas, true);
+                utilLog.escribirLog("Segunda serialización completada", Level.INFO);
+
+                utilLog.escribirLog("Serialización de reseñas actualizada correctamente.", Level.INFO);
+            }
+        } catch (Exception e) {
+            utilLog.escribirLog("Error en actualizarSerializacionReseñas: " + e.getMessage(), Level.SEVERE);
+            throw new RuntimeException("Error en actualizar serialización de reseñas", e);
+        } finally {
+            lock.unlock();
+        }
+    }
+
     public void serializarLista(List<?> lista, boolean esXML) {
         lock.lock();
         try {
@@ -179,6 +215,9 @@ public class UtilSerializar implements Serializable {
             } else if (primerElemento instanceof Solicitud) {
                 ruta = esXML ? utilProperties.obtenerPropiedad("rutaSolicitudes.xml")
                         : utilProperties.obtenerPropiedad("rutaSolicitudes.bin");
+            } else if(primerElemento instanceof Reseña) {
+                ruta = esXML ? utilProperties.obtenerPropiedad("rutaResenas.xml")
+                        : utilProperties.obtenerPropiedad("rutaResenas.bin");
             } else {
                 utilLog.escribirLog("No se puede serializar la lista, tipo de objeto desconocido.", Level.SEVERE);
                 return;
@@ -290,4 +329,36 @@ public class UtilSerializar implements Serializable {
         }
     }
     
+    // Método para deserializar reseñas
+    public List<Reseña> deserializarReseñas(boolean esXML) {
+        lock.lock();
+        try {
+            String ruta = esXML ? utilProperties.obtenerPropiedad("rutaReseñas.xml")
+                                : utilProperties.obtenerPropiedad("rutaReseñas.bin");
+
+            List<Object> lista = new ArrayList<>();
+            DeserializarTarea tarea = new DeserializarTarea(ruta, esXML, lista);
+            tarea.start();
+            tarea.join(); // Esperar a que la tarea termine
+
+            List<Reseña> reseñas = new ArrayList<>();
+            for (Object obj : lista) {
+                if (obj instanceof Reseña) {
+                    reseñas.add((Reseña) obj);
+                } else {
+                    utilLog.escribirLog("Objeto deserializado no es una instancia de Reseña: " + obj.getClass().getName(), Level.WARNING);
+                }
+            }
+            return reseñas;
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            utilLog.escribirLog("Error al esperar la deserialización: " + e.getMessage(), Level.SEVERE);
+            return Collections.emptyList();
+        } catch (Exception e) {
+            utilLog.escribirLog("Error inesperado durante la deserialización: " + e.getMessage(), Level.SEVERE);
+            return Collections.emptyList();
+        } finally {
+            lock.unlock();
+        }
+    }
 }

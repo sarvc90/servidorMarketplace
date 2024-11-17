@@ -38282,3 +38282,15 @@ nov 16, 2024 7:41:51 P. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Archivos gestionados correctamente
 nov 16, 2024 7:41:51 P. M. com.servidor.util.UtilLog escribirLog
 GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 17, 2024 5:29:55 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 17, 2024 5:29:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: AutorID
+nov 17, 2024 5:29:56 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: DueñoID
+nov 17, 2024 5:31:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 17, 2024 5:31:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: AutorID
+nov 17, 2024 5:31:16 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: DueñoID

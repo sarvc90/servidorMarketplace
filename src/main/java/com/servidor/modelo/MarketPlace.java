@@ -20,12 +20,13 @@ public class MarketPlace implements Serializable {
     private List<Producto> productos;
     private Admin administrador;
     private UtilMarketPlace utilMarketPlace;
-    //private List<Reseña> reseñas;
+    private List<Reseña> reseñas;
 
     // Constructor
 public MarketPlace(UtilMarketPlace utilMarketPlace) {
     this.administrador = new Admin("1", "Juana", "Arias", "123", "direccion", "contraseña");
     this.utilMarketPlace = utilMarketPlace;
+    this.reseñas = new ArrayList<Reseña>();
 
     // Inicializar vendedores
     List<Vendedor> vendedoresTemp = utilMarketPlace.obtenerVendedores();
@@ -39,10 +40,14 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
     List<Producto> productosTemp = utilMarketPlace.obtenerProductos();
     this.productos = (productosTemp != null && !productosTemp.isEmpty()) ? productosTemp : new ArrayList<>();
 
-    //List<Reseña> reseñasTemp = utilMarketPlace.obtenerReseñas();
-    //this.reseñas = (reseñasTemp != null && !reseñasTemp.isEmpty()) ? reseñasTemp: new ArrayList<>();
+    List<Reseña> reseñasTemp = utilMarketPlace.obtenerReseñas();
+    this.reseñas = (reseñasTemp != null && !reseñasTemp.isEmpty()) ? reseñasTemp: new ArrayList<>();
 
     //LLAMAR METODO DE SERIALIZAR MODELO
+}
+
+public List<Reseña> getReseñas() {
+    return this.reseñas; 
 }
 
     public void setUtilMarketPlace(UtilMarketPlace utilMarketPlace) {

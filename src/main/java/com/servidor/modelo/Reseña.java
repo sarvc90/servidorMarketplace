@@ -2,6 +2,7 @@ package com.servidor.modelo;
 
 import java.io.Serializable;
 
+
 import com.servidor.util.UtilId;
 
 public class Reseña implements Serializable{

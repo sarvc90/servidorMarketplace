@@ -6,21 +6,25 @@ import com.servidor.modelo.Estado;
 import com.servidor.modelo.EstadoSolicitud;
 import com.servidor.modelo.MarketPlace;
 import com.servidor.modelo.Producto;
+import com.servidor.modelo.Reseña;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 import com.servidor.util.UtilMarketPlace;
 import com.servidor.util.UtilSerializar;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import com.servidor.excepciones.ProductoNoEncontradoException;
+import com.servidor.excepciones.ReseñaExistenteException;
 import com.servidor.excepciones.SolicitudExistenteException;
 import com.servidor.excepciones.SolicitudNoExistenteException;
+import com.servidor.excepciones.ReseñaNoEncontradaException;
 import com.servidor.excepciones.UsuarioExistenteException;
 import com.servidor.excepciones.UsuarioNoEncontradoException;
 
 public class Main {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         UtilMarketPlace utilMarketPlace = UtilMarketPlace.getInstance();
         UtilSerializar utilSerializar = UtilSerializar.getInstance();
 
@@ -37,6 +41,57 @@ public class Main {
         } catch (UsuarioExistenteException e) {
             System.out.println("El vendedor ya existe.");
         }
+     */
+
+
+    public static void main(String[] args) {
+        // Crear una lista de publicaciones (puede estar vacía inicialmente)
+        List<Producto> publicaciones = new ArrayList<>();
+
+        // Crear una lista de contactos (puede estar vacía inicialmente)
+        List<Vendedor> redDeContactos = new ArrayList<>();
+
+        // Crear una lista de calificaciones (puede estar vacía inicialmente)
+        List<Integer> calificaciones = new ArrayList<>();
+
+        // Crear instancias de Vendedor con todos los parámetros requeridos
+        Vendedor autor = new Vendedor(
+            "AutorID", 
+            "Nombre del Autor", 
+            "Apellido del Autor", 
+            "123456789", // Cédula
+            "Dirección del Autor", 
+            "ContraseñaSegura", 
+            publicaciones, 
+            redDeContactos, 
+            calificaciones, 
+            0, // Contador de calificaciones
+            0.0 // Promedio de calificaciones
+        );
+
+        Vendedor dueño = new Vendedor(
+            "DueñoID", 
+            "Nombre del Dueño", 
+            "Apellido del Dueño", 
+            "987654321", // Cédula
+            "Dirección del Dueño", 
+            "ContraseñaSegura", 
+            publicaciones, 
+            redDeContactos, 
+            calificaciones, 
+            0, // Contador de calificaciones
+            0.0 // Promedio de calificaciones
+        );
+
+        // Crear una reseña (asumiendo que tienes una clase Reseña)
+        Reseña reseña = new Reseña("1", autor, dueño, "muy bien todo.");
+
+        // Imprimir la reseña
+        System.out.println("Reseña creada: " + reseña.getTexto());
+    }
+
+        
+
 /* 
         // ELIMINAR
         try {
@@ -186,4 +241,4 @@ public class Main {
     utilMarketPlace.exportarEstadisticas("/persistencia/log","Usuario ejemplo", "01/01/2024", "31/12/2024", "4285");
 */
     }
-}
+

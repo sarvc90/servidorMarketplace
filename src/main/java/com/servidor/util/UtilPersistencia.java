@@ -25,6 +25,7 @@ import com.servidor.modelo.EstadoSolicitud;
 import com.servidor.modelo.Producto;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
+import com.servidor.modelo.Reseña;
 
 
 public class UtilPersistencia implements Serializable {
@@ -32,6 +33,9 @@ public class UtilPersistencia implements Serializable {
     private UtilProperties utilProperties;
     private UtilLog utilLog;
     private List<Vendedor> listaVendedoresCache = new ArrayList<>();
+    private List<Reseña> listaReseñas = new ArrayList<>();
+    private List<Producto> listaProductos = new ArrayList<>();
+    private List<Solicitud> listaSolicitudes = new ArrayList<>();
 
     // se crea la unica instancia de la clase
     private UtilPersistencia() {
@@ -39,15 +43,24 @@ public class UtilPersistencia implements Serializable {
         this.utilLog = UtilLog.getInstance();
     }
 
+    public UtilPersistencia(List<Reseña> listaReseñas) {
+        this.listaReseñas = listaReseñas;
+    }
+    public List<Vendedor> getListaVendedoresCache() {
+        return listaVendedoresCache; // Método para acceder a la lista
+    }
+
     // metodo que se encarga de gestionar la escritura de las listas de los obj
     public void gestionarArchivos(List<Vendedor> listaVendedores, List<Producto> listaProductos,
-            List<Solicitud> listaSolicitudes) {
+            List<Solicitud> listaSolicitudes, List<Reseña> listaReseñas) {
         String rutaVendedores = utilProperties.obtenerPropiedad("rutaVendedores.txt");
         String rutaProductos = utilProperties.obtenerPropiedad("rutaProductos.txt");
         String rutaSolicitudes = utilProperties.obtenerPropiedad("rutaSolicitudes.txt");
+        String rutaReseñas = utilProperties.obtenerPropiedad("rutaReseñas.txt");
         escribirListaEnArchivo(rutaVendedores, listaVendedores);
         escribirListaEnArchivo(rutaProductos, listaProductos);
         escribirListaEnArchivo(rutaSolicitudes, listaSolicitudes);
+        escribirListaEnArchivo(rutaReseñas, listaReseñas);
         utilLog.escribirLog("Archivos gestionados correctamente", Level.INFO);
     }
 
@@ -91,6 +104,9 @@ public class UtilPersistencia implements Serializable {
                 } else if (objeto instanceof Solicitud) {
                     Solicitud solicitud = (Solicitud) objeto;
                     guardarSolicitudEnArchivo(solicitud);
+                } else if (objeto instanceof Reseña) {
+                    Reseña reseña = (Reseña) objeto;
+                    guardarReseñaEnArchivo(reseña);
                 } else {
                     utilLog.escribirLog("Tipo de objeto desconocido: " + objeto.getClass().getName(), Level.WARNING);
                 }
@@ -119,7 +135,7 @@ public class UtilPersistencia implements Serializable {
         }
     }
 
-    // Guarda la información de un vendedor en un archivo de texto, incluyendo sus
+    // Guardar la información de un vendedor en un archivo de texto, incluyendo sus
     // publicaciones y contactos
     public void guardarVendedorEnArchivo(Vendedor vendedor) {
         if (vendedor == null) {
@@ -191,6 +207,30 @@ public class UtilPersistencia implements Serializable {
             utilLog.escribirLog("Producto guardado exitosamente: " + producto, Level.INFO);
         } catch (IOException e) {
             utilLog.escribirLog("Error al guardar el producto: " + producto, Level.SEVERE);
+        }
+    }
+    
+    // Guardar la información de una reseña en un archivo de texto
+    public void guardarReseñaEnArchivo(Reseña reseña) {
+      if (reseña == null) {
+        utilLog.escribirLog("La reseña es null, no se puede guardar.", Level.SEVERE);
+        return; // Salir del método si la reseña es null
+      }
+
+    String rutaReseñas = utilProperties.obtenerPropiedad("rutaReseñas.txt");
+      try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaReseñas, true))) {
+          //  los datos de la reseña
+          String idReseña = reseña.getId(); // Asegúrate de que Reseña tenga el método getId()
+         String autorId = reseña.getAutor().getId(); //  el ID del autor
+         String dueñoId = reseña.getDueño().getId(); // Obtener el ID del dueño
+         String texto = reseña.getTexto(); // Asegúrate de que Reseña tenga el método getTexto()
+
+         // Escribir en el archivo
+         writer.write(idReseña + "%" + autorId + "%" + dueñoId + "%" + texto);
+         writer.newLine();
+         utilLog.escribirLog("Reseña guardada exitosamente: " + reseña, Level.INFO);
+        }  catch (IOException e) {
+          utilLog.escribirLog("Error al guardar la reseña en el archivo: " + e.getMessage(), Level.SEVERE);
         }
     }
 
@@ -377,8 +417,7 @@ public class UtilPersistencia implements Serializable {
         return listaVendedores;
     }
 
-    // Método para leer productos desde archivo
-    // Método para leer productos desde archivo
+    //leer productos desde archivo
     public List<Producto> leerProductosDesdeArchivo() {
         List<Producto> listaProductos = new ArrayList<>();
         String rutaProductos = utilProperties.obtenerPropiedad("rutaProductos.txt");
@@ -454,7 +493,7 @@ public class UtilPersistencia implements Serializable {
         return listaProductos; // Retornar la lista de productos
     }
 
-    // Método para leer solicitudes desde archivo
+    // leer solicitudes desde archivo
     public List<Solicitud> leerSolicitudesDesdeArchivo() {
         List<Solicitud> listaSolicitudes = new ArrayList<>();
         String rutaSolicitudes = utilProperties.obtenerPropiedad("rutaSolicitudes.txt");
@@ -518,6 +557,48 @@ public class UtilPersistencia implements Serializable {
         return listaSolicitudes;
     }
 
+    // leer reseñas desde archivo
+    public List<Reseña> leerReseñasDesdeArchivo(List<Vendedor> listaVendedores) {
+        List<Reseña> listaReseñas = new ArrayList<>();
+        String rutaReseñas = utilProperties.obtenerPropiedad("rutaReseñas.txt");
+    
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaReseñas))) {
+            String linea; 
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split("%");
+                if (datos.length < 4) { // Asegurarse de que hay suficientes datos
+                    utilLog.escribirLog("Formato incorrecto en la línea: " + linea, Level.WARNING);
+                    continue; // Saltar esta línea si no tiene el formato correcto
+                }
+                String id = datos[0];
+                Vendedor autor = obtenerVendedorPorId(datos[1], listaVendedores); // Método para obtener Vendedor por ID
+                Vendedor dueño = obtenerVendedorPorId(datos[2], listaVendedores); // Método para obtener Vendedor por ID
+                String texto = datos[3];
+    
+                if (autor != null && dueño != null) { // Asegurarse de que ambos vendedores existen
+                    Reseña reseña = new Reseña(id, autor, dueño, texto); // Crear la reseña
+                    listaReseñas.add(reseña);
+                } else {
+                    utilLog.escribirLog("No se pudo encontrar el autor o dueño para la reseña: " + linea, Level.WARNING);
+                }
+            }
+            utilLog.escribirLog("Reseñas leídas desde el archivo correctamente.", Level.INFO);
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al leer reseñas desde el archivo: " + rutaReseñas, Level.SEVERE);
+        }
+        return listaReseñas; // Retornar la lista de reseñas
+    }
+    
+    // Método para obtener un Vendedor por su ID
+    private Vendedor obtenerVendedorPorId(String id, List<Vendedor> listaVendedores) {
+        for (Vendedor vendedor : listaVendedores) {
+            if (vendedor.getId().equals(id)) {
+                return vendedor; // Retorna el vendedor si se encuentra
+            }
+        }
+        return null; // Retorna null si no se encuentra
+    }
+
     // Método para leer todas las solicitudes
     public List<Solicitud> leerTodasLasSolicitudes() {
         return leerSolicitudesDesdeArchivo();
@@ -556,7 +637,7 @@ public class UtilPersistencia implements Serializable {
             return;
         }
 
-        gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes);
+        gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas);
         utilLog.escribirLog("Lista de solicitudes guardada con éxito", Level.INFO);
     }
 
@@ -569,7 +650,7 @@ public class UtilPersistencia implements Serializable {
                 break;
             }
         }
-        gestionarArchivos(listaVendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
+        gestionarArchivos(listaVendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo(), listaReseñas);
         utilLog.escribirLog("Vendedor modificado exitosamente: " + vendedorModificado, Level.INFO);
     }
 
@@ -582,8 +663,29 @@ public class UtilPersistencia implements Serializable {
                 break;
             }
         }
-        gestionarArchivos(leerVendedoresDesdeArchivo(), listaProductos, leerSolicitudesDesdeArchivo());
+        gestionarArchivos(leerVendedoresDesdeArchivo(), listaProductos, leerSolicitudesDesdeArchivo(), listaReseñas);
         utilLog.escribirLog("Producto modificado exitosamente: " + productoModificado, Level.INFO);
+    }
+    // Método para modificar una reseña
+    public void modificarReseña(Reseña reseñaModificada) {
+       List<Reseña> listaReseñas = leerReseñasDesdeArchivo(listaVendedoresCache); // Método que debes implementar para leer las reseñas
+       boolean reseñaEncontrada = false;
+
+    for (int i = 0; i < listaReseñas.size(); i++) {
+        if (listaReseñas.get(i).getId().equals(reseñaModificada.getId())) {
+            reseñaEncontrada = true;
+            listaReseñas.set(i, reseñaModificada); // Reemplazar la reseña existente con la modificada
+            utilLog.escribirLog("Reseña modificada exitosamente: " + reseñaModificada, Level.INFO);
+            break;
+        }
+    }
+    if (!reseñaEncontrada) {
+        utilLog.escribirLog("No se encontró la reseña con ID: " + reseñaModificada.getId(), Level.WARNING);
+        return;
+    }
+
+      gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas); // Asegúrate de que gestionarArchivos soporte reseñas
+      utilLog.escribirLog("Lista de reseñas guardada con éxito", Level.INFO);
     }
 
     // ELIMINAR
@@ -592,7 +694,7 @@ public class UtilPersistencia implements Serializable {
     public void eliminarSolicitud(String idSolicitud) {
         List<Solicitud> listaSolicitudes = leerSolicitudesDesdeArchivo();
         listaSolicitudes.removeIf(solicitud -> solicitud.getId().equals(idSolicitud));
-        gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes);
+        gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas);
         utilLog.escribirLog("Solicitud eliminada exitosamente con ID: " + idSolicitud, Level.INFO);
     }
 
@@ -600,7 +702,7 @@ public class UtilPersistencia implements Serializable {
     public void eliminarVendedor(String cedulaVendedor) {
         List<Vendedor> listaVendedores = leerVendedoresDesdeArchivo();
         listaVendedores.removeIf(vendedor -> vendedor.getCedula().equals(cedulaVendedor));
-        gestionarArchivos(listaVendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
+        gestionarArchivos(listaVendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo(), listaReseñas);
         utilLog.escribirLog("Vendedor eliminado exitosamente con cedula: " + cedulaVendedor, Level.INFO);
     }
 
@@ -608,11 +710,28 @@ public class UtilPersistencia implements Serializable {
     public void eliminarProducto(String idProducto) {
         List<Producto> listaProductos = leerProductosDesdeArchivo();
         listaProductos.removeIf(producto -> producto.getId().equals(idProducto));
-        gestionarArchivos(leerVendedoresDesdeArchivo(), listaProductos, leerSolicitudesDesdeArchivo());
+        gestionarArchivos(leerVendedoresDesdeArchivo(), listaProductos, leerSolicitudesDesdeArchivo(), listaReseñas);
         utilLog.escribirLog("Producto eliminado exitosamente con ID: " + idProducto, Level.INFO);
     }
 
+    // Método para eliminar reseña
+    public void eliminarReseña(String idReseña) {
+    List<Reseña> listaReseñas = leerReseñasDesdeArchivo(listaVendedoresCache); // Leer las reseñas desde el archivo
+    listaReseñas.removeIf(reseña -> reseña.getId().equals(idReseña)); // Eliminar la reseña con el ID especificado
+    gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas); // Guardar los cambios
+    utilLog.escribirLog("Reseña eliminada exitosamente con ID: " + idReseña, Level.INFO); // Log de éxito
+}
+
     // BUSCAR
+
+    public Reseña buscarReseñaPorId(String id) {
+        for (Reseña reseña : listaReseñas) {
+            if (reseña.getId().equals(id)) {
+                return reseña; // Retorna la reseña encontrada
+            }
+        }
+        return null; // Retorna null si no se encuentra la reseña
+    }
 
     // Método para buscar un vendedor por cedula
     public Vendedor buscarVendedorPorCedula(String cedula) {
@@ -916,7 +1035,7 @@ public class UtilPersistencia implements Serializable {
                 break;
             }
         }
-        gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
+        gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo(), listaReseñas);
     }
 
     public void agregarSolicitudAVendedor(Solicitud solicitud, Vendedor vendedor) {
@@ -940,7 +1059,7 @@ public class UtilPersistencia implements Serializable {
                 break;
             }
         }
-        gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo());
+        gestionarArchivos(vendedores, leerProductosDesdeArchivo(), leerSolicitudesDesdeArchivo(), listaReseñas);
     }
 
 }

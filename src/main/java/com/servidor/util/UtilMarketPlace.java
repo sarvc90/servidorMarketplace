@@ -9,12 +9,14 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 //import java.util.HashSet;
 //import java.util.Set;
 
 import com.servidor.excepciones.ReseñaExistenteException;
+import com.servidor.excepciones.ReseñaNoEncontradaException;
 import com.servidor.excepciones.SolicitudExistenteException;
 import com.servidor.excepciones.SolicitudNoExistenteException;
 import com.servidor.excepciones.UsuarioExistenteException;
@@ -44,8 +46,6 @@ public class UtilMarketPlace implements Serializable {
         this.utilSerializar = UtilSerializar.getInstance();
         utilPersistencia.gestionarArchivosPorEstado(utilPersistencia.leerProductosDesdeArchivo(),
                 utilPersistencia.leerSolicitudesDesdeArchivo());
-        
-
     }
 
     public void setMarketPlace(MarketPlace marketPlace) {
@@ -59,6 +59,17 @@ public class UtilMarketPlace implements Serializable {
         return marketPlace;
     }
 
+    private List<Vendedor> obtenerListaDeVendedores() {
+        List<Vendedor> vendedores = new ArrayList<>();
+        // ... (Lógica para obtener los vendedores)
+        return vendedores;
+    }
+
+    public List<Reseña> getReseñas() {
+        List<Vendedor> vendedores = obtenerListaDeVendedores(); // Obtiene la lista de vendedores (implementa este método)
+        return utilPersistencia.leerReseñasDesdeArchivo(vendedores);
+    }
+
     // se crea la unica instancia de la clase
     public static UtilMarketPlace getInstance() {
         if (instancia == null) {
@@ -66,7 +77,7 @@ public class UtilMarketPlace implements Serializable {
         }
         return instancia;
     }
-
+    
     // metodo que crea y registra vendedores nuevos
     public boolean crearVendedor(Vendedor vendedor) throws UsuarioExistenteException {
 
@@ -230,22 +241,37 @@ public class UtilMarketPlace implements Serializable {
 
     // obtiene la lista de solicitudes deserializada desde un archivo.
     public List<Solicitud> obtenerSolicitudes() {
-        utilPersistencia.gestionarArchivos(utilPersistencia.leerVendedoresDesdeArchivo(),
-                utilPersistencia.leerProductosDesdeArchivo(), utilSerializar.deserializarSolicitudes(true));
-        return utilSerializar.deserializarSolicitudes(true);
+        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
+        utilPersistencia.gestionarArchivos(
+            utilPersistencia.leerVendedoresDesdeArchivo(),
+            utilPersistencia.leerProductosDesdeArchivo(),
+            utilSerializar.deserializarSolicitudes(true),
+            utilPersistencia.leerReseñasDesdeArchivo(listaVendedores) // Agregado el cuarto argumento
+        );
+         return utilSerializar.deserializarSolicitudes(true);
     }
 
-    // obtiene la lista de vendedores deserializada desde un archivo.
+     // obtiene la lista de vendedores deserializada desde un archivo.
     public List<Vendedor> obtenerVendedores() {
-        utilPersistencia.gestionarArchivos(utilSerializar.deserializarVendedores(true),
-                utilPersistencia.leerProductosDesdeArchivo(), utilPersistencia.leerSolicitudesDesdeArchivo());
+        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
+         utilPersistencia.gestionarArchivos(
+            utilSerializar.deserializarVendedores(true),
+            utilPersistencia.leerProductosDesdeArchivo(),
+            utilPersistencia.leerSolicitudesDesdeArchivo(),
+            utilPersistencia.leerReseñasDesdeArchivo(listaVendedores) // Agregado el cuarto argumento
+        );
         return utilSerializar.deserializarVendedores(true);
     }
 
-    // obtiene la lista de sproductos deserializada desde un archivo.
+    // obtiene la lista de productos deserializada desde un archivo.
     public List<Producto> obtenerProductos() {
-        utilPersistencia.gestionarArchivos(utilPersistencia.leerVendedoresDesdeArchivo(),
-                utilSerializar.deserializarProductos(true), utilPersistencia.leerSolicitudesDesdeArchivo());
+        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
+        utilPersistencia.gestionarArchivos(
+          utilPersistencia.leerVendedoresDesdeArchivo(),
+          utilSerializar.deserializarProductos(true),
+          utilPersistencia.leerSolicitudesDesdeArchivo(),
+          utilPersistencia.leerReseñasDesdeArchivo(listaVendedores) // Agregado el cuarto argumento
+        );
         return utilSerializar.deserializarProductos(true);
     }
 
@@ -446,7 +472,7 @@ public class UtilMarketPlace implements Serializable {
         return null; // Si no se encuentra el vendedor, retorna null
 
     }
-/* 
+
     public boolean crearReseña(Reseña reseña) throws ReseñaExistenteException {
     // Verificar si la reseña ya existe
     if (utilPersistencia.buscarReseñaPorId(reseña.getId()) == null) {
@@ -467,7 +493,7 @@ public class UtilMarketPlace implements Serializable {
     }
 }
 
-public boolean eliminarReseña(String idReseña) throws ReseñaNoExistenteException {
+public boolean eliminarReseña(String idReseña) throws ReseñaNoEncontradaException {
     // Buscar la reseña por ID
     Reseña reseña = utilPersistencia.buscarReseñaPorId(idReseña);
     if (reseña != null) {
@@ -485,7 +511,54 @@ public boolean eliminarReseña(String idReseña) throws ReseñaNoExistenteExcept
     } else {
         // Excepción de reseña no existente
         utilLog.registrarAccion("La reseña no fue encontrada.", "Eliminación fallida.", "Eliminación.");
-        throw new ReseñaNoExistenteException();
+        throw new ReseñaNoEncontradaException();
+        }
     }
-*/
+
+    // método para modificar una reseña existente
+  public void modificarReseña(Reseña resenaModificada) throws ReseñaNoEncontradaException {
+    List<Vendedor> listaVendedores = new ArrayList<>();
+      utilPersistencia.modificarReseña(resenaModificada);
+      utilSerializar.actualizarSerializacionReseñas();
+
+      // Obtener la lista de reseñas
+      List<Reseña> reseñas = utilPersistencia.leerReseñasDesdeArchivo(listaVendedores);
+
+      // Verificar si la lista de reseñas es nula
+      if (reseñas == null) {
+         utilLog.registrarAccion("La lista de reseñas es nula.",
+                "Error crítico.", "Modificar Reseña.");
+         throw new ReseñaNoEncontradaException(); // O maneja como sea apropiado
+        }
+
+      // Buscar la posición de la reseña en la lista usando el id
+      int posicion = -1;
+      for (int i = 0; i < reseñas.size(); i++) {
+          if (reseñas.get(i).getId().equals(resenaModificada.getId())) {
+             posicion = i;
+             break;
+            } 
+        }
+
+      if (posicion != -1) {
+          reseñas.set(posicion, resenaModificada);
+            utilLog.registrarAccion(("Reseña modificada por " + resenaModificada.getAutor().getNombre() + " sobre " + resenaModificada.getDueño().getNombre() + "."),
+                " Se modifica la reseña ", "Modificar Reseña.");
+        } else {
+        // Manejar el caso donde la reseña no fue encontrada
+        utilLog.registrarAccion("Reseña no encontrada para modificar: " + resenaModificada.getId(),
+                "Modificación fallida.", "Modificar Reseña.");
+        throw new ReseñaNoEncontradaException();
+        }   // O maneja como sea apropiado
+    }
+    // obtiene la lista de reseñas deserializada desde un archivo.
+  public List<Reseña> obtenerReseñas() {
+       utilPersistencia.gestionarArchivos(utilPersistencia.leerVendedoresDesdeArchivo(),
+             utilPersistencia.leerProductosDesdeArchivo(),
+             utilPersistencia.leerSolicitudesDesdeArchivo(),
+             utilSerializar.deserializarReseñas(true));
+       return utilSerializar.deserializarReseñas(true);
+    }
 }
+
+
