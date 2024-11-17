@@ -1,8 +1,8 @@
 package com.servidor.util;
 
-import java.io.BufferedReader;
+//import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
+//import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
@@ -11,8 +11,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
+//import java.util.HashSet;
+//import java.util.Set;
 
-
+import com.servidor.excepciones.ReseñaExistenteException;
 import com.servidor.excepciones.SolicitudExistenteException;
 import com.servidor.excepciones.SolicitudNoExistenteException;
 import com.servidor.excepciones.UsuarioExistenteException;
@@ -21,6 +23,7 @@ import com.servidor.modelo.Admin;
 import com.servidor.modelo.EstadoSolicitud;
 import com.servidor.modelo.MarketPlace;
 import com.servidor.modelo.Producto;
+import com.servidor.modelo.Reseña;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 import com.servidor.modelo.Comentario;
@@ -31,7 +34,8 @@ public class UtilMarketPlace implements Serializable {
     private UtilLog utilLog;
     private UtilPersistencia utilPersistencia;
     private UtilRespaldo utilRespaldo;
-    private UtilSerializar utilSerializar;
+    private UtilSerializar utilSerializar; 
+
 
     private UtilMarketPlace() {
         this.utilLog = UtilLog.getInstance();
@@ -40,6 +44,7 @@ public class UtilMarketPlace implements Serializable {
         this.utilSerializar = UtilSerializar.getInstance();
         utilPersistencia.gestionarArchivosPorEstado(utilPersistencia.leerProductosDesdeArchivo(),
                 utilPersistencia.leerSolicitudesDesdeArchivo());
+        
 
     }
 
@@ -439,48 +444,48 @@ public class UtilMarketPlace implements Serializable {
             }
         }
         return null; // Si no se encuentra el vendedor, retorna null
+
     }
-     // Método para contar la cantidad de productos publicados por un vendedor específico
-    public int contarProductosPorVendedor(List<Producto> productos, Vendedor vendedorBuscado) {
-        int contador = 0;
-
-        // Iterar sobre la lista de productos y contar los que pertenecen al vendedor buscado
-        for (Producto producto : productos) {
-            Vendedor vendedor = obtenerAutorDeProducto(producto.getId());
-            if (vendedor.getId().equals(vendedorBuscado.getId())) {
-                contador++;
-            }
-        }
-
-        return contador; // Devolver la cantidad de productos encontrados
+/* 
+    public boolean crearReseña(Reseña reseña) throws ReseñaExistenteException {
+    // Verificar si la reseña ya existe
+    if (utilPersistencia.buscarReseñaPorId(reseña.getId()) == null) {
+        // Guardar la reseña en el archivo
+        utilPersistencia.guardarReseñaEnArchivo(reseña);
+        utilSerializar.actualizarSerializacionReseñas();
+        
+        // Añadir la reseña al marketplace (asumiendo que hay un método para obtener las reseñas)
+        marketPlace.getReseñas().add(reseña);
+        
+        // Registrar la acción en el log
+        utilLog.registrarAccion("Reseña nueva", "Registro exitoso.", "Registro.");
+        return true;
+    } else {
+        // Excepción de reseña existente
+        utilLog.registrarAccion("Desconocido", "Registro fallido. Reseña ya existente.", "Registro");
+        throw new ReseñaExistenteException();
     }
+}
 
-// Método para contar la cantidad de contactos de un vendedor específico desde un archivo
-public int contarContactosDesdeArchivo(String nombreArchivo, String cedulaVendedor) {
-    int contador = 0;
-
-    try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
-        String linea;
-        while ((linea = br.readLine()) != null) {
-            // Suponemos que cada línea tiene el formato "VendedorCedula, Contacto"
-            String[] partes = linea.split(",\\s*"); // Dividir por coma y posible espacio
-
-            if (partes.length >= 2) {
-                String vendedorCedula = partes[0]; // Primer elemento es la cédula del vendedor
-                // El segundo elemento es el contacto (no lo usamos aquí, pero puede ser útil)
-                String contacto = partes[1];
-
-                // Comparar la cédula del vendedor en la línea con la cédula buscada
-                if (vendedorCedula.equalsIgnoreCase(cedulaVendedor)) {
-                    contador++; // Incrementar contador si encontramos el vendedor
-                }
-            }
-        }
-    } catch (IOException e) {
-        utilLog.escribirLog("Error al leer el archivo de contactos: " + e.getMessage(), Level.SEVERE);
+public boolean eliminarReseña(String idReseña) throws ReseñaNoExistenteException {
+    // Buscar la reseña por ID
+    Reseña reseña = utilPersistencia.buscarReseñaPorId(idReseña);
+    if (reseña != null) {
+        // Eliminar la reseña de la persistencia
+        utilPersistencia.eliminarReseña(idReseña);
+        utilSerializar.actualizarSerializacionReseñas();
+        
+        // Eliminar la reseña del marketplace
+        marketPlace.getReseñas().remove(reseña);
+        
+        // Registrar la acción en el log
+        utilLog.registrarAccion("Reseña eliminada",
+                "La reseña con ID " + idReseña + " ha sido eliminada.", "Eliminación.");
+        return true;
+    } else {
+        // Excepción de reseña no existente
+        utilLog.registrarAccion("La reseña no fue encontrada.", "Eliminación fallida.", "Eliminación.");
+        throw new ReseñaNoExistenteException();
     }
-
-    return contador; // Devolver la cantidad de contactos encontrados
-    }
-
+*/
 }

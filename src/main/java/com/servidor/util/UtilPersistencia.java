@@ -26,6 +26,7 @@ import com.servidor.modelo.Producto;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 
+
 public class UtilPersistencia implements Serializable {
     private static UtilPersistencia instancia;
     private UtilProperties utilProperties;

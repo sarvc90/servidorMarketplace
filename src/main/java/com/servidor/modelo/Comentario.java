@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.servidor.util.UtilId;
 import com.servidor.util.UtilPersistencia;
 
 
@@ -17,7 +18,7 @@ public class Comentario implements Serializable{
     
         // Constructor
         public Comentario(String id, Vendedor autor, LocalDateTime fechaPublicacion, String texto) {
-            this.id = id;
+            this.id = (id == null || id.isEmpty()) ? UtilId.generarIdAleatorio() : id;
             this.autor = autor;
             this.fechaPublicacion = fechaPublicacion;
             this.texto = texto;

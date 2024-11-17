@@ -14,6 +14,9 @@ public class Vendedor extends Persona {
     private List<Integer> calificaciones;
     private int contadorCalificaciones;
     private double promedioCalificaciones;
+    
+    
+
 
     public Vendedor() {
         super();
@@ -23,6 +26,7 @@ public class Vendedor extends Persona {
         this.calificaciones = new ArrayList<>(); // Inicializar lista de calificaciones
         this.contadorCalificaciones = 0; // Inicializar contador de calificaciones
         this.promedioCalificaciones = 0.0; // Inicializar promedio de calificaciones
+       
     }
 
     public Vendedor(String id, String nombre, String apellido, String cedula, String direccion, String contraseña,
@@ -165,3 +169,4 @@ public class Vendedor extends Persona {
         return new ArrayList<>(calificaciones); // Devuelve una copia de la lista de calificaciones
     }
 }
+

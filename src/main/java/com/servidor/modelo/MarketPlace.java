@@ -20,6 +20,7 @@ public class MarketPlace implements Serializable {
     private List<Producto> productos;
     private Admin administrador;
     private UtilMarketPlace utilMarketPlace;
+    //private List<Reseña> reseñas;
 
     // Constructor
 public MarketPlace(UtilMarketPlace utilMarketPlace) {
@@ -38,6 +39,9 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
     List<Producto> productosTemp = utilMarketPlace.obtenerProductos();
     this.productos = (productosTemp != null && !productosTemp.isEmpty()) ? productosTemp : new ArrayList<>();
 
+    //List<Reseña> reseñasTemp = utilMarketPlace.obtenerReseñas();
+    //this.reseñas = (reseñasTemp != null && !reseñasTemp.isEmpty()) ? reseñasTemp: new ArrayList<>();
+
     //LLAMAR METODO DE SERIALIZAR MODELO
 }
 
@@ -46,7 +50,8 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
         this.vendedores = utilMarketPlace.obtenerVendedores();
         this.solicitudes = utilMarketPlace.obtenerSolicitudes();
         this.productos = utilMarketPlace.obtenerProductos();
-    }
+        //this.reseñas = utilMarketPlace.obtenerReseñas();    
+        }
 
     public List<Vendedor> getVendedores() {
         return vendedores;
@@ -239,5 +244,14 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
     public void darLike(Vendedor vendedor, Producto producto) {
         // Llamar al método darMeGusta de la clase Producto
         producto.darLike(vendedor.getId());
+    }
+
+    public String iniciarSesion(String cedula, String contraseña){
+        try {
+			return utilMarketPlace.iniciarSesion(cedula,contraseña);
+		} catch (UsuarioNoEncontradoException e) {
+			e.printStackTrace();
+            return null;
+		}
     }
 }

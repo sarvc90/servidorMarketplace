@@ -31,7 +31,7 @@ public class Main {
         // CREAR
         try {
 
-            Vendedor nuevoVendedor = new Vendedor(null, "Ruperto", "Castiblanco", "777", "Cll3-2050", "contraseña", null, null, null, 0, 0);
+            Vendedor nuevoVendedor = new Vendedor(null, "alfonso", "Cantinflas", "876", "Cll3-1010", "contraseña", null, null, null, 0, 0);
             marketPlace.crearVendedor(nuevoVendedor);
             System.out.println("Vendedor creado exitosamente.");
         } catch (UsuarioExistenteException e) {

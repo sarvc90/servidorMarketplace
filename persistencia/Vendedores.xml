@@ -23,5 +23,27 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Cantinflas</string>
+    </void>
+    <void property="cedula">
+     <string>876</string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>Cll3-1010</string>
+    </void>
+    <void property="id">
+     <string>2247</string>
+    </void>
+    <void property="nombre">
+     <string>alfonso</string>
+    </void>
+   </object>
+  </void>
  </object>
 </java>

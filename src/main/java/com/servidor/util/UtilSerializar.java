@@ -1,8 +1,8 @@
 package com.servidor.util;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+//import java.io.BufferedWriter;
+//import java.io.FileWriter;
+//import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -290,5 +290,4 @@ public class UtilSerializar implements Serializable {
         }
     }
     
-
 }

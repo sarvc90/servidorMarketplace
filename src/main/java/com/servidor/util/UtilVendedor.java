@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.servidor.excepciones.ProductoNoEncontradoException;
 import com.servidor.excepciones.ProductoYaExisteException;
 import com.servidor.modelo.MarketPlace;
+import com.servidor.modelo.Mensaje;
 import com.servidor.modelo.Producto;
 import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
@@ -185,6 +186,27 @@ public class UtilVendedor implements Serializable {
     
         return productosCanceladosPorVendedor;
     }
-    
+    // Obtiene el total de mensajes entre dos vendedores específicos.
+    /*
+    public int contarMensajesEntreVendedores(Vendedor vendedor1, Vendedor vendedor2) {
+        List<Mensaje> mensajes = utilPersistencia.leerMensajesDesdeArchivo(); // Método para leer mensajes
+        int contador = 0;
 
+        if (mensajes != null) { // Verifica que la lista de mensajes no sea nula
+            for (Mensaje mensaje : mensajes) {
+                // Verifica si el mensaje es entre los dos vendedores
+                if ((mensaje.getRemitente().equals(vendedor1.getId()) && mensaje.getDestinatario().equals(vendedor2.getId())) ||
+                    (mensaje.getRemitente().equals(vendedor2.getId()) && mensaje.getDestinatario().equals(vendedor1.getId()))) {
+                    contador++;
+                }
+            }
+        } else {
+            utilLog.escribirLog("No se pudieron leer los mensajes desde el archivo.", Level.WARNING);
+        }
+
+        return contador;
+    }
+    
+    
+*/
 }
