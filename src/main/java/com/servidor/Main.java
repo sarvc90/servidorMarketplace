@@ -24,12 +24,12 @@ import com.servidor.excepciones.UsuarioExistenteException;
 import com.servidor.excepciones.UsuarioNoEncontradoException;
 
 public class Main {
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         UtilMarketPlace utilMarketPlace = UtilMarketPlace.getInstance();
         UtilSerializar utilSerializar = UtilSerializar.getInstance();
 
         MarketPlace marketPlace = utilMarketPlace.getMarketPlace();
-
+/* 
         // Vendedor
  
         // CREAR
@@ -43,7 +43,7 @@ public class Main {
         }
      */
 
-
+/* 
     public static void main(String[] args) {
         // Crear una lista de publicaciones (puede estar vacía inicialmente)
         List<Producto> publicaciones = new ArrayList<>();
@@ -240,5 +240,5 @@ public class Main {
 *//*
     utilMarketPlace.exportarEstadisticas("/persistencia/log","Usuario ejemplo", "01/01/2024", "31/12/2024", "4285");
 */
-    }
+}}
 

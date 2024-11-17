@@ -217,7 +217,7 @@ public class UtilPersistencia implements Serializable {
         return; // Salir del método si la reseña es null
       }
 
-    String rutaReseñas = utilProperties.obtenerPropiedad("rutaReseñas.txt");
+    String rutaReseñas = utilProperties.obtenerPropiedad("rutaResenas.txt");
       try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaReseñas, true))) {
           //  los datos de la reseña
           String idReseña = reseña.getId(); // Asegúrate de que Reseña tenga el método getId()
