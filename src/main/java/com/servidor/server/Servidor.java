@@ -3,13 +3,21 @@ package com.servidor.server;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.util.concurrent.*;
+
+import com.servidor.excepciones.*;
+import com.servidor.modelo.*;
+import com.servidor.util.UtilMarketPlace;
 
 public class Servidor {
     private static final int PUERTO = 12345; // Puerto del servidor
-    private static Set<ClienteHandler> clientes = new HashSet<>(); // Conjunto para manejar múltiples clientes
+    private static Set<ClienteHandler> clientes = new CopyOnWriteArraySet<>(); // Conjunto para manejar múltiples clientes de forma concurrente
+    private static MarketPlace marketPlace; // Instancia de MarketPlace
 
     public static void main(String[] args) {
         System.out.println("Servidor iniciado en el puerto " + PUERTO);
+        marketPlace = new MarketPlace(new UtilMarketPlace()); // Inicializar MarketPlace
+
         try (ServerSocket serverSocket = new ServerSocket(PUERTO)) {
             while (true) {
                 Socket socket = serverSocket.accept(); // Aceptar nuevas conexiones
@@ -54,181 +62,188 @@ public class Servidor {
         }
 
         private void procesarMensaje(String mensaje) {
-            String[] partes = mensaje.split(" ", 2); // Dividir el mensaje en comando y datos
+            if (mensaje == null || mensaje.trim().isEmpty()) {
+                out.println("Error: Mensaje vacío o mal formado.");
+                return;
+            }
+
+            String[] partes = mensaje.split(" ", 2);
+            if (partes.length < 2) {
+                out.println("Error: Comando o datos faltantes.");
+                return;
+            }
+
             String comando = partes[0];
 
-            switch (comando) {
-                case "LOGIN":
-                    // Aquí puedes implementar la lógica de inicio de sesión
-                    // Por ejemplo, verificar las credenciales
-                    String[] credenciales = partes[1].split(" ");
-                    String usuario = credenciales[0];
-                    String contrasena = credenciales[1];
-                    // Suponiendo que verificamos las credenciales y obtenemos un ID
-                    String userId = verificarCredenciales(usuario, contrasena);
-                    out.println(userId != null ? userId : "Error");
-                    break;
-
-                case "REGISTER":
-                    // Lógica para registrar un nuevo vendedor
-                    registrarVendedor(partes[1]);
-                    break;
-
-                case "GET_VENDEDOR":
-                    // Lógica para obtener los datos del vendedor
-                    obtenerVendedor(partes[1]);
-                    break;
-
-                case "UPDATE_VENDEDOR":
-                    // Lógica para actualizar los datos del vendedor
-                    actualizarVendedor(partes[1]);
-                    break;
-
-                case "GET_PRODUCTS":
-                    // Lógica para obtener productos
-                    obtenerProductos(partes[1]);
-                    break;
-
-                case "EXPORTAR_ESTADISTICAS":
-                    // Lógica para exportar estadísticas
-                    exportarEstadisticas(partes[1]);
-                    break;
-
-                case "OBTENER_PRODUCTOS":
-                    // Lógica para obtener productos
-                    obtenerProductos(partes[1]);
-                    break;
-
-                case "OBTENER_VENDEDORES":
-                    // Lógica para obtener vendedores
-                    obtenerVendedores(partes[1]);
-                    break;
-
-                case "ELIMINAR_PRODUCTO":
-                    // Lógica para eliminar un producto
-                    eliminarProducto(partes[1]);
-                    break;
-
-                case "ELIMINAR_VENDEDOR":
-                    // Lógica para eliminar un vendedor
-                    eliminarVendedor(partes[1]);
-                    break;
-
-                case "GET_NOTIFICATIONS":
-                    // Lógica para obtener notificaciones
-                    obtenerNotificaciones(partes[1]);
-                    break;
-
-                case "SEARCH":
-                    // Lógica para buscar productos
-                    buscarProductos(partes[1]);
-                    break;
-
-                case "COMPRAR":
-                    // Lógica para comprar un producto
-                    comprarProducto(partes[1]);
-                    break;
-
-                case "LIKE":
-                    // Lógica para dar like a un producto
-                    darLike(partes[1]);
-                    break;
-
-                case "LEERLIKES":
-                    // Lógica para leer likes de un vendedor
-                    leerLikes(partes[1]);
-                    break;
-
-                // Agrega más casos según sea necesario
-
-                default:
-                    out.println("Comando no reconocido");
+            try {
+                switch (comando) {
+                    case "LOGIN":
+                        procesarLogin(partes[1]);
+                        break;
+                    case "REGISTER":
+                        registrarVendedor(partes[1]);
+                        break;
+                    case "GET_VENDEDOR":
+                        obtenerVendedor(partes[1]);
+                        break;
+                    case "UPDATE_VENDEDOR":
+                        actualizarVendedor(partes[1]);
+                        break;
+                    case "GET_PRODUCTS":
+                    case "OBTENER_PRODUCTOS":
+                        obtenerProductos(partes[1]);
+                        break;
+                    case "EXPORTAR_ESTADISTICAS":
+                        exportarEstadisticas(partes[1]);
+                        break;
+                    case "GET_NOTIFICATIONS":
+                        obtenerNotificaciones(partes[1]);
+                        break;
+                    case "SEARCH":
+                        buscarProductos(partes[1]);
+                        break;
+                    case "COMPRAR":
+                        comprarProducto(partes[1]);
+                        break;
+                    case "LIKE":
+                        darLike(partes[1]);
+                        break;
+                    case "LEERLIKES":
+                        leerLikes(partes[1]);
+                        break;
+                    case "OBTENER_VENDEDORES":
+                        obtenerVendedores(partes[1]);
+                        break;
+                    //case "ELIMINAR_PRODUCTO":
+                        //eliminarProducto(partes[1]);
+                        //break;
+                    case "ELIMINAR_VENDEDOR":
+                        eliminarVendedor(partes[1]);
+                        break;
+                    default:
+                        out.println("Comando no reconocido.");
+                }
+            } catch (Exception e) {
+                out.println("Error procesando el comando: " + e.getMessage());
             }
         }
 
-        // Ejemplo de método para verificar credenciales
-        private String verificarCredenciales(String usuario, String contrasena) {
-            // Aquí deberías implementar la lógica para verificar las credenciales
-            // Retornar el ID del usuario si es válido, o null si no lo es
-            return "1"; // Placeholder para el ID del usuario
+        private void procesarLogin(String datos) {
+            String[] credenciales = datos.split(" ");
+            if (credenciales.length < 2) {
+                out.println("Error: Datos de login incompletos.");
+                return;
+            }
+            String usuario = credenciales[0];
+            String contrasena = credenciales[1];
+            String userId = marketPlace.iniciarSesion(usuario, contrasena);
+            out.println(userId != null ? userId : "Error: Usuario o contraseña incorrectos.");
         }
 
-        // Ejemplo de método para registrar un vendedor
         private void registrarVendedor(String datos) {
-            // Aquí deberías implementar la lógica para registrar un vendedor
-            out.println("Registro exitoso");
+            Vendedor nuevoVendedor = crearVendedorDesdeDatos(datos);
+            try {
+                marketPlace.crearVendedor(nuevoVendedor);
+                out.println("Registro exitoso");
+            } catch (UsuarioExistenteException e) {
+                out.println("Error: El vendedor ya existe.");
+            }
         }
 
-        // Ejemplo de método para obtener un vendedor
         private void obtenerVendedor(String userId) {
-            // Aquí deberías implementar la lógica para obtener los datos del vendedor
-            out.println("Nombre,Apellido,Cedula,Contrasena,Direccion,Reputacion");
+            Vendedor vendedor = marketPlace.obtenerVendedores().stream()
+                .filter(v -> v.getId().equals(userId))
+                .findFirst()
+                .orElse(null);
+            if (vendedor != null) {
+                out.println(vendedor.toString());
+            } else {
+                out.println("Error: Vendedor no encontrado.");
+            }
         }
 
-        // Ejemplo de método para actualizar un vendedor
         private void actualizarVendedor(String datos) {
-            // Aquí deberías implementar la lógica para actualizar los datos del vendedor
-            out.println("Actualización exitosa");
+            Vendedor vendedorModificado = crearVendedorDesdeDatos(datos);
+            try {
+                marketPlace.modificarVendedor(vendedorModificado);
+                out.println("Actualización exitosa");
+            } catch (UsuarioNoEncontradoException e) {
+                out.println("Error: Vendedor no encontrado.");
+            }
         }
 
-        // Ejemplo de método para obtener productos
         private void obtenerProductos(String userId) {
-            // Aquí deberías implementar la lógica para obtener productos
-            out.println("Producto1,Producto2,Producto3");
+            List<Producto> productos = marketPlace.obtenerProductos();
+            if (!productos.isEmpty()) {
+                StringBuilder sb = new StringBuilder();
+                for (Producto producto : productos) {
+                    sb.append(producto.getId()).append(", ");
+                }
+                out.println(sb.toString());
+            } else {
+                out.println("No hay productos disponibles.");
+            }
         }
 
-        // Ejemplo de método para exportar estadísticas
         private void exportarEstadisticas(String userId) {
-            // Aquí deberías implementar la lógica para exportar estadísticas
-            out.println("Estadísticas exportadas con éxito");
+            // Lógica para exportar estadísticas (simulada)
+            out.println("Estadísticas exportadas con éxito.");
         }
 
-        // Ejemplo de método para obtener vendedores
         private void obtenerVendedores(String userId) {
-            // Aquí deberías implementar la lógica para obtener vendedores
-            out.println("Vendedor1,Vendedor2,Vendedor3");
+            List<Vendedor> vendedores = marketPlace.obtenerVendedores();
+            if (!vendedores.isEmpty()) {
+                StringBuilder sb = new StringBuilder();
+                for (Vendedor vendedor : vendedores) {
+                    sb.append(vendedor.getId()).append(", ");
+                }
+                out.println(sb.toString());
+            } else {
+                out.println("No hay vendedores disponibles.");
+            }
         }
-
-        // Ejemplo de método para eliminar un producto
+/* 
         private void eliminarProducto(String productoId) {
-            // Aquí deberías implementar la lógica para eliminar un producto
-            out.println("Producto eliminado con éxito");
+            try {
+                marketPlace.eliminarProducto(productoId);
+                out.println("Producto eliminado con éxito");
+            } catch (ProductoNoEncontradoException e) {
+                out.println("Error: Producto no encontrado.");
+            }
         }
-
-        // Ejemplo de método para eliminar un vendedor
+*/
         private void eliminarVendedor(String vendedorId) {
-            // Aquí deberías implementar la lógica para eliminar un vendedor
-            out.println("Vendedor eliminado con éxito");
+            try {
+                marketPlace.eliminarVendedor(vendedorId);
+                out.println("Vendedor eliminado con éxito");
+            } catch (UsuarioNoEncontradoException e) {
+                out.println("Error: Vendedor no encontrado.");
+            }
         }
 
-        // Ejemplo de método para obtener notificaciones
         private void obtenerNotificaciones(String userId) {
-            // Aquí deberías implementar la lógica para obtener notificaciones
-            out.println("Notificación1;Notificación2;Notificación3");
+            // Lógica para obtener notificaciones (simulada)
+            out.println("Notificación1; Notificación2; Notificación3");
         }
 
-        // Ejemplo de método para buscar productos
         private void buscarProductos(String datos) {
-            // Aquí deberías implementar la lógica para buscar productos
-            out.println("Resultado de la búsqueda");
+            // Lógica para buscar productos (simulada)
+            out.println("Resultado de la búsqueda de productos.");
         }
 
-        // Ejemplo de método para comprar un producto
         private void comprarProducto(String datos) {
-            // Aquí deberías implementar la lógica para comprar un producto
-            out.println("Compra realizada con éxito");
+            // Lógica para comprar productos (simulada)
+            out.println("Compra realizada con éxito.");
         }
 
-        // Ejemplo de método para dar like a un producto
         private void darLike(String datos) {
-            // Aquí deberías implementar la lógica para dar like a un producto
-            out.println("Like dado con éxito");
+            // Lógica para dar like a un producto (simulada)
+            out.println("Like dado con éxito.");
         }
 
-        // Ejemplo de método para leer likes de un vendedor
         private void leerLikes(String vendedorId) {
-            // Aquí deberías implementar la lógica para leer likes de un vendedor
-            out.println("Lista de likes");
+            // Lógica para leer los likes de un vendedor (simulada)
+            out.println("Lista de likes del vendedor.");
         }
 
         private void cerrarConexiones() {
@@ -239,6 +254,11 @@ public class Servidor {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        private Vendedor crearVendedorDesdeDatos(String datos) {
+            String[] info = datos.split(",");
+            return new Vendedor(info[0], info[1], info[2], info[3], info[4], info[5], null, null, null, 0, 0.0);
         }
     }
 }

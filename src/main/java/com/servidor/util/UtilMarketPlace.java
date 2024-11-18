@@ -39,7 +39,7 @@ public class UtilMarketPlace implements Serializable {
     private UtilSerializar utilSerializar; 
 
 
-    private UtilMarketPlace() {
+    public UtilMarketPlace() {
         this.utilLog = UtilLog.getInstance();
         this.utilPersistencia = UtilPersistencia.getInstance();
         this.utilRespaldo = UtilRespaldo.getInstance();

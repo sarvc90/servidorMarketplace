@@ -38300,3 +38300,71 @@ nov 17, 2024 6:24:47 P. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: AutorID
 nov 17, 2024 6:24:47 P. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: DueñoID
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de productos está vacía. Se han borrado los archivos correspondientes.
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 17, 2024 7:01:22 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de productos está vacía. Se han borrado los archivos correspondientes.
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 17, 2024 7:32:33 P. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
