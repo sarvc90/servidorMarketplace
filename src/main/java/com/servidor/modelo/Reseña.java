@@ -18,6 +18,13 @@ public class Reseña implements Serializable{
         this.texto = texto;
     }
 
+    public Reseña() {
+        this.id = UtilId.generarIdAleatorio(); // Optionally generate a random ID
+        this.autor = null;
+        this.dueño = null;
+        this.texto = null;
+    }
+
     public String getId() {
         return id;
     }

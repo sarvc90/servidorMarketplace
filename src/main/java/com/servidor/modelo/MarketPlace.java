@@ -3,6 +3,8 @@ package com.servidor.modelo;
 import java.io.Serializable;
 import java.util.List;
 
+import com.servidor.excepciones.ReseñaExistenteException;
+import com.servidor.excepciones.ReseñaNoEncontradaException;
 import com.servidor.excepciones.SolicitudExistenteException;
 import com.servidor.excepciones.SolicitudNoExistenteException;
 import com.servidor.excepciones.UsuarioExistenteException;
@@ -26,7 +28,6 @@ public class MarketPlace implements Serializable {
 public MarketPlace(UtilMarketPlace utilMarketPlace) {
     this.administrador = new Admin("1", "Juana", "Arias", "123", "direccion", "contraseña");
     this.utilMarketPlace = utilMarketPlace;
-    this.reseñas = new ArrayList<Reseña>();
 
     // Inicializar vendedores
     List<Vendedor> vendedoresTemp = utilMarketPlace.obtenerVendedores();
@@ -40,14 +41,11 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
     List<Producto> productosTemp = utilMarketPlace.obtenerProductos();
     this.productos = (productosTemp != null && !productosTemp.isEmpty()) ? productosTemp : new ArrayList<>();
 
+    // Inicializar reseñas
     List<Reseña> reseñasTemp = utilMarketPlace.obtenerReseñas();
     this.reseñas = (reseñasTemp != null && !reseñasTemp.isEmpty()) ? reseñasTemp: new ArrayList<>();
 
     //LLAMAR METODO DE SERIALIZAR MODELO
-}
-
-public List<Reseña> getReseñas() {
-    return this.reseñas; 
 }
 
     public void setUtilMarketPlace(UtilMarketPlace utilMarketPlace) {
@@ -55,9 +53,9 @@ public List<Reseña> getReseñas() {
         this.vendedores = utilMarketPlace.obtenerVendedores();
         this.solicitudes = utilMarketPlace.obtenerSolicitudes();
         this.productos = utilMarketPlace.obtenerProductos();
-        //this.reseñas = utilMarketPlace.obtenerReseñas();    
+        this.reseñas = utilMarketPlace.obtenerReseñas();    
         }
-
+    
     public List<Vendedor> getVendedores() {
         return vendedores;
     }
@@ -90,6 +88,45 @@ public List<Reseña> getReseñas() {
         return productos;
     }
 
+    public List<Reseña> getReseñas() {
+        return this.reseñas; 
+    }
+
+    public void setReseñas(List<Reseña> reseñas) {
+        this.reseñas = reseñas;
+    }
+
+    //CRUD DE VENDEDOR, SOLITCITUD Y RESEÑA
+
+    public void crearReseña(Reseña reseña) throws ReseñaExistenteException {
+    boolean exito = utilMarketPlace.crearReseña(reseña);
+    if (exito) {
+        reseñas.add(reseña);}
+    }
+
+    public void eliminarReseña(String idReseña) throws ReseñaNoEncontradaException {
+        boolean exito = utilMarketPlace.eliminarReseña(idReseña);
+        if (exito) {
+            for (Reseña reseña : reseñas) {
+                if (reseña.getId().equals(idReseña)) {
+                    reseñas.remove(reseña);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void modificarReseña(Reseña resenaModificada) throws ReseñaNoEncontradaException {
+        utilMarketPlace.modificarReseña(resenaModificada);
+        for (Reseña reseña : reseñas) {
+            if (reseña.getId().equals(resenaModificada.getId())) {
+                int posicion = reseñas.indexOf(reseña);
+                reseñas.set(posicion, resenaModificada);
+                break;
+            }
+        }
+    }
+    
     public void crearVendedor(Vendedor vendedor) throws UsuarioExistenteException {
         boolean exito = utilMarketPlace.crearVendedor(vendedor);
         if (exito) {
@@ -130,6 +167,10 @@ public List<Reseña> getReseñas() {
 
     public List<Producto> obtenerProductos() {
         return utilMarketPlace.obtenerProductos();
+    }
+
+    public List<Reseña> obtenerReseñas(){
+        return utilMarketPlace.obtenerReseñas();
     }
 
     public void crearSolicitud(Solicitud solicitud) throws SolicitudExistenteException {
@@ -258,5 +299,9 @@ public List<Reseña> getReseñas() {
 			e.printStackTrace();
             return null;
 		}
+    }
+
+    public UtilMarketPlace getUtilMarketPlace() {
+        return utilMarketPlace;
     }
 }

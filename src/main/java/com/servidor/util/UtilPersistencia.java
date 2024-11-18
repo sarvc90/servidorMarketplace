@@ -27,7 +27,6 @@ import com.servidor.modelo.Solicitud;
 import com.servidor.modelo.Vendedor;
 import com.servidor.modelo.Reseña;
 
-
 public class UtilPersistencia implements Serializable {
     private static UtilPersistencia instancia;
     private UtilProperties utilProperties;
@@ -46,6 +45,7 @@ public class UtilPersistencia implements Serializable {
     public UtilPersistencia(List<Reseña> listaReseñas) {
         this.listaReseñas = listaReseñas;
     }
+
     public List<Vendedor> getListaVendedoresCache() {
         return listaVendedoresCache; // Método para acceder a la lista
     }
@@ -56,11 +56,15 @@ public class UtilPersistencia implements Serializable {
         String rutaVendedores = utilProperties.obtenerPropiedad("rutaVendedores.txt");
         String rutaProductos = utilProperties.obtenerPropiedad("rutaProductos.txt");
         String rutaSolicitudes = utilProperties.obtenerPropiedad("rutaSolicitudes.txt");
-        String rutaReseñas = utilProperties.obtenerPropiedad("rutaReseñas.txt");
+        String rutaReseñas = utilProperties.obtenerPropiedad("rutaResenas.txt");
         escribirListaEnArchivo(rutaVendedores, listaVendedores);
         escribirListaEnArchivo(rutaProductos, listaProductos);
         escribirListaEnArchivo(rutaSolicitudes, listaSolicitudes);
-        escribirListaEnArchivo(rutaReseñas, listaReseñas);
+        if (!listaReseñas.isEmpty()) {
+            escribirListaEnArchivo(rutaReseñas, listaReseñas);
+        } else {
+            utilLog.escribirLog("La lista de reseñas está vacía, no se escribirá en el archivo.", Level.INFO);
+        }
         utilLog.escribirLog("Archivos gestionados correctamente", Level.INFO);
     }
 
@@ -209,28 +213,28 @@ public class UtilPersistencia implements Serializable {
             utilLog.escribirLog("Error al guardar el producto: " + producto, Level.SEVERE);
         }
     }
-    
+
     // Guardar la información de una reseña en un archivo de texto
     public void guardarReseñaEnArchivo(Reseña reseña) {
-      if (reseña == null) {
-        utilLog.escribirLog("La reseña es null, no se puede guardar.", Level.SEVERE);
-        return; // Salir del método si la reseña es null
-      }
+        if (reseña == null) {
+            utilLog.escribirLog("La reseña es null, no se puede guardar.", Level.SEVERE);
+            return; // Salir del método si la reseña es null
+        }
 
-    String rutaReseñas = utilProperties.obtenerPropiedad("rutaResenas.txt");
-      try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaReseñas, true))) {
-          //  los datos de la reseña
-          String idReseña = reseña.getId(); // Asegúrate de que Reseña tenga el método getId()
-         String autorId = reseña.getAutor().getId(); //  el ID del autor
-         String dueñoId = reseña.getDueño().getId(); // Obtener el ID del dueño
-         String texto = reseña.getTexto(); // Asegúrate de que Reseña tenga el método getTexto()
+        String rutaReseñas = utilProperties.obtenerPropiedad("rutaResenas.txt");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaReseñas, true))) {
+            // los datos de la reseña
+            String idReseña = reseña.getId(); // Asegúrate de que Reseña tenga el método getId()
+            String autorId = reseña.getAutor().getId(); // el ID del autor
+            String dueñoId = reseña.getDueño().getId(); // Obtener el ID del dueño
+            String texto = reseña.getTexto(); // Asegúrate de que Reseña tenga el método getTexto()
 
-         // Escribir en el archivo
-         writer.write(idReseña + "%" + autorId + "%" + dueñoId + "%" + texto);
-         writer.newLine();
-         utilLog.escribirLog("Reseña guardada exitosamente: " + reseña, Level.INFO);
-        }  catch (IOException e) {
-          utilLog.escribirLog("Error al guardar la reseña en el archivo: " + e.getMessage(), Level.SEVERE);
+            // Escribir en el archivo
+            writer.write(idReseña + "%" + autorId + "%" + dueñoId + "%" + texto);
+            writer.newLine();
+            utilLog.escribirLog("Reseña guardada exitosamente: " + reseña, Level.INFO);
+        } catch (IOException e) {
+            utilLog.escribirLog("Error al guardar la reseña en el archivo: " + e.getMessage(), Level.SEVERE);
         }
     }
 
@@ -417,7 +421,7 @@ public class UtilPersistencia implements Serializable {
         return listaVendedores;
     }
 
-    //leer productos desde archivo
+    // leer productos desde archivo
     public List<Producto> leerProductosDesdeArchivo() {
         List<Producto> listaProductos = new ArrayList<>();
         String rutaProductos = utilProperties.obtenerPropiedad("rutaProductos.txt");
@@ -558,12 +562,32 @@ public class UtilPersistencia implements Serializable {
     }
 
     // leer reseñas desde archivo
-    public List<Reseña> leerReseñasDesdeArchivo(List<Vendedor> listaVendedores) {
+    public List<Reseña> leerReseñasDesdeArchivo() {
         List<Reseña> listaReseñas = new ArrayList<>();
-        String rutaReseñas = utilProperties.obtenerPropiedad("rutaReseñas.txt");
-    
+        String rutaReseñas = utilProperties.obtenerPropiedad("rutaResenas.txt");
+
+        // Verificar si la ruta es nula
+        if (rutaReseñas == null) {
+            utilLog.escribirLog("La ruta de reseñas es nula. Verifica la configuración.", Level.SEVERE);
+            return listaReseñas; // Retornar lista vacía si la ruta es nula
+        }
+
+
+        // Verificar si el archivo existe y no está vacío
+        File archivoReseñas = new File(rutaReseñas);
+                System.out.println("Ruta del archivo: " + rutaReseñas);
+        System.out.println("Existe: " + archivoReseñas.exists());
+        System.out.println("Tamaño: " + archivoReseñas.length());
+        System.out.println("Tamaño del archivo: " + archivoReseñas.length());
+        if (!archivoReseñas.exists() || archivoReseñas.length() == 0) {
+
+            utilLog.escribirLog("El archivo de reseñas está vacío o no existe: " + rutaReseñas, Level.INFO);
+            return listaReseñas; // Retornar lista vacía si el archivo no existe o está vacío
+        }
+        // Depuración: imprimir información sobre el archivo
+
         try (BufferedReader reader = new BufferedReader(new FileReader(rutaReseñas))) {
-            String linea; 
+            String linea;
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split("%");
                 if (datos.length < 4) { // Asegurarse de que hay suficientes datos
@@ -571,15 +595,18 @@ public class UtilPersistencia implements Serializable {
                     continue; // Saltar esta línea si no tiene el formato correcto
                 }
                 String id = datos[0];
-                Vendedor autor = obtenerVendedorPorId(datos[1], listaVendedores); // Método para obtener Vendedor por ID
-                Vendedor dueño = obtenerVendedorPorId(datos[2], listaVendedores); // Método para obtener Vendedor por ID
+                Vendedor autor = obtenerVendedorPorId(datos[1], leerVendedoresDesdeArchivo()); // Método para obtener
+                                                                                               // Vendedor por ID
+                Vendedor dueño = obtenerVendedorPorId(datos[2], leerVendedoresDesdeArchivo()); // Método para obtener
+                                                                                               // Vendedor por ID
                 String texto = datos[3];
-    
+
                 if (autor != null && dueño != null) { // Asegurarse de que ambos vendedores existen
                     Reseña reseña = new Reseña(id, autor, dueño, texto); // Crear la reseña
                     listaReseñas.add(reseña);
                 } else {
-                    utilLog.escribirLog("No se pudo encontrar el autor o dueño para la reseña: " + linea, Level.WARNING);
+                    utilLog.escribirLog("No se pudo encontrar el autor o dueño para la reseña: " + linea,
+                            Level.WARNING);
                 }
             }
             utilLog.escribirLog("Reseñas leídas desde el archivo correctamente.", Level.INFO);
@@ -588,7 +615,7 @@ public class UtilPersistencia implements Serializable {
         }
         return listaReseñas; // Retornar la lista de reseñas
     }
-    
+
     // Método para obtener un Vendedor por su ID
     private Vendedor obtenerVendedorPorId(String id, List<Vendedor> listaVendedores) {
         for (Vendedor vendedor : listaVendedores) {
@@ -666,26 +693,33 @@ public class UtilPersistencia implements Serializable {
         gestionarArchivos(leerVendedoresDesdeArchivo(), listaProductos, leerSolicitudesDesdeArchivo(), listaReseñas);
         utilLog.escribirLog("Producto modificado exitosamente: " + productoModificado, Level.INFO);
     }
+
     // Método para modificar una reseña
     public void modificarReseña(Reseña reseñaModificada) {
-       List<Reseña> listaReseñas = leerReseñasDesdeArchivo(listaVendedoresCache); // Método que debes implementar para leer las reseñas
-       boolean reseñaEncontrada = false;
+        List<Reseña> listaReseñas = leerReseñasDesdeArchivo(); // Método que debes implementar para
+                                                               // leer las reseñas
+        boolean reseñaEncontrada = false;
 
-    for (int i = 0; i < listaReseñas.size(); i++) {
-        if (listaReseñas.get(i).getId().equals(reseñaModificada.getId())) {
-            reseñaEncontrada = true;
-            listaReseñas.set(i, reseñaModificada); // Reemplazar la reseña existente con la modificada
-            utilLog.escribirLog("Reseña modificada exitosamente: " + reseñaModificada, Level.INFO);
-            break;
+        for (int i = 0; i < listaReseñas.size(); i++) {
+            if (listaReseñas.get(i).getId().equals(reseñaModificada.getId())) {
+                reseñaEncontrada = true;
+                listaReseñas.set(i, reseñaModificada); // Reemplazar la reseña existente con la modificada
+                utilLog.escribirLog("Reseña modificada exitosamente: " + reseñaModificada, Level.INFO);
+                break;
+            }
         }
-    }
-    if (!reseñaEncontrada) {
-        utilLog.escribirLog("No se encontró la reseña con ID: " + reseñaModificada.getId(), Level.WARNING);
-        return;
-    }
+        if (!reseñaEncontrada) {
+            utilLog.escribirLog("No se encontró la reseña con ID: " + reseñaModificada.getId(), Level.WARNING);
+            return;
+        }
 
-      gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas); // Asegúrate de que gestionarArchivos soporte reseñas
-      utilLog.escribirLog("Lista de reseñas guardada con éxito", Level.INFO);
+        gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas); // Asegúrate
+                                                                                                                      // de
+                                                                                                                      // que
+                                                                                                                      // gestionarArchivos
+                                                                                                                      // soporte
+                                                                                                                      // reseñas
+        utilLog.escribirLog("Lista de reseñas guardada con éxito", Level.INFO);
     }
 
     // ELIMINAR
@@ -716,15 +750,18 @@ public class UtilPersistencia implements Serializable {
 
     // Método para eliminar reseña
     public void eliminarReseña(String idReseña) {
-    List<Reseña> listaReseñas = leerReseñasDesdeArchivo(listaVendedoresCache); // Leer las reseñas desde el archivo
-    listaReseñas.removeIf(reseña -> reseña.getId().equals(idReseña)); // Eliminar la reseña con el ID especificado
-    gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas); // Guardar los cambios
-    utilLog.escribirLog("Reseña eliminada exitosamente con ID: " + idReseña, Level.INFO); // Log de éxito
-}
+        List<Reseña> listaReseñas = leerReseñasDesdeArchivo(); // Leer las reseñas desde el archivo
+        listaReseñas.removeIf(reseña -> reseña.getId().equals(idReseña)); // Eliminar la reseña con el ID especificado
+        gestionarArchivos(leerVendedoresDesdeArchivo(), leerProductosDesdeArchivo(), listaSolicitudes, listaReseñas); // Guardar
+                                                                                                                      // los
+                                                                                                                      // cambios
+        utilLog.escribirLog("Reseña eliminada exitosamente con ID: " + idReseña, Level.INFO); // Log de éxito
+    }
 
     // BUSCAR
 
     public Reseña buscarReseñaPorId(String id) {
+        List<Reseña> listaReseñas = leerReseñasDesdeArchivo();
         for (Reseña reseña : listaReseñas) {
             if (reseña.getId().equals(id)) {
                 return reseña; // Retorna la reseña encontrada

@@ -1,2 +1,5 @@
 8381%Ruperto%Castiblanco%777%Cll3-2050%contraseña%%%
 2247%alfonso%Cantinflas%876%Cll3-1010%contraseña%%%
+7967%Nombre del Autor%Apellido del Autor%123456789%Dirección del Autor%ContraseñaSegura%%%
+5513%Nombre del Dueño%Apellido del Dueño%987654321%Dirección del Dueño%ContraseñaSegura%%%
+0251%alfonso%Cantinflas%896%Cll3-1010%contraseña%%%

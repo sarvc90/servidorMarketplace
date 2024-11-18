@@ -162,16 +162,15 @@ public class UtilSerializar implements Serializable {
     }
 
     public void actualizarSerializacionReseñas() {
-        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
         lock.lock();
         try {
             utilLog.escribirLog("Leyendo reseñas desde archivo", Level.INFO);
-            List<Reseña> listaReseñas = utilPersistencia.leerReseñasDesdeArchivo(listaVendedores);
+            List<Reseña> listaReseñas = utilPersistencia.leerReseñasDesdeArchivo();
             utilLog.escribirLog("Reseñas leídas: " + listaReseñas.size(), Level.INFO);
 
             if (listaReseñas.isEmpty()) {
-                String rutaArchivoXML = "persistencia/Reseñas.xml";
-                String rutaArchivoBin = "persistencia/Reseñas.bin";
+                String rutaArchivoXML = "persistencia/Resenas.xml";
+                String rutaArchivoBin = "persistencia/Resenas.bin";
                 utilLog.escribirLog("Intentando borrar contenido del archivo: " + rutaArchivoXML + " y " + rutaArchivoBin, Level.INFO);
                 utilPersistencia.borrarContenidoArchivo(rutaArchivoXML);
                 utilPersistencia.borrarContenidoArchivo(rutaArchivoBin);
@@ -333,8 +332,8 @@ public class UtilSerializar implements Serializable {
     public List<Reseña> deserializarReseñas(boolean esXML) {
         lock.lock();
         try {
-            String ruta = esXML ? utilProperties.obtenerPropiedad("rutaReseñas.xml")
-                                : utilProperties.obtenerPropiedad("rutaReseñas.bin");
+            String ruta = esXML ? utilProperties.obtenerPropiedad("rutaResenas.xml")
+                                : utilProperties.obtenerPropiedad("rutaResenas.bin");
 
             List<Object> lista = new ArrayList<>();
             DeserializarTarea tarea = new DeserializarTarea(ruta, esXML, lista);

@@ -67,7 +67,7 @@ public class UtilMarketPlace implements Serializable {
 
     public List<Reseña> getReseñas() {
         List<Vendedor> vendedores = obtenerListaDeVendedores(); // Obtiene la lista de vendedores (implementa este método)
-        return utilPersistencia.leerReseñasDesdeArchivo(vendedores);
+        return utilPersistencia.leerReseñasDesdeArchivo();
     }
 
     // se crea la unica instancia de la clase
@@ -241,38 +241,45 @@ public class UtilMarketPlace implements Serializable {
 
     // obtiene la lista de solicitudes deserializada desde un archivo.
     public List<Solicitud> obtenerSolicitudes() {
-        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
-        utilPersistencia.gestionarArchivos(
+            utilPersistencia.gestionarArchivos(
             utilPersistencia.leerVendedoresDesdeArchivo(),
             utilPersistencia.leerProductosDesdeArchivo(),
             utilSerializar.deserializarSolicitudes(true),
-            utilPersistencia.leerReseñasDesdeArchivo(listaVendedores) // Agregado el cuarto argumento
+            utilPersistencia.leerReseñasDesdeArchivo() // Agregado el cuarto argumento
         );
          return utilSerializar.deserializarSolicitudes(true);
     }
 
      // obtiene la lista de vendedores deserializada desde un archivo.
     public List<Vendedor> obtenerVendedores() {
-        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
-         utilPersistencia.gestionarArchivos(
+            utilPersistencia.gestionarArchivos(
             utilSerializar.deserializarVendedores(true),
             utilPersistencia.leerProductosDesdeArchivo(),
             utilPersistencia.leerSolicitudesDesdeArchivo(),
-            utilPersistencia.leerReseñasDesdeArchivo(listaVendedores) // Agregado el cuarto argumento
+            utilPersistencia.leerReseñasDesdeArchivo() // Agregado el cuarto argumento
         );
         return utilSerializar.deserializarVendedores(true);
     }
 
     // obtiene la lista de productos deserializada desde un archivo.
     public List<Producto> obtenerProductos() {
-        List<Vendedor> listaVendedores = utilPersistencia.getListaVendedoresCache();
-        utilPersistencia.gestionarArchivos(
+          utilPersistencia.gestionarArchivos(
           utilPersistencia.leerVendedoresDesdeArchivo(),
           utilSerializar.deserializarProductos(true),
           utilPersistencia.leerSolicitudesDesdeArchivo(),
-          utilPersistencia.leerReseñasDesdeArchivo(listaVendedores) // Agregado el cuarto argumento
+          utilPersistencia.leerReseñasDesdeArchivo() // Agregado el cuarto argumento
         );
         return utilSerializar.deserializarProductos(true);
+    }
+
+    // obtiene la lista de reseñas deserializada desde un archivo.
+  public List<Reseña> obtenerReseñas() {
+    utilPersistencia.gestionarArchivos(
+          utilPersistencia.leerVendedoresDesdeArchivo(),
+          utilPersistencia.leerProductosDesdeArchivo(),
+          utilPersistencia.leerSolicitudesDesdeArchivo(),
+          utilSerializar.deserializarReseñas(true));
+    return utilSerializar.deserializarReseñas(true);
     }
 
     // Inicia sesión para un usuario (vendedor o administrador) basado en la cédula
@@ -522,7 +529,7 @@ public boolean eliminarReseña(String idReseña) throws ReseñaNoEncontradaExcep
       utilSerializar.actualizarSerializacionReseñas();
 
       // Obtener la lista de reseñas
-      List<Reseña> reseñas = utilPersistencia.leerReseñasDesdeArchivo(listaVendedores);
+      List<Reseña> reseñas = utilPersistencia.leerReseñasDesdeArchivo();
 
       // Verificar si la lista de reseñas es nula
       if (reseñas == null) {
@@ -551,14 +558,6 @@ public boolean eliminarReseña(String idReseña) throws ReseñaNoEncontradaExcep
         throw new ReseñaNoEncontradaException();
         }   // O maneja como sea apropiado
     }
-    // obtiene la lista de reseñas deserializada desde un archivo.
-  public List<Reseña> obtenerReseñas() {
-       utilPersistencia.gestionarArchivos(utilPersistencia.leerVendedoresDesdeArchivo(),
-             utilPersistencia.leerProductosDesdeArchivo(),
-             utilPersistencia.leerSolicitudesDesdeArchivo(),
-             utilSerializar.deserializarReseñas(true));
-       return utilSerializar.deserializarReseñas(true);
-    }
-}
+}   
 
 

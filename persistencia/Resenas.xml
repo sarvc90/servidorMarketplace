@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.4" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="com.servidor.modelo.Reseña">
+    <void property="autor">
+     <object class="com.servidor.modelo.Vendedor">
+      <void property="apellido">
+       <string>Castiblanco</string>
+      </void>
+      <void property="cedula">
+       <string>777</string>
+      </void>
+      <void property="contraseña">
+       <string>contraseña</string>
+      </void>
+      <void property="direccion">
+       <string>Cll3-2050</string>
+      </void>
+      <void property="id">
+       <string>8381</string>
+      </void>
+      <void property="nombre">
+       <string>Ruperto</string>
+      </void>
+     </object>
+    </void>
+    <void property="dueño">
+     <object class="com.servidor.modelo.Vendedor">
+      <void property="apellido">
+       <string>Cantinflas</string>
+      </void>
+      <void property="cedula">
+       <string>876</string>
+      </void>
+      <void property="contraseña">
+       <string>contraseña</string>
+      </void>
+      <void property="direccion">
+       <string>Cll3-1010</string>
+      </void>
+      <void property="id">
+       <string>2247</string>
+      </void>
+      <void property="nombre">
+       <string>alfonso</string>
+      </void>
+     </object>
+    </void>
+    <void property="id">
+     <string>3254</string>
+    </void>
+    <void property="texto">
+     <string>intento2</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Reseña">
+    <void property="autor">
+     <object class="com.servidor.modelo.Vendedor">
+      <void property="apellido">
+       <string>Cantinflas</string>
+      </void>
+      <void property="cedula">
+       <string>876</string>
+      </void>
+      <void property="contraseña">
+       <string>contraseña</string>
+      </void>
+      <void property="direccion">
+       <string>Cll3-1010</string>
+      </void>
+      <void property="id">
+       <string>2247</string>
+      </void>
+      <void property="nombre">
+       <string>alfonso</string>
+      </void>
+     </object>
+    </void>
+    <void property="dueño">
+     <object class="com.servidor.modelo.Vendedor">
+      <void property="apellido">
+       <string>Apellido del Autor</string>
+      </void>
+      <void property="cedula">
+       <string>123456789</string>
+      </void>
+      <void property="contraseña">
+       <string>ContraseñaSegura</string>
+      </void>
+      <void property="direccion">
+       <string>Dirección del Autor</string>
+      </void>
+      <void property="id">
+       <string>7967</string>
+      </void>
+      <void property="nombre">
+       <string>Nombre del Autor</string>
+      </void>
+     </object>
+    </void>
+    <void property="id">
+     <string>9973</string>
+    </void>
+    <void property="texto">
+     <string>hola</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

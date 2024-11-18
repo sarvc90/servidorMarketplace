@@ -26,10 +26,58 @@ import com.servidor.excepciones.UsuarioNoEncontradoException;
 public class Main {
     public static void main(String[] args) {
         UtilMarketPlace utilMarketPlace = UtilMarketPlace.getInstance();
-        UtilSerializar utilSerializar = UtilSerializar.getInstance();
 
         MarketPlace marketPlace = utilMarketPlace.getMarketPlace();
+
+        System.out.println("Lista de reseñas:");
+        marketPlace.obtenerReseñas().forEach(r -> {
+            System.out.println("Reseña: " + r.getTexto() + " de " + r.getAutor().getNombre());
+        });
+
+        }
+
+        
+        /*
+        // CREAR Reseña
+        try {
+            marketPlace.crearReseña(reseña);
+            System.out.println("Reseña creada exitosamente: " + reseña.getTexto());
+        } catch (ReseñaExistenteException e) {
+            System.out.println("La reseña ya existe.");
+        } }
+/*
+        // LEER Reseñas
+        System.out.println("Lista de reseñas:");
+        marketPlace.getReseñas().forEach(r -> {
+            System.out.println("Reseña: " + r.getTexto() + " de " + r.getAutor().getNombre());
+        });
+
+        // MODIFICAR Reseña
+        try {
+            Reseña reseñaModificada = new Reseña("1", autor, dueño, "todo excelente.");
+            marketPlace.modificarReseña(reseñaModificada);
+            System.out.println("Reseña modificada exitosamente.");
+        } catch (ReseñaNoEncontradaException e) {
+            System.out.println("No se encontró la reseña para modificar.");
+        }
+
+        // ELIMINAR Reseña
+        try {
+            String idReseñaAEliminar = "1";
+            marketPlace.eliminarReseña(idReseñaAEliminar);
+            System.out.println("Reseña eliminada exitosamente.");
+        } catch (ReseñaNoEncontradaException e) {
+            System.out.println("No se encontró la reseña para eliminar.");
+        }
+        
+        // Leer nuevamente las reseñas
+        System.out.println("Lista de reseñas después de la eliminación:");
+        marketPlace.getReseñas().forEach(r -> {
+            System.out.println("Reseña: " + r.getTexto() + " de " + r.getAutor().getNombre());
+        });
+    }
 /* 
+
         // Vendedor
  
         // CREAR
@@ -240,5 +288,6 @@ public class Main {
 *//*
     utilMarketPlace.exportarEstadisticas("/persistencia/log","Usuario ejemplo", "01/01/2024", "31/12/2024", "4285");
 */
-}}
+}
+
 
