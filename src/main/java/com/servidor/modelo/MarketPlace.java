@@ -146,6 +146,30 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
         }
     }
 
+    public boolean modificarVendedor(Vendedor vendedorModificado) {
+    try {
+        // Llama al método para modificar el vendedor en utilMarketPlace
+        utilMarketPlace.modificarVendedor(vendedorModificado);
+        
+        // Busca si el vendedor existe en la lista de vendedores
+        for (Vendedor vendedor : vendedores) {
+            if (vendedor.getCedula().equals(vendedorModificado.getCedula())) {
+                // Si se encuentra, modifica el vendedor
+                int posicion = vendedores.indexOf(vendedor);
+                vendedores.set(posicion, vendedorModificado);
+                return true; // Modificación exitosa
+            }
+        }
+        
+        // Si no se encuentra el vendedor, retorna false
+        return false; 
+    } catch (UsuarioNoEncontradoException e) {
+        // Manejo de la excepción
+        System.err.println("Error: " + e.getMessage());
+        return false;} // Retorna false si hay un error
+    }
+    
+/*
     public void modificarVendedor(Vendedor vendedorModificado) throws UsuarioNoEncontradoException {
         utilMarketPlace.modificarVendedor(vendedorModificado);
         for (Vendedor vendedor : vendedores) {
@@ -156,7 +180,7 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
             }
         }
     }
-
+*/
     public List<Solicitud> obtenerSolicitudes() {
         return utilMarketPlace.obtenerSolicitudes();
     }

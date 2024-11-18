@@ -1,7 +1,9 @@
-package com.servidor.server;
+/*package com.servidor.server;
 
 import java.io.*;
 import java.net.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -114,11 +116,23 @@ public class Servidor {
                     case "OBTENER_VENDEDORES":
                         obtenerVendedores(partes[1]);
                         break;
-                    //case "ELIMINAR_PRODUCTO":
-                        //eliminarProducto(partes[1]);
-                        //break;
                     case "ELIMINAR_VENDEDOR":
                         eliminarVendedor(partes[1]);
+                        break;
+                        case "MENSAJES_ENTRE_VENDEDORES":
+                        manejarMensajesEntreVendedores(datos);
+                        break;
+                    case "PRODUCTOS_PUBLICADOS_RANGO":
+                        manejarProductosPublicadosRango(datos);
+                        break;
+                    case "PRODUCTOS_PUBLICADOS_POR_VENDEDOR":
+                        manejarProductosPublicadosPorVendedor(datos);
+                        break;
+                    case "CONTACTOS_POR_VENDEDOR":
+                        manejarContactosPorVendedor(datos);
+                        break;
+                    case "TOP_10_PRODUCTOS_POPULARES":
+                        manejarTop10ProductosPopulares();
                         break;
                     default:
                         out.println("Comando no reconocido.");
@@ -126,6 +140,106 @@ public class Servidor {
             } catch (Exception e) {
                 out.println("Error procesando el comando: " + e.getMessage());
             }
+        }
+
+        
+private void manejarMensajesEntreVendedores(String datos) {
+    String[] vendedores = datos.split(",");
+    if (vendedores.length < 2) {
+        out.println("Error: Se necesitan dos vendedores.");
+        return;
+    }
+    String vendedor1 = vendedores[0];
+    String vendedor2 = vendedores[1];
+
+    // Aquí deberías implementar la lógica para obtener los mensajes entre los dos vendedores
+    String mensajes = obtenerMensajesEntreVendedores(vendedor1, vendedor2);
+    out.println(mensajes);
+}
+
+private void manejarProductosPublicadosRango(String datos) {
+    String[] fechas = datos.split(",");
+    LocalDate startDate = LocalDate.parse(fechas[0]);
+    LocalDate endDate = LocalDate.parse(fechas[1]);
+
+    // Lógica para obtener los productos publicados entre las fechas
+    String productos = obtenerProductosPublicadosRango(startDate, endDate);
+    out.println(productos);
+}
+
+private void manejarProductosPublicadosPorVendedor(String datos) {
+    // Lógica para obtener los productos publicados por el vendedor
+    String productos = obtenerProductosPublicadosPorVendedor(datos);
+    out.println(productos);
+}
+
+private void manejarContactosPorVendedor(String datos) {
+    // Lógica para obtener los contactos del vendedor
+    String contactos = obtenerContactosPorVendedor(datos);
+    out.println(contactos);
+}
+
+private void manejarTop10ProductosPopulares() {
+    // Lógica para obtener los 10 productos más populares
+    String productos = obtenerTop10ProductosPopulares();
+    out.println(productos);
+}
+        private void procesarMensaje(String mensaje) {
+    // Suponiendo que el mensaje contiene información del producto
+    String[] partes = mensaje.split(",");
+    
+    if (partes.length < 8) {
+        out.println("Error: Datos del producto incompletos.");
+        return;
+    }
+
+    String nombre = partes[0];
+    String descripcion = partes[1];
+    LocalDateTime fechaPublicacion = LocalDateTime.parse(partes[2]);
+    String imagenRuta = partes[3];
+    int precio = Integer.parseInt(partes[4]);
+    int meGustas = Integer.parseInt(partes[5]);
+    String estado = partes[6];
+    String categoria = partes[7];
+
+    // Crear el objeto ProductoDTO (o similar) y guardar en la base de datos
+    ProductoDTO nuevoProducto = new ProductoDTO(
+            null, // id (puedes generarlo en la base de datos)
+            nombre,
+            descripcion,
+            fechaPublicacion,
+            imagenRuta,
+            precio,
+            meGustas,
+            new ArrayList<>(), // comentarios
+            estado,
+            categoria
+    );
+
+    // Lógica para guardar el producto en la base de datos
+    boolean exito = guardarProductoEnBaseDeDatos(nuevoProducto);
+
+    // Enviar respuesta al cliente
+    if (exito) {
+        out.println("Éxito");
+    } else {
+        out.println("Error al crear el producto.");
+    }
+}
+
+// Método para guardar el producto en la base de datos
+private boolean guardarProductoEnBaseDeDatos(ProductoDTO producto) {
+    // Implementa la lógica para guardar el producto en tu base de datos
+    // Retorna true si el producto se guardó correctamente, de lo contrario false
+    return true; // Placeholder, cambia esto por la lógica real
+}
+        private void actualizarVendedor(String datos) {
+            
+            Vendedor vendedorModificado = crearVendedorDesdeDatos(datos);
+            marketPlace.modificarVendedor(vendedorModificado);
+            out.println("Actualización exitosa");
+            boolean success = marketPlace.modificarVendedor(vendedorModificado);
+            out.println(success ? "SUCCESS" : "ERROR");
         }
 
         private void procesarLogin(String datos) {
@@ -151,23 +265,13 @@ public class Servidor {
         }
 
         private void obtenerVendedor(String userId) {
-            Vendedor vendedor = marketPlace.obtenerVendedores().stream()
+            Vendedor vendedor = marketPlace.getVendedores().stream()
                 .filter(v -> v.getId().equals(userId))
                 .findFirst()
                 .orElse(null);
             if (vendedor != null) {
                 out.println(vendedor.toString());
             } else {
-                out.println("Error: Vendedor no encontrado.");
-            }
-        }
-
-        private void actualizarVendedor(String datos) {
-            Vendedor vendedorModificado = crearVendedorDesdeDatos(datos);
-            try {
-                marketPlace.modificarVendedor(vendedorModificado);
-                out.println("Actualización exitosa");
-            } catch (UsuarioNoEncontradoException e) {
                 out.println("Error: Vendedor no encontrado.");
             }
         }
@@ -202,16 +306,7 @@ public class Servidor {
                 out.println("No hay vendedores disponibles.");
             }
         }
-/* 
-        private void eliminarProducto(String productoId) {
-            try {
-                marketPlace.eliminarProducto(productoId);
-                out.println("Producto eliminado con éxito");
-            } catch (ProductoNoEncontradoException e) {
-                out.println("Error: Producto no encontrado.");
-            }
-        }
-*/
+
         private void eliminarVendedor(String vendedorId) {
             try {
                 marketPlace.eliminarVendedor(vendedorId);
@@ -246,6 +341,46 @@ public class Servidor {
             out.println("Lista de likes del vendedor.");
         }
 
+        private void procesarMensaje(String mensaje) {
+            String[] partes = mensaje.split(" ", 2);
+            
+            if (partes.length < 2) {
+                out.println("Error: Comando o datos faltantes.");
+                return;
+            }
+        
+            String comando = partes[0];
+            String datos = partes[1];
+        
+            switch (comando) {
+                case "EXPORTAR_ESTADISTICAS":
+                    manejarExportarEstadisticas(datos);
+                    break;
+                // Otros casos...
+                default:
+                    out.println("Comando no reconocido.");
+            }
+        }
+        
+        private void manejarExportarEstadisticas(String userId) {
+            // Lógica para obtener las estadísticas del usuario
+            String estadisticas = obtenerEstadisticasPorUsuario(userId);
+            
+            if (estadisticas != null) {
+                // Enviar las estadísticas al cliente
+                out.println(estadisticas);
+            } else {
+                out.println("Error: No se pudieron obtener las estadísticas.");
+            }
+        }
+        
+        // Método que obtiene las estadísticas del usuario (implementación ficticia)
+        private String obtenerEstadisticasPorUsuario(String userId) {
+            // Aquí deberías implementar la lógica para obtener las estadísticas del usuario
+            // Esto puede incluir consultas a la base de datos u otras fuentes de datos
+            return "Estadísticas para el usuario " + userId; // Placeholder
+        }
+
         private void cerrarConexiones() {
             try {
                 if (out != null) out.close();
@@ -258,7 +393,8 @@ public class Servidor {
 
         private Vendedor crearVendedorDesdeDatos(String datos) {
             String[] info = datos.split(",");
-            return new Vendedor(info[0], info[1], info[2], info[3], info[4], info[5], null, null, null, 0, 0.0);
+            String id = null; // Asignar un ID adecuado si es necesario
+            return new Vendedor(id, info[0], info[1], info[2], info[3], info[4], null, null, null, 0, 0.0);
         }
     }
-}
+}*/
