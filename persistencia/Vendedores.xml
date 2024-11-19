@@ -111,5 +111,27 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="com.servidor.modelo.Vendedor">
+    <void property="apellido">
+     <string>Registro</string>
+    </void>
+    <void property="cedula">
+     <string>desde </string>
+    </void>
+    <void property="contraseña">
+     <string>contraseña</string>
+    </void>
+    <void property="direccion">
+     <string>server</string>
+    </void>
+    <void property="id">
+     <string>4633</string>
+    </void>
+    <void property="nombre">
+     <string>Prueba</string>
+    </void>
+   </object>
+  </void>
  </object>
 </java>

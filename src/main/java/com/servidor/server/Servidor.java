@@ -1,9 +1,10 @@
-/*package com.servidor.server;
+package com.servidor.server;
 
 import java.io.*;
 import java.net.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -13,7 +14,8 @@ import com.servidor.util.UtilMarketPlace;
 
 public class Servidor {
     private static final int PUERTO = 12345; // Puerto del servidor
-    private static Set<ClienteHandler> clientes = new CopyOnWriteArraySet<>(); // Conjunto para manejar múltiples clientes de forma concurrente
+    private static Set<ClienteHandler> clientes = new CopyOnWriteArraySet<>(); // Conjunto para manejar múltiples
+                                                                               // clientes de forma concurrente
     private static MarketPlace marketPlace; // Instancia de MarketPlace
 
     public static void main(String[] args) {
@@ -91,12 +93,11 @@ public class Servidor {
                     case "UPDATE_VENDEDOR":
                         actualizarVendedor(partes[1]);
                         break;
-                    case "GET_PRODUCTS":
                     case "OBTENER_PRODUCTOS":
-                        obtenerProductos(partes[1]);
+                        obtenerProductos();
                         break;
                     case "EXPORTAR_ESTADISTICAS":
-                        exportarEstadisticas(partes[1]);
+                        manejarExportarEstadisticas(partes[1]);
                         break;
                     case "GET_NOTIFICATIONS":
                         obtenerNotificaciones(partes[1]);
@@ -114,25 +115,31 @@ public class Servidor {
                         leerLikes(partes[1]);
                         break;
                     case "OBTENER_VENDEDORES":
-                        obtenerVendedores(partes[1]);
+                        obtenerVendedores();
                         break;
                     case "ELIMINAR_VENDEDOR":
                         eliminarVendedor(partes[1]);
                         break;
-                        case "MENSAJES_ENTRE_VENDEDORES":
-                        manejarMensajesEntreVendedores(datos);
+                    case "ELIMINAR_PRODUCTO":
+                        eliminarProducto(partes[1]);
+                        break;
+                    case "MENSAJES_ENTRE_VENDEDORES":
+                        manejarMensajesEntreVendedores(partes[1]);
                         break;
                     case "PRODUCTOS_PUBLICADOS_RANGO":
-                        manejarProductosPublicadosRango(datos);
+                        manejarProductosPublicadosRango(partes[1]);
                         break;
                     case "PRODUCTOS_PUBLICADOS_POR_VENDEDOR":
-                        manejarProductosPublicadosPorVendedor(datos);
+                        manejarProductosPublicadosPorVendedor(partes[1]);
                         break;
                     case "CONTACTOS_POR_VENDEDOR":
-                        manejarContactosPorVendedor(datos);
+                        manejarContactosPorVendedor(partes[1]);
                         break;
                     case "TOP_10_PRODUCTOS_POPULARES":
                         manejarTop10ProductosPopulares();
+                        break;
+                    case "CREAR_PRODUCTO":
+                        crearProducto(partes);
                         break;
                     default:
                         out.println("Comando no reconocido.");
@@ -142,104 +149,248 @@ public class Servidor {
             }
         }
 
+        private void crearProducto(String[] datos) {
+            if (datos.length < 9) { // Cambia a 9 porque ahora hay un ID de vendedor
+                out.println("Error: Datos del producto incompletos.");
+                return;
+            }
+
+            String vendedorId = datos[0]; // Obtener el ID del vendedor
+            String nombre = datos[1];
+            String descripcion = datos[2];
+            LocalDateTime fechaPublicacion = LocalDateTime.parse(datos[3]);
+            String fechaPublicacionString = fechaPublicacion.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+            String imagenRuta = datos[4];
+            int precio;
+            try {
+                precio = Integer.parseInt(datos[5]);
+            } catch (NumberFormatException e) {
+                out.println("Error: El precio debe ser un número válido.");
+                return;
+            }
+            int meGustas = Integer.parseInt(datos[6]);
+            String estado = datos[7];
+            String categoriaString = datos[8];
+
+            // Convertir el String de categoría a enum
+            Categoria categoria = Categoria.fromString(categoriaString);
+            if (categoria == null) {
+                out.println("Error: Categoría no válida.");
+                return;
+            }
+            Estado estado1 = Estado.fromString(categoriaString);
+            if (estado1 == null) {
+                out.println("Error: Estado no válida.");
+                return;
+            }
+
+            // Aquí puedes buscar el vendedor por ID y crear el producto asociado
+            Vendedor vendedor = buscarVendedorPorId(vendedorId);
+            if (vendedor == null) {
+                out.println("Error: Vendedor no encontrado.");
+                return;
+            }
+            Set<String> vendedoresQueDieronLike = null;
+            String id = null;
+            // Crear el objeto ProductoDTO (o similar) y guardar en la base de datos
+            Producto nuevoProducto = new Producto(
+                    id, // id (puedes generarlo en la base de datos)
+                    nombre,
+                    descripcion,
+                    fechaPublicacionString,
+                    imagenRuta,
+                    precio,
+                    meGustas,
+                    new ArrayList<>(), // comentarios
+                    estado1,
+                    categoria, // ahora es un enum,
+                    vendedoresQueDieronLike);
+
+            // Lógica para guardar el producto en la base de datos
+            boolean exito = guardarProductoEnBaseDeDatos(nuevoProducto, vendedor);
+
+            // Enviar respuesta al cliente
+            out.println(exito ? "Éxito" : "Error al crear el producto.");
+        }
+
+        // Método para buscar el vendedor por ID
+        private Vendedor buscarVendedorPorId(String vendedorId) {
+            return marketPlace.buscarVendedorPorId(vendedorId); // Placeholder, cambia esto por la lógica real
+        }
+
+        // Método para guardar el producto en la base de datos
+        private boolean guardarProductoEnBaseDeDatos(Producto producto, Vendedor vendedor) {
+            try {
+                vendedor.crearProducto(producto);
+            } catch (ProductoYaExisteException e) {
+                e.printStackTrace();
+            }
+            return true;
+        }
+
+        private void manejarExportarEstadisticas(String mensaje) {
+            String[] partes = mensaje.split(" ", 3); // Dividir en 3 partes: comando, userId, ruta
+            if (partes.length < 3) {
+                out.println("Error: Mensaje incompleto.");
+                return;
+            }
         
-private void manejarMensajesEntreVendedores(String datos) {
-    String[] vendedores = datos.split(",");
-    if (vendedores.length < 2) {
-        out.println("Error: Se necesitan dos vendedores.");
-        return;
-    }
-    String vendedor1 = vendedores[0];
-    String vendedor2 = vendedores[1];
+            String userId = partes[1];
+            String rutaSeleccionada = partes[2];
+        
+            // Aquí deberías implementar la lógica para obtener las estadísticas del usuario
+            String nombre = marketPlace.buscarVendedorPorId(userId).getNombre();
+            String estadisticas = marketPlace.generarReporte(nombre, "01/01/2000", "18/11/2024", userId);
+        
+            if (estadisticas != null) {
+                // Devolver las estadísticas como respuesta al cliente
+                out.println("Estadísticas para el usuario " + userId + ": " + estadisticas);
+            } else {
+                out.println("Error: No se encontraron estadísticas para el usuario " + userId);
+            }
+        }
+        
 
-    // Aquí deberías implementar la lógica para obtener los mensajes entre los dos vendedores
-    String mensajes = obtenerMensajesEntreVendedores(vendedor1, vendedor2);
-    out.println(mensajes);
-}
+        
 
-private void manejarProductosPublicadosRango(String datos) {
-    String[] fechas = datos.split(",");
-    LocalDate startDate = LocalDate.parse(fechas[0]);
-    LocalDate endDate = LocalDate.parse(fechas[1]);
+        private void manejarMensajesEntreVendedores(String datos) {
+            String[] vendedores = datos.split(",");
+            if (vendedores.length < 2) {
+                out.println("Error: Se necesitan dos vendedores.");
+                return;
+            }
+            String vendedor1 = vendedores[0];
+            String vendedor2 = vendedores[1];
 
-    // Lógica para obtener los productos publicados entre las fechas
-    String productos = obtenerProductosPublicadosRango(startDate, endDate);
-    out.println(productos);
-}
+            // Aquí deberías implementar la lógica para obtener los mensajes entre los dos
+            // vendedores
+            String mensajes = obtenerMensajesEntreVendedores(vendedor1, vendedor2);
+            out.println(mensajes);
+        }
 
-private void manejarProductosPublicadosPorVendedor(String datos) {
-    // Lógica para obtener los productos publicados por el vendedor
-    String productos = obtenerProductosPublicadosPorVendedor(datos);
-    out.println(productos);
-}
+        private void manejarProductosPublicadosRango(String datos) {
+            String[] fechas = datos.split(",");
+            LocalDateTime startDateTime = LocalDateTime.parse(fechas[0]);
+            LocalDateTime endDateTime = LocalDateTime.parse(fechas[1]);
 
-private void manejarContactosPorVendedor(String datos) {
-    // Lógica para obtener los contactos del vendedor
-    String contactos = obtenerContactosPorVendedor(datos);
-    out.println(contactos);
-}
+            // Convertir LocalDateTime a String
+            String startDateStr = startDateTime.toString();
+            String endDateStr = endDateTime.toString();
 
-private void manejarTop10ProductosPopulares() {
-    // Lógica para obtener los 10 productos más populares
-    String productos = obtenerTop10ProductosPopulares();
-    out.println(productos);
-}
-        private void procesarMensaje(String mensaje) {
-    // Suponiendo que el mensaje contiene información del producto
-    String[] partes = mensaje.split(",");
-    
-    if (partes.length < 8) {
-        out.println("Error: Datos del producto incompletos.");
-        return;
-    }
+            // Lógica para obtener los productos publicados entre las fechas
+            int productos = marketPlace.contarProductosPorRangoFecha(startDateStr, endDateStr);
+            if (productos != 0) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(productos).append("\n");
+                out.println(sb.toString());
+            } else {
+                out.println("No hay productos publicados en este rango de fechas.");
+            }
+        }
 
-    String nombre = partes[0];
-    String descripcion = partes[1];
-    LocalDateTime fechaPublicacion = LocalDateTime.parse(partes[2]);
-    String imagenRuta = partes[3];
-    int precio = Integer.parseInt(partes[4]);
-    int meGustas = Integer.parseInt(partes[5]);
-    String estado = partes[6];
-    String categoria = partes[7];
+        private void manejarProductosPublicadosPorVendedor(String datos) {
+            // Lógica para obtener los productos publicados por el vendedor
+            int productos = marketPlace.contarProductosPorVendedor(datos);
+            if (productos != 0) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(productos).append("\n");
+                out.println(sb.toString());
+            } else {
+                out.println("No hay productos publicados por este vendedor.");
+            }
+        }
 
-    // Crear el objeto ProductoDTO (o similar) y guardar en la base de datos
-    ProductoDTO nuevoProducto = new ProductoDTO(
-            null, // id (puedes generarlo en la base de datos)
-            nombre,
-            descripcion,
-            fechaPublicacion,
-            imagenRuta,
-            precio,
-            meGustas,
-            new ArrayList<>(), // comentarios
-            estado,
-            categoria
-    );
+        private void manejarContactosPorVendedor(String datos) {
+            // Lógica para obtener los contactos del vendedor
+            int contactos = marketPlace.contarContactosPorVendedor(datos);
+            if (contactos != 0) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(contactos).append("\n");
+                out.println(sb.toString());
+            } else {
+                out.println("No hay contactos disponibles para este vendedor.");
+            }
+        }
 
-    // Lógica para guardar el producto en la base de datos
-    boolean exito = guardarProductoEnBaseDeDatos(nuevoProducto);
+        private void manejarTop10ProductosPopulares() {
+            // Lógica para obtener los 10 productos más populares
+            List<Producto> productosPopulares = marketPlace.obtenerTop10ProductosPopulares();
+            if (!productosPopulares.isEmpty()) {
+                StringBuilder sb = new StringBuilder();
+                for (Producto producto : productosPopulares) {
+                    sb.append(producto.toString()).append("\n");
+                }
+                out.println(sb.toString());
+            } else {
+                out.println("No hay productos populares disponibles.");
+            }
+        }
 
-    // Enviar respuesta al cliente
-    if (exito) {
-        out.println("Éxito");
-    } else {
-        out.println("Error al crear el producto.");
-    }
-}
+        private void obtenerVendedores() {
+            List<Vendedor> vendedores = marketPlace.getVendedores();
+            if (!vendedores.isEmpty()) {
+                StringBuilder sb = new StringBuilder();
+                for (Vendedor vendedor : vendedores) {
+                    sb.append(vendedor.toString()).append("\n"); // Formato de salida de vendedores
+                }
+                out.println(sb.toString());
+            } else {
+                out.println("No hay vendedores disponibles.");
+            }
+        }
 
-// Método para guardar el producto en la base de datos
-private boolean guardarProductoEnBaseDeDatos(ProductoDTO producto) {
-    // Implementa la lógica para guardar el producto en tu base de datos
-    // Retorna true si el producto se guardó correctamente, de lo contrario false
-    return true; // Placeholder, cambia esto por la lógica real
-}
+        private String obtenerMensajesEntreVendedores(String vendedor1, String vendedor2) {
+            // Implementa la lógica para obtener los mensajes entre los dos vendedores
+            // Esto puede incluir consultas a la base de datos o a una lista de mensajes
+            return "Mensajes entre " + vendedor1 + " y " + vendedor2;
+        }
+
+        private void eliminarProducto(String productoId) {
+            //boolean exito = marketPlace.eliminarProducto(productoId); // Implementa la lógica en MarketPlace
+            //out.println(exito ? "Producto eliminado con éxito." : "Error: Producto no encontrado.");
+        }
+
+
         private void actualizarVendedor(String datos) {
-            
-            Vendedor vendedorModificado = crearVendedorDesdeDatos(datos);
-            marketPlace.modificarVendedor(vendedorModificado);
-            out.println("Actualización exitosa");
-            boolean success = marketPlace.modificarVendedor(vendedorModificado);
-            out.println(success ? "SUCCESS" : "ERROR");
+            try {
+                // Dividir los datos recibidos
+                String[] partes = datos.split(",");
+                if (partes.length < 6) {
+                    out.println("ERROR");
+                    return;
+                }
+
+                String userId = partes[0];
+                String nombres = partes[1];
+                String apellidos = partes[2];
+                String cedula = partes[3];
+                String contrasena = partes[4];
+                String direccion = partes[5];
+
+                // Crear un objeto Vendedor con los datos actualizados
+                Vendedor vendedorActualizado = new Vendedor(
+                        userId,
+                        nombres,
+                        apellidos,
+                        cedula,
+                        contrasena,
+                        direccion,
+                        null, // Mantener los valores existentes para los campos no actualizados
+                        null,
+                        null,
+                        0,
+                        0.0);
+
+                // Intentar modificar el vendedor
+                boolean success = marketPlace.modificarVendedor(vendedorActualizado);
+
+                // Enviar respuesta al cliente
+                out.println(success ? "SUCCESS" : "ERROR");
+
+            } catch (Exception e) {
+                out.println("ERROR");
+                e.printStackTrace();
+            }
         }
 
         private void procesarLogin(String datos) {
@@ -264,24 +415,13 @@ private boolean guardarProductoEnBaseDeDatos(ProductoDTO producto) {
             }
         }
 
-        private void obtenerVendedor(String userId) {
-            Vendedor vendedor = marketPlace.getVendedores().stream()
-                .filter(v -> v.getId().equals(userId))
-                .findFirst()
-                .orElse(null);
-            if (vendedor != null) {
-                out.println(vendedor.toString());
-            } else {
-                out.println("Error: Vendedor no encontrado.");
-            }
-        }
 
-        private void obtenerProductos(String userId) {
+        private void obtenerProductos() {
             List<Producto> productos = marketPlace.obtenerProductos();
             if (!productos.isEmpty()) {
                 StringBuilder sb = new StringBuilder();
                 for (Producto producto : productos) {
-                    sb.append(producto.getId()).append(", ");
+                    sb.append(producto.toString()).append("\n"); // Formato de salida de productos
                 }
                 out.println(sb.toString());
             } else {
@@ -294,23 +434,32 @@ private boolean guardarProductoEnBaseDeDatos(ProductoDTO producto) {
             out.println("Estadísticas exportadas con éxito.");
         }
 
-        private void obtenerVendedores(String userId) {
-            List<Vendedor> vendedores = marketPlace.obtenerVendedores();
-            if (!vendedores.isEmpty()) {
-                StringBuilder sb = new StringBuilder();
-                for (Vendedor vendedor : vendedores) {
-                    sb.append(vendedor.getId()).append(", ");
+        private void obtenerVendedor(String userId) {
+            try {
+                Vendedor vendedor = marketPlace.buscarVendedorPorId(userId);
+                if (vendedor != null) {
+                    // Formatear la respuesta como en el cliente:
+                    // nombres,apellidos,cedula,contrasena,direccion,reputacion
+                    String respuesta = String.format("%s,%s,%s,%s,%s,%s",
+                            vendedor.getNombre(),
+                            vendedor.getApellido(),
+                            vendedor.getCedula(),
+                            vendedor.getContraseña(),
+                            vendedor.getDireccion(),
+                            vendedor.getPromedioCalificaciones()); 
+                    out.println(respuesta);
+                } else {
+                    out.println("Error: Vendedor no encontrado.");
                 }
-                out.println(sb.toString());
-            } else {
-                out.println("No hay vendedores disponibles.");
+            } catch (Exception e) {
+                out.println("Error al obtener el vendedor: " + e.getMessage());
             }
         }
 
         private void eliminarVendedor(String vendedorId) {
             try {
                 marketPlace.eliminarVendedor(vendedorId);
-                out.println("Vendedor eliminado con éxito");
+                out.println("Vendedor eliminado con éxito.");
             } catch (UsuarioNoEncontradoException e) {
                 out.println("Error: Vendedor no encontrado.");
             }
@@ -332,8 +481,17 @@ private boolean guardarProductoEnBaseDeDatos(ProductoDTO producto) {
         }
 
         private void darLike(String datos) {
-            // Lógica para dar like a un producto (simulada)
-            out.println("Like dado con éxito.");
+            String[] partes = datos.split(":");
+            if (partes.length < 2) {
+                out.println("Error: Datos incompletos para dar like.");
+                return;
+            }
+            
+            String vendedorId = partes[0];
+            String productoId = partes[1];
+            // Lógica para dar like al producto
+            boolean exito = marketPlace.darLike(marketPlace.buscarVendedorPorId(vendedorId), marketPlace.buscarProductoPorId(productoId)); // Implementa esta lógica en MarketPlace
+            out.println(exito ? "Like dado con éxito." : "Error: No se pudo dar like.");
         }
 
         private void leerLikes(String vendedorId) {
@@ -341,51 +499,18 @@ private boolean guardarProductoEnBaseDeDatos(ProductoDTO producto) {
             out.println("Lista de likes del vendedor.");
         }
 
-        private void procesarMensaje(String mensaje) {
-            String[] partes = mensaje.split(" ", 2);
-            
-            if (partes.length < 2) {
-                out.println("Error: Comando o datos faltantes.");
-                return;
-            }
-        
-            String comando = partes[0];
-            String datos = partes[1];
-        
-            switch (comando) {
-                case "EXPORTAR_ESTADISTICAS":
-                    manejarExportarEstadisticas(datos);
-                    break;
-                // Otros casos...
-                default:
-                    out.println("Comando no reconocido.");
-            }
-        }
-        
-        private void manejarExportarEstadisticas(String userId) {
-            // Lógica para obtener las estadísticas del usuario
-            String estadisticas = obtenerEstadisticasPorUsuario(userId);
-            
-            if (estadisticas != null) {
-                // Enviar las estadísticas al cliente
-                out.println(estadisticas);
-            } else {
-                out.println("Error: No se pudieron obtener las estadísticas.");
-            }
-        }
-        
-        // Método que obtiene las estadísticas del usuario (implementación ficticia)
-        private String obtenerEstadisticasPorUsuario(String userId) {
-            // Aquí deberías implementar la lógica para obtener las estadísticas del usuario
-            // Esto puede incluir consultas a la base de datos u otras fuentes de datos
-            return "Estadísticas para el usuario " + userId; // Placeholder
-        }
+
+
+
 
         private void cerrarConexiones() {
             try {
-                if (out != null) out.close();
-                if (in != null) in.close();
-                if (socket != null) socket.close();
+                if (out != null)
+                    out.close();
+                if (in != null)
+                    in.close();
+                if (socket != null)
+                    socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -397,4 +522,4 @@ private boolean guardarProductoEnBaseDeDatos(ProductoDTO producto) {
             return new Vendedor(id, info[0], info[1], info[2], info[3], info[4], null, null, null, 0, 0.0);
         }
     }
-}*/
+}

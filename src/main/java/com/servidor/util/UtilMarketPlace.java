@@ -386,7 +386,7 @@ public class UtilMarketPlace implements Serializable {
 
     // Exporta las estadísticas de un vendedor específico en un rango de fechas
     // determinado, guardándolas en una ruta especificada.
-    public void exportarEstadisticas(String ruta, String nombreUsuario, String fechaInicio, String fechaFin,
+    public StringBuilder exportarEstadisticas( String nombreUsuario, String fechaInicio, String fechaFin,
             String idVendedor) {
         // Formatear la fecha actual
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -411,24 +411,15 @@ public class UtilMarketPlace implements Serializable {
         reporte.append("Cantidad de contactos para el vendedor ID ").append(idVendedor).append(": ")
                 .append(cantidadContactos).append("\n");
         reporte.append("Top 10 productos con más 'me gusta':\n");
-
-        // for (Producto producto : top10Productos) {
-        // reporte.append("- ").append(producto.getNombre()).append(" (ID:
-        // ").append(producto.getId()).append(") con
-        // ").append(producto.getMeGustas()).append(" me gusta(s)\n");
-        // }
-
-        reporte.append("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
-        reporte.append("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
-
-        // Escribe el reporte en el archivo
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ruta))) {
-            writer.write(reporte.toString());
-            utilLog.escribirLog("Reporte exportado exitosamente a: " + ruta, Level.INFO);
-            utilLog.registrarAccion(nombreUsuario, "Exportó estadísticas. ", "Muro. ");
-        } catch (IOException e) {
-            utilLog.escribirLog("Error al exportar el reporte: " + e.getMessage(), Level.SEVERE);
+        List<Producto> top10Productos = obtenerTop10ProductosPopulares();
+        for (Producto producto : top10Productos) {
+        reporte.append("- ").append(producto.getNombre()).append(" (ID:").append(producto.getId()).append(") con").append(producto.getMeGustas()).append(" me gusta(s)\n");
         }
+
+        reporte.append("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+        reporte.append("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+
+return reporte;
     }
     public Vendedor obtenerVendedorPorId(String id){
         return utilPersistencia.buscarVendedorPorId(id);
@@ -557,6 +548,10 @@ public boolean eliminarReseña(String idReseña) throws ReseñaNoEncontradaExcep
                 "Modificación fallida.", "Modificar Reseña.");
         throw new ReseñaNoEncontradaException();
         }   // O maneja como sea apropiado
+    }
+    
+    public Producto buscarProductoPorId(String id){
+        return utilPersistencia.buscarProductoPorId(id);
     }
 }   
 

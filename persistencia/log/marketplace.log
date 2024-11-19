@@ -50000,3 +50000,1161 @@ nov 18, 2024 12:08:41 A. M. com.servidor.util.UtilLog escribirLog
 ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
 nov 18, 2024 12:08:41 A. M. com.servidor.util.UtilLog escribirLog
 INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Resenas.xml
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de productos está vacía. Se han borrado los archivos correspondientes.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:21:48 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@8807e25
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@2a3046da
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@2a098129
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@198e2867
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@12f40c25
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@3ada9e37
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Resenas.xml
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de reseñas está vacía, no se escribirá en el archivo.
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:21:49 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Resenas.xml
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de productos está vacía. Se han borrado los archivos correspondientes.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:23:46 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@8807e25
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@2a3046da
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@2a098129
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@198e2867
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@12f40c25
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@3ada9e37
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Resenas.xml
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de reseñas está vacía, no se escribirá en el archivo.
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:23:47 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Resenas.xml
+nov 19, 2024 1:24:01 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor. , Acción: Ingreso de sesión exitoso. , Interfaz: Iniciar sesión., Fecha y Hora: 19/11/2024 01:24:01
+nov 19, 2024 1:24:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor. , Acción: Ingreso de sesión exitoso. , Interfaz: Iniciar sesión., Fecha y Hora: 19/11/2024 01:24:25
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Serialización de vendedores actualizada correctamente.
+nov 19, 2024 1:25:25 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Vendedores.bin
+nov 19, 2024 1:25:26 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Objeto guardado exitosamente en: persistencia/Vendedores.xml
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Logger configurado correctamente
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosVendidos.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosPublicados.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/ProductosCancelados.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de productos está vacía. Se han borrado los archivos correspondientes.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesPendientes.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesAceptadas.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Se borro correctamente el contenido del archivo: persistencia/archivos/SolicitudesRechazadas.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de solicitudes está vacía. Se han borrado los archivos correspondientes.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados por estado correctamente
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@8807e25
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@2a3046da
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Vendedores.xml
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:26:02 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@2a098129
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@198e2867
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseñas leídas desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@12f40c25
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Reseña guardada exitosamente: com.servidor.modelo.Reseña@3ada9e37
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Resenas.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+GRAVE: Error general al cargar el objeto deserializado: Index 0 out of bounds for length 0
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de vendedores: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 8381
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 2247
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 7967
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 5513
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 0251
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes aceptadas encontradas para el vendedor ID: 4633
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Vendedores leídos desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Productos leídos desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Ruta de solicitudes: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Solicitudes leídas desde el archivo correctamente.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Resenas.xml
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Vendedores.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Productos.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Escribir lista en archivo: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Lista escrita en archivo correctamente: persistencia/archivos/Solicitudes.txt
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: La lista de reseñas está vacía, no se escribirá en el archivo.
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Archivos gestionados correctamente
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+ADVERTENCIA: Objeto deserializado no es una instancia válida: com.servidor.modelo.Reseña
+nov 19, 2024 1:26:03 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Modelo cargado exitosamente desde: persistencia/Resenas.xml
+nov 19, 2024 1:26:04 A. M. com.servidor.util.UtilLog escribirLog
+INFORMACIÓN: Tipo de Usuario: Vendedor. , Acción: Ingreso de sesión exitoso. , Interfaz: Iniciar sesión., Fecha y Hora: 19/11/2024 01:26:04

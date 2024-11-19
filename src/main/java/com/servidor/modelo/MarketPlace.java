@@ -221,10 +221,6 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
 
     }
 
-    public void exportarEstadisticas(String ruta, String nombreUsuario, String fechaInicio, String fechaFin,
-            String idVendedor) {
-        utilMarketPlace.exportarEstadisticas(ruta, nombreUsuario, fechaInicio, fechaFin, idVendedor);
-    }
 
     public List<Vendedor> sugerirContactos(Vendedor vendedor) {
         List<Vendedor> sugerencias = new ArrayList<>();
@@ -311,9 +307,10 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
         return vendedores; // Retornar la lista de vendedores que dieron "me gusta"
     }
 
-    public void darLike(Vendedor vendedor, Producto producto) {
-        // Llamar al método darMeGusta de la clase Producto
+    public boolean darLike(Vendedor vendedor, Producto producto) {
+        
         producto.darLike(vendedor.getId());
+        return true;
     }
 
     public String iniciarSesion(String cedula, String contraseña){
@@ -327,5 +324,33 @@ public MarketPlace(UtilMarketPlace utilMarketPlace) {
 
     public UtilMarketPlace getUtilMarketPlace() {
         return utilMarketPlace;
+    }
+
+    public int contarProductosPorRangoFecha(String fechaInicio, String fechaFin){
+        return utilMarketPlace.contarProductosPorRangoFecha(fechaInicio, fechaFin);
+    }
+    public int contarProductosPorVendedor(String cedulaVendedor){
+        return utilMarketPlace.contarContactosPorVendedor(cedulaVendedor);
+    }
+    public int contarContactosPorVendedor(String cedulaVendedor){
+        return utilMarketPlace.contarContactosPorVendedor(cedulaVendedor);
+    }
+
+    public List<Producto> obtenerTop10ProductosPopulares(){
+        return utilMarketPlace.obtenerTop10ProductosPopulares();
+    }
+
+    public Vendedor buscarVendedorPorId(String vendedorId){
+        return utilMarketPlace.obtenerVendedorPorId(vendedorId);
+    }
+
+    public Producto buscarProductoPorId(String productoId){
+        return utilMarketPlace.buscarProductoPorId(productoId);
+    }
+
+    public String generarReporte( String nombreUsuario, String fechaInicio, String fechaFin,
+    String idVendedor){
+        String reporte = utilMarketPlace.exportarEstadisticas(nombreUsuario, fechaInicio, fechaFin, idVendedor).toString();
+        return reporte;
     }
 }

@@ -11,5 +11,13 @@ public enum Categoria {
     BELLEZA,
     JUGUETES,
     SALUD,
-    ROPA
+    ROPA;
+
+    public static Categoria fromString(String categoria) {
+        try {
+            return Categoria.valueOf(categoria.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return null; // O lanza una excepción personalizada si prefieres
+        }
+    }
 }
